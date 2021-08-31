@@ -12,3 +12,5 @@ const corVerdeMaca = const Color(0xFF80B918);
 const corPeer = const Color(0xFFD4D700);
 //const corBranco = const Color(0xFFFFFFFF);
 
+const corUltramarinhoAzul = const Color(0xFF0061ff);
+const corEletricoAzul = const Color(0xFF60efff);
