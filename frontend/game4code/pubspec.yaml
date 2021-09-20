@@ -88,6 +88,15 @@ flutter:
    - assets/app-logo.png
    - assets/post-picture-001.png
 
+   - assets/blackwidow.jpg
+   - assets/captamerica.jpg
+   - assets/captmarvel.jpg
+   - assets/hawkey.jpg
+   - assets/hulk.jpg
+   - assets/thor.jpg
+   - assets/ironman.jpeg
+   - assets/okoye.jpeg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

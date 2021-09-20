@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:game4code/App/colors/colors.dart';
 import 'package:game4code/App/drawer/drawer.dart';
+import 'package:game4code/App/custom/app_icons2.dart';
 
 //aluno
-class HomeAluno extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: AppBar(
-          backgroundColor: corSkyBlue,
-          title: Text('GAME4CODE', style: TextStyle(color: corUSABlue)),
+          centerTitle: true,
+          title: Text('GAME4CODE', style: TextStyle(color: corBranco)),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xFF0061ff),
+                Color(0xFF60efff),
+              ],
+            )),
+          ),
         ),
         drawer: DrawerAlunoWidget(),
         body: getAlunoBody(context));
@@ -26,8 +38,17 @@ Widget getAlunoBody(BuildContext context) {
     padding: EdgeInsets.all(20),
     childAspectRatio: 8 / 9,
     children: <Widget>[
-      Card(
-        color: corCommandBlue,
+      Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Color(0xFF0061ff),
+              Color(0xFF60efff),
+            ],
+          ),
+        ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () async {
@@ -38,12 +59,17 @@ Widget getAlunoBody(BuildContext context) {
             children: <Widget>[
               AspectRatio(
                 aspectRatio: 20 / 13,
-                child: Image.asset('assets/Gauss.jpg', fit: BoxFit.fitWidth),
+                child: IconTheme(
+                  data: IconThemeData(
+                    color: corPowderBlues,
+                  ),
+                  child: Icon(CustomIcon.java, size: 100.0),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10),
                 child: Center(
-                  child: Text('Canhão de Gauss',
+                  child: Text('Java',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: corPowderBlues)),
                 ),
@@ -52,25 +78,38 @@ Widget getAlunoBody(BuildContext context) {
           ),
         ),
       ),
-      Card(
-        color: corCommandBlue,
+      Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Color(0xFF0061ff),
+              Color(0xFF60efff),
+            ],
+          ),
+        ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () async {
-            Navigator.pushNamed(context, '/rampaCad');
+            Navigator.pushNamed(context, '/gaussCad');
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               AspectRatio(
                 aspectRatio: 20 / 13,
-                child: Image.asset('assets/RampaLooping.jpg',
-                    fit: BoxFit.fitWidth),
+                child: IconTheme(
+                  data: IconThemeData(
+                    color: corPowderBlues,
+                  ),
+                  child: Icon(CustomIcon.java, size: 100.0),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10),
                 child: Center(
-                  child: Text('Rampa com looping',
+                  child: Text('Java',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: corPowderBlues)),
                 ),
@@ -79,25 +118,38 @@ Widget getAlunoBody(BuildContext context) {
           ),
         ),
       ),
-      Card(
-        color: corCommandBlue,
+      Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Color(0xFF0061ff),
+              Color(0xFF60efff),
+            ],
+          ),
+        ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () async {
-            Navigator.pushNamed(context, '/CadastroRampaInclinada');
+            Navigator.pushNamed(context, '/gaussCad');
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               AspectRatio(
-                aspectRatio: 22 / 13,
-                child: Image.asset('assets/RampaInclinada.jpg',
-                    fit: BoxFit.fitWidth),
+                aspectRatio: 20 / 13,
+                child: IconTheme(
+                  data: IconThemeData(
+                    color: corPowderBlues,
+                  ),
+                  child: Icon(CustomIcon.java, size: 100.0),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10),
                 child: Center(
-                  child: Text('Rampa inclinada',
+                  child: Text('Java',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: corPowderBlues)),
                 ),

@@ -22,8 +22,8 @@ class LoginAluno extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SizedBox(
-              width: 128,
-              height: 128,
+              width: 200,
+              height: 200,
               child: Image.asset("assets/logo.png"),
             ),
             SizedBox(
@@ -131,7 +131,7 @@ class LoginAluno extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomeAluno(),
+                        builder: (context) => Home(),
                       ),
                     );
                   },

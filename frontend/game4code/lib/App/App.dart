@@ -20,7 +20,7 @@ class game4code extends StatelessWidget {
       title: 'GAME4CODE',
       initialRoute: '/LoginAluno',
       routes: {
-        '/homeAluno': (context) => HomeAluno(),
+        '/homeAluno': (context) => Home(),
         '/profile': (context) => ProfileAlunoPage(),
         '/registerAluno': (context) => RegisterAlunoPage(),
         '/resultados': (context) => ResultadosPage(),
