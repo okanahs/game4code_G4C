@@ -15,8 +15,8 @@ class LoginAluno extends StatelessWidget {
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           colors: [
-            Color(0xFF0061ff),
-            Color(0xFF60efff),
+            Color(0xFF57ebde),
+            Color(0xFFaefb2a),
           ],
         )),
         child: ListView(
@@ -35,7 +35,7 @@ class LoginAluno extends StatelessWidget {
                 decoration: InputDecoration(
                   labelText: "E-mail",
                   labelStyle: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   ),
@@ -55,7 +55,7 @@ class LoginAluno extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: "Senha",
                 labelStyle: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -66,65 +66,29 @@ class LoginAluno extends StatelessWidget {
               ),
               style: TextStyle(fontSize: 15),
             ),
-/*             Container(
-              height: 40,
-              alignment: Alignment.centerRight,
-              child: FlatButton(
-                child: Text(
-                  "Recuperar Senha",
-                  textAlign: TextAlign.right,
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ResetPasswordPage(),
-                    ),
-                  );
-                },
-              ),
-            ), */
             SizedBox(
-              height: 40,
+              height: 30,
             ),
             Container(
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Color(0xFFF58524),
-                    Color(0XFFF92B7F),
-                  ],
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
-                ),
-              ),
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(12.0)),
               child: SizedBox.expand(
                 child: FlatButton(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "Login",
+                        "LOGIN",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                           fontSize: 20,
                         ),
-                        textAlign: TextAlign.left,
+                        textAlign: TextAlign.center,
                       ),
-                      Container(
-                        child: SizedBox(
-                          child: Image.asset("assets/bone.png"),
-                          height: 28,
-                          width: 28,
-                        ),
-                      )
                     ],
                   ),
                   onPressed: () {
