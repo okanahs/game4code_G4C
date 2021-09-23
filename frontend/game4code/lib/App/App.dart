@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:game4code/App/view/cadastroEquipe.dart';
-import 'package:game4code/App/view/cadastroGauss.dart';
-import 'package:game4code/App/view/cadastroRampa.dart';
-import 'package:game4code/App/view/cadastroRampaInclinada.dart';
-import 'package:game4code/App/view/cadastroTurma.dart';
-import 'package:game4code/App/view/equipe.dart';
-import 'package:game4code/App/view/equipeAdd.dart';
+import 'package:game4code/App/view/SeletorLinguagem.dart';
 import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/login.dart';
 import 'package:game4code/App/view/profile.dart';
 import 'package:game4code/App/view/register.dart';
 import 'package:game4code/App/view/resultados.dart';
-import 'package:game4code/App/view/turma.dart';
 
 class game4code extends StatelessWidget {
   @override
@@ -20,11 +13,12 @@ class game4code extends StatelessWidget {
       title: 'GAME4CODE',
       initialRoute: '/LoginAluno',
       routes: {
-        '/homeAluno': (context) => Home(),
-        '/profile': (context) => ProfileAlunoPage(),
+        '/home': (context) => Home(),
+        '/profile': (context) => Profile(),
         '/registerAluno': (context) => RegisterAlunoPage(),
         '/resultados': (context) => ResultadosPage(),
         '/LoginAluno': (context) => LoginAluno(),
+        '/SeletorLinguagem': (context) => SeletorLinguagem(),
       },
       debugShowCheckedModeBanner: false,
       onGenerateRoute: _getRoute,

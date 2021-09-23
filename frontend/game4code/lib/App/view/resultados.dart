@@ -11,7 +11,7 @@ class ResultadosPage extends StatelessWidget {
         backgroundColor: corSkyBlue,
         title: Text('GAME4CODE', style: TextStyle(color: corUSABlue)),
       ),
-      drawer: DrawerAlunoWidget(),
+      drawer: DrawerHomeWidget(),
       body: getBody(),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:game4code/App/colors/colors.dart';
 
-//aluno - home pra frente
-class DrawerAlunoWidget extends StatelessWidget {
+//home pra frente
+class DrawerHomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -12,12 +12,12 @@ class DrawerAlunoWidget extends StatelessWidget {
         children: <Widget>[
           UserAccountsDrawerHeader(
             accountName: Text(
-              'Bem Vindo (a) aluno (a) Thomas Hugo',
-              style: TextStyle(color: corUSABlue),
+              'Bem Vindo (a) Thomas Hugo',
+              style: TextStyle(color: Colors.black),
             ),
             accountEmail: Text(
               'thomhugo@gmail.com',
-              style: TextStyle(color: corUSABlue),
+              style: TextStyle(color: Colors.black),
             ),
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.black87,
@@ -26,7 +26,15 @@ class DrawerAlunoWidget extends StatelessWidget {
                 style: TextStyle(fontSize: 40.0, color: corUSABlue),
               ),
             ),
-            decoration: BoxDecoration(color: corPowderBlues),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xFF57ebde),
+                Color(0xFFaefb2a),
+              ],
+            )),
           ),
           Divider(
             height: 2.0,
@@ -34,13 +42,13 @@ class DrawerAlunoWidget extends StatelessWidget {
           ListTile(
             leading: IconTheme(
               data: IconThemeData(
-                color: corUSABlue,
+                color: Colors.black,
               ),
               child: Icon(Icons.person),
             ),
             title: Text(
               'Perfil',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
+              style: TextStyle(fontSize: 20, color: Colors.black),
             ),
             onTap: () {
               Navigator.pushNamed(context, '/profile');
@@ -52,28 +60,28 @@ class DrawerAlunoWidget extends StatelessWidget {
           ListTile(
             leading: IconTheme(
               data: IconThemeData(
-                color: corUSABlue,
+                color: Colors.black,
               ),
               child: Icon(Icons.home),
             ),
             title: Text(
               'Home',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
+              style: TextStyle(fontSize: 20, color: Colors.black),
             ),
             onTap: () {
-              Navigator.pushNamed(context, '/homeAluno');
+              Navigator.pushNamed(context, '/home');
             },
           ),
           new ListTile(
             leading: IconTheme(
               data: IconThemeData(
-                color: corUSABlue,
+                color: Colors.black,
               ),
               child: Icon(Icons.keyboard_backspace),
             ),
             title: Text(
               'Sair',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
+              style: TextStyle(fontSize: 20, color: Colors.black),
             ),
             onTap: () {
               Navigator.pushNamed(context, '/LoginAluno');
@@ -85,8 +93,8 @@ class DrawerAlunoWidget extends StatelessWidget {
   }
 }
 
-//prof - home pra frente
-class DrawerProfWidget extends StatelessWidget {
+//antes da home
+class DrawerAntesHomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -96,111 +104,12 @@ class DrawerProfWidget extends StatelessWidget {
         children: <Widget>[
           UserAccountsDrawerHeader(
             accountName: Text(
-              '\n\nBem Vindo (a) Prof. Severus Snape',
-              style: TextStyle(color: corUSABlue),
-            ),
-            accountEmail: Text(
-              'severussnape@gmail.com',
-              style: TextStyle(color: corUSABlue),
-            ),
-            currentAccountPicture: CircleAvatar(
-              backgroundColor: Colors.black87,
-              child: Text(
-                'SS',
-                style: TextStyle(fontSize: 40.0, color: corUSABlue),
-              ),
-            ),
-            decoration: BoxDecoration(color: corPowderBlues),
-          ),
-          Divider(
-            height: 2.0,
-          ),
-          ListTile(
-            leading: IconTheme(
-              data: IconThemeData(
-                color: corUSABlue,
-              ),
-              child: Icon(Icons.person),
-            ),
-            title: Text(
-              'Perfil',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, '/profileProf');
-            },
-          ),
-          Divider(
-            height: 2.0,
-          ),
-          ListTile(
-            leading: IconTheme(
-              data: IconThemeData(
-                color: corUSABlue,
-              ),
-              child: Icon(Icons.home_filled),
-            ),
-            title: Text(
-              'Home',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, '/homeProfessor');
-            },
-          ),
-          new ListTile(
-            leading: IconTheme(
-              data: IconThemeData(
-                color: corUSABlue,
-              ),
-              child: Icon(Icons.dashboard),
-            ),
-            title: Text(
-              'Resultados',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, '/resultados');
-            },
-          ),
-          new ListTile(
-            leading: IconTheme(
-              data: IconThemeData(
-                color: corUSABlue,
-              ),
-              child: Icon(Icons.keyboard_backspace),
-            ),
-            title: Text(
-              'Sair',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, '/LoginAluno');
-            },
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-//aluno - antes da home
-class DrawerAlunoEquipeWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      elevation: 20.0,
-      child: new ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          UserAccountsDrawerHeader(
-            accountName: Text(
-              'Bem Vindo (a) aluno (a) Thomas Hugo',
-              style: TextStyle(color: corUSABlue),
+              'Bem Vindo (a) Thomas Hugo',
+              style: TextStyle(color: Colors.black),
             ),
             accountEmail: Text(
               'thomhugo@gmail.com',
-              style: TextStyle(color: corUSABlue),
+              style: TextStyle(color: Colors.black),
             ),
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.black87,
@@ -209,7 +118,15 @@ class DrawerAlunoEquipeWidget extends StatelessWidget {
                 style: TextStyle(fontSize: 40.0, color: corUSABlue),
               ),
             ),
-            decoration: BoxDecoration(color: corPowderBlues),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xFF57ebde),
+                Color(0xFFaefb2a),
+              ],
+            )),
           ),
           Divider(
             height: 2.0,
@@ -217,13 +134,13 @@ class DrawerAlunoEquipeWidget extends StatelessWidget {
           ListTile(
             leading: IconTheme(
               data: IconThemeData(
-                color: corUSABlue,
+                color: Colors.black,
               ),
               child: Icon(Icons.person),
             ),
             title: Text(
               'Perfil',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
+              style: TextStyle(fontSize: 20, color: Colors.black),
             ),
             onTap: () {
               Navigator.pushNamed(context, '/profile');
@@ -235,82 +152,13 @@ class DrawerAlunoEquipeWidget extends StatelessWidget {
           new ListTile(
             leading: IconTheme(
               data: IconThemeData(
-                color: corUSABlue,
+                color: Colors.black,
               ),
               child: Icon(Icons.keyboard_backspace),
             ),
             title: Text(
               'Sair',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, '/LoginAluno');
-            },
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-//prof - home para tras
-class DrawerProfTurmaWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      elevation: 20.0,
-      child: new ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          UserAccountsDrawerHeader(
-            accountName: Text(
-              '\n\nBem Vindo (a) Prof. Severus Snape',
-              style: TextStyle(color: corUSABlue),
-            ),
-            accountEmail: Text(
-              'severussnape@gmail.com',
-              style: TextStyle(color: corUSABlue),
-            ),
-            currentAccountPicture: CircleAvatar(
-              backgroundColor: Colors.black87,
-              child: Text(
-                'SS',
-                style: TextStyle(fontSize: 40.0, color: corUSABlue),
-              ),
-            ),
-            decoration: BoxDecoration(color: corPowderBlues),
-          ),
-          Divider(
-            height: 2.0,
-          ),
-          ListTile(
-            leading: IconTheme(
-              data: IconThemeData(
-                color: corUSABlue,
-              ),
-              child: Icon(Icons.person),
-            ),
-            title: Text(
-              'Perfil',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, '/profileProfTurma');
-            },
-          ),
-          Divider(
-            height: 2.0,
-          ),
-          new ListTile(
-            leading: IconTheme(
-              data: IconThemeData(
-                color: corUSABlue,
-              ),
-              child: Icon(Icons.keyboard_backspace),
-            ),
-            title: Text(
-              'Sair',
-              style: TextStyle(fontSize: 20, color: corUSABlue),
+              style: TextStyle(fontSize: 20, color: Colors.black),
             ),
             onTap: () {
               Navigator.pushNamed(context, '/LoginAluno');

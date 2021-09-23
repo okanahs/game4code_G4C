@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game4code/App/colors/colors.dart';
+import 'package:game4code/App/view/SeletorLinguagem.dart';
 import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/register.dart';
 
@@ -95,7 +96,7 @@ class LoginAluno extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Home(),
+                        builder: (context) => SeletorLinguagem(),
                       ),
                     );
                   },

@@ -3,13 +3,13 @@ import 'package:game4code/App/colors/colors.dart';
 import 'package:game4code/App/drawer/drawer.dart';
 import 'package:game4code/App/custom/app_icons2.dart';
 
-//aluno
-class Home extends StatelessWidget {
+class SeletorLinguagem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: AppBar(
+          backgroundColor: corSkyBlue,
           centerTitle: true,
           title: Text('GAME4CODE', style: TextStyle(color: corBranco)),
           flexibleSpace: Container(
@@ -24,12 +24,12 @@ class Home extends StatelessWidget {
             )),
           ),
         ),
-        drawer: DrawerHomeWidget(),
-        body: getAlunoBody(context));
+        drawer: DrawerAntesHomeWidget(),
+        body: getLingBody(context));
   }
 }
 
-Widget getAlunoBody(BuildContext context) {
+Widget getLingBody(BuildContext context) {
   return Center(
       child: GridView.count(
     crossAxisCount: 2,
@@ -53,7 +53,7 @@ Widget getAlunoBody(BuildContext context) {
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () async {
-            Navigator.pushNamed(context, '/nivel1');
+            Navigator.pushNamed(context, '/home');
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,13 +64,13 @@ Widget getAlunoBody(BuildContext context) {
                   data: IconThemeData(
                     color: Colors.black,
                   ),
-                  child: Icon(Icons.menu_book, size: 80.0),
+                  child: Icon(CustomIcon.java, size: 80.0),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10),
                 child: Center(
-                  child: Text('Nivel 1          Introdução a java',
+                  child: Text('Java',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.black)),
                 ),
@@ -94,7 +94,7 @@ Widget getAlunoBody(BuildContext context) {
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () async {
-            Navigator.pushNamed(context, '/gaussCad');
+            Navigator.pushNamed(context, '/home');
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,7 +111,7 @@ Widget getAlunoBody(BuildContext context) {
               Padding(
                 padding: EdgeInsets.only(top: 10),
                 child: Center(
-                  child: Text('Nivel 2               Fundamentos',
+                  child: Text('...',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.black)),
                 ),
@@ -135,7 +135,7 @@ Widget getAlunoBody(BuildContext context) {
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () async {
-            Navigator.pushNamed(context, '/gaussCad');
+            Navigator.pushNamed(context, '/home');
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,7 +152,7 @@ Widget getAlunoBody(BuildContext context) {
               Padding(
                 padding: EdgeInsets.only(top: 10),
                 child: Center(
-                  child: Text('Nivel 3          Operadores Logicos',
+                  child: Text('...',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.black)),
                 ),
