@@ -15,12 +15,20 @@
 ///
 import 'package:flutter/widgets.dart';
 
-class DistanceIcon {
-  DistanceIcon._();
+class CustomIcon {
+  CustomIcon._();
 
   static const _kFontFam = 'icomoon';
   static const _kFontPkg = null;
 
-  static const IconData distance =
+  static const IconData java =
       IconData(0xe900, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+}
+
+class Gems {
+  Gems._();
+
+  static const String _fontFamily = 'gems';
+
+  static const IconData rubygems = IconData(0xe901, fontFamily: _fontFamily);
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:game4code/App/colors/colors.dart';
 import 'package:game4code/App/drawer/drawer.dart';
-import 'package:game4code/App/custom/app_icons2.dart';
+import 'package:game4code/App/custom/app_icons.dart';
 
 class SeletorLinguagem extends StatelessWidget {
   @override
@@ -9,9 +9,16 @@ class SeletorLinguagem extends StatelessWidget {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: AppBar(
-          backgroundColor: corSkyBlue,
-          centerTitle: true,
-          title: Text('GAME4CODE', style: TextStyle(color: corBranco)),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/logo.png',
+                fit: BoxFit.contain,
+                height: 75,
+              ),
+            ],
+          ),
           flexibleSpace: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -23,8 +30,28 @@ class SeletorLinguagem extends StatelessWidget {
               ],
             )),
           ),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/profile');
+            },
+            child: Icon(
+              Icons.account_circle,
+              size: 30, // add custom icons also
+            ),
+          ),
+          actions: <Widget>[
+            Padding(
+                padding: EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Icon(
+                    Gems.rubygems,
+                    size: 26.0,
+                    color: Colors.white,
+                  ),
+                )),
+          ],
         ),
-        drawer: DrawerAntesHomeWidget(),
         body: getLingBody(context));
   }
 }
@@ -64,7 +91,7 @@ Widget getLingBody(BuildContext context) {
                   data: IconThemeData(
                     color: Colors.black,
                   ),
-                  child: Icon(CustomIcon.java, size: 80.0),
+                  child: Icon(CustomIcon.java, size: 100),
                 ),
               ),
               Padding(

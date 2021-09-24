@@ -64,15 +64,16 @@ flutter:
         - asset: fonts/JosefinSans-Regular.ttf
         - asset: fonts/JosefinSans-Bold.ttf
           weight: 500
-    - family: icomoon 
+    - family: icomoon
       fonts:
-        - asset: fonts/icomoon.ttf
+        - asset: fonts/javaicon.ttf
+        - asset: fonts/rubygems.ttf
           weight: 500
-    - family: aceleracao 
+    - family: gems
       fonts:
-        - asset: fonts/alphaAceleracao.ttf
+        - asset: fonts/gems.ttf
           weight: 500
-        
+    
   assets:
    - assets/PhysicsLogo.png
    - assets/Gauss.jpg
