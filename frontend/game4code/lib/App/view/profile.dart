@@ -34,9 +34,7 @@ class _ProfileState extends State<Profile> {
             )),
         new Scaffold(
             backgroundColor: corBranco,
-            appBar: new AppBar(
-              centerTitle: true,
-              title: Text('GAME4CODE', style: TextStyle(color: corBranco)),
+            appBar: AppBar(
               flexibleSpace: Container(
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -48,8 +46,86 @@ class _ProfileState extends State<Profile> {
                   ],
                 )),
               ),
+              leading: IconButton(
+                padding: const EdgeInsets.only(left: 16),
+                icon: Icon(
+                  Icons.account_circle,
+                  size: 30,
+                  color: Colors.redAccent,
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/profile');
+                },
+              ),
+              actions: <Widget>[
+                Row(
+                  children: <Widget>[
+                    IconButton(
+                      padding: const EdgeInsets.only(left: 16),
+                      icon: Image.asset(
+                        "assets/appBar/java.png",
+                        height: 29,
+                      ),
+                      iconSize: 40,
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/home');
+                      },
+                    ),
+                    Text(
+                      "Java",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.red,
+                          fontSize: 17),
+                    ),
+                    const SizedBox(
+                      width: 40,
+                    ),
+                    Text('GAME4CODE', style: TextStyle(color: corBranco)),
+                    const SizedBox(
+                      width: 40,
+                    ),
+                    Icon(
+                      Icons.dashboard_outlined,
+                      color: Colors.red,
+                    ),
+                    const SizedBox(
+                      width: 0,
+                    ),
+                    IconButton(
+                      padding: const EdgeInsets.only(left: 16),
+                      icon: Image.asset(
+                        "assets/appBar/navbar_diamont.png",
+                        height: 29,
+                      ),
+                      onPressed: () {},
+                    ),
+                    Text(
+                      "0",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.red,
+                          fontSize: 17),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                  ],
+                ),
+              ],
             ),
-            drawer: DrawerHomeWidget(),
+            bottomNavigationBar: BottomNavigationBar(
+              currentIndex: 0,
+              items: [
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.person), title: Text("Tarefas")),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.shopping_basket),
+                    title: Text("Meus pedidos")),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.favorite), title: Text("Favoritos")),
+              ],
+            ),
             body: new Center(
               child: new Column(
                 children: <Widget>[

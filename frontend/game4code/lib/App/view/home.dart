@@ -11,16 +11,6 @@ class Home extends StatelessWidget {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/logo.png',
-                fit: BoxFit.contain,
-                height: 75,
-              ),
-            ],
-          ),
           flexibleSpace: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -32,28 +22,75 @@ class Home extends StatelessWidget {
               ],
             )),
           ),
-          leading: GestureDetector(
-            onTap: () {
+          leading: IconButton(
+            padding: const EdgeInsets.only(left: 16),
+            icon: Icon(
+              Icons.account_circle,
+              size: 30,
+              color: Colors.redAccent,
+            ),
+            onPressed: () {
               Navigator.pushNamed(context, '/profile');
             },
-            child: Icon(
-              Icons.account_circle,
-              size: 30, // add custom icons also
-            ),
           ),
           actions: <Widget>[
-            Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Icon(
-                    Gems.rubygems,
-                    size: 26.0,
-                    color: Colors.white,
+            Row(
+              children: <Widget>[
+                IconButton(
+                  padding: const EdgeInsets.only(left: 16),
+                  icon: Image.asset(
+                    "assets/appBar/java.png",
+                    height: 29,
                   ),
-                )),
+                  iconSize: 40,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/home');
+                  },
+                ),
+                Text(
+                  "Java",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red,
+                      fontSize: 17),
+                ),
+                const SizedBox(
+                  width: 40,
+                ),
+                Text('GAME4CODE', style: TextStyle(color: corBranco)),
+                const SizedBox(
+                  width: 40,
+                ),
+                Icon(
+                  Icons.dashboard_outlined,
+                  color: Colors.red,
+                ),
+                const SizedBox(
+                  width: 0,
+                ),
+                IconButton(
+                  padding: const EdgeInsets.only(left: 16),
+                  icon: Image.asset(
+                    "assets/appBar/navbar_diamont.png",
+                    height: 29,
+                  ),
+                  onPressed: () {},
+                ),
+                Text(
+                  "0",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red,
+                      fontSize: 17),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+              ],
+            ),
           ],
         ),
+        bottomNavigationBar: _createBottomNavigationBar(),
         body: getAlunoBody(context));
   }
 }
@@ -192,4 +229,31 @@ Widget getAlunoBody(BuildContext context) {
       ),
     ],
   ));
+}
+
+Widget _createBottomNavigationBar() {
+  return Container(
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        colors: [
+          Color(0xFFf5c900),
+          Color(0xFFfaff89),
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.topRight,
+        stops: [0.0, 0.8],
+        tileMode: TileMode.clamp,
+      ),
+    ),
+    child: BottomNavigationBar(
+      currentIndex: 0,
+      items: [
+        BottomNavigationBarItem(icon: Icon(Icons.task), title: Text("Tarefas")),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard), title: Text("Dashboard")),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.person), title: Text("Perfil")),
+      ],
+    ),
+  );
 }
