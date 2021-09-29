@@ -4,20 +4,20 @@ import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/login.dart';
 import 'package:game4code/App/view/profile.dart';
 import 'package:game4code/App/view/register.dart';
-import 'package:game4code/App/view/resultados.dart';
+import 'package:game4code/App/view/dashboard.dart';
 
 class game4code extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GAME4CODE',
-      initialRoute: '/LoginAluno',
+      initialRoute: '/Login',
       routes: {
         '/home': (context) => Home(),
         '/profile': (context) => Profile(),
-        '/registerAluno': (context) => RegisterAlunoPage(),
-        '/resultados': (context) => ResultadosPage(),
-        '/LoginAluno': (context) => LoginAluno(),
+        '/registerAluno': (context) => RegisterPage(),
+        '/dashboard': (context) => ResultadosPage(),
+        '/Login': (context) => Login(),
         '/SeletorLinguagem': (context) => SeletorLinguagem(),
       },
       debugShowCheckedModeBanner: false,
@@ -26,13 +26,13 @@ class game4code extends StatelessWidget {
   }
 
   Route<dynamic> _getRoute(RouteSettings settings) {
-    if (settings.name != '/LoginAluno') {
+    if (settings.name != '/Login') {
       return null;
     }
 
     return MaterialPageRoute<void>(
       settings: settings,
-      builder: (BuildContext context) => LoginAluno(),
+      builder: (BuildContext context) => Login(),
       fullscreenDialog: true,
     );
   }

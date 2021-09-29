@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:game4code/App/colors/colors.dart';
 
-class RegisterAlunoPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: getAlunoBody(context));
+    return Scaffold(body: getBody(context));
   }
 }
 
-Widget getAlunoBody(BuildContext context) {
+Widget getBody(BuildContext context) {
   return Scaffold(
       appBar: AppBar(
         backgroundColor: corSkyBlue,

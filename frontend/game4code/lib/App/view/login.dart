@@ -5,7 +5,7 @@ import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/register.dart';
 
 //aluno
-class LoginAluno extends StatelessWidget {
+class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,7 +117,7 @@ class LoginAluno extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => RegisterAlunoPage(),
+                      builder: (context) => RegisterPage(),
                     ),
                   );
                 },

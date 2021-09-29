@@ -4,8 +4,12 @@ import 'package:game4code/App/drawer/drawer.dart';
 import 'package:game4code/App/custom/app_icons.dart';
 import 'package:path/path.dart';
 
-//aluno
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,51 +26,21 @@ class Home extends StatelessWidget {
               ],
             )),
           ),
-          leading: IconButton(
-            padding: const EdgeInsets.only(left: 16),
-            icon: Icon(
-              Icons.account_circle,
-              size: 30,
-              color: Colors.redAccent,
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, '/profile');
-            },
-          ),
           actions: <Widget>[
             Row(
               children: <Widget>[
                 IconButton(
-                  padding: const EdgeInsets.only(left: 16),
-                  icon: Image.asset(
-                    "assets/appBar/java.png",
-                    height: 29,
-                  ),
-                  iconSize: 40,
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/home');
-                  },
-                ),
-                Text(
-                  "Java",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red,
-                      fontSize: 17),
-                ),
+                    padding: const EdgeInsets.only(left: 16),
+                    icon: Image.asset(
+                      "assets/appBar/java.png",
+                      height: 29,
+                    ),
+                    iconSize: 20,
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/home');
+                    }),
                 const SizedBox(
-                  width: 40,
-                ),
-                Text('GAME4CODE', style: TextStyle(color: corBranco)),
-                const SizedBox(
-                  width: 40,
-                ),
-                Icon(
-                  Icons.dashboard_outlined,
-                  color: Colors.red,
-                ),
-                const SizedBox(
-                  width: 0,
+                  width: 5,
                 ),
                 IconButton(
                   padding: const EdgeInsets.only(left: 16),
@@ -84,18 +58,18 @@ class Home extends StatelessWidget {
                       fontSize: 17),
                 ),
                 const SizedBox(
-                  width: 20,
+                  width: 30,
                 ),
               ],
             ),
           ],
         ),
-        bottomNavigationBar: _createBottomNavigationBar(),
-        body: getAlunoBody(context));
+        drawer: DrawerHomeWidget(),
+        body: getBody(context));
   }
 }
 
-Widget getAlunoBody(BuildContext context) {
+Widget getBody(BuildContext context) {
   return Center(
       child: GridView.count(
     crossAxisCount: 2,
@@ -231,7 +205,7 @@ Widget getAlunoBody(BuildContext context) {
   ));
 }
 
-Widget _createBottomNavigationBar() {
+Widget _criarBottomNavigationBar() {
   return Container(
     decoration: BoxDecoration(
       gradient: LinearGradient(
@@ -248,7 +222,10 @@ Widget _createBottomNavigationBar() {
     child: BottomNavigationBar(
       currentIndex: 0,
       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.task), title: Text("Tarefas")),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.task),
+          title: Text("Tarefas"),
+        ),
         BottomNavigationBarItem(
             icon: Icon(Icons.dashboard), title: Text("Dashboard")),
         BottomNavigationBarItem(
