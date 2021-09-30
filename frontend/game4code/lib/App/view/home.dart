@@ -205,32 +205,3 @@ Widget getBody(BuildContext context) {
   ));
 }
 
-Widget _criarBottomNavigationBar() {
-  return Container(
-    decoration: BoxDecoration(
-      gradient: LinearGradient(
-        colors: [
-          Color(0xFFf5c900),
-          Color(0xFFfaff89),
-        ],
-        begin: Alignment.topLeft,
-        end: Alignment.topRight,
-        stops: [0.0, 0.8],
-        tileMode: TileMode.clamp,
-      ),
-    ),
-    child: BottomNavigationBar(
-      currentIndex: 0,
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.task),
-          title: Text("Tarefas"),
-        ),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard), title: Text("Dashboard")),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.person), title: Text("Perfil")),
-      ],
-    ),
-  );
-}

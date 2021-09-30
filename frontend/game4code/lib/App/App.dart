@@ -16,7 +16,7 @@ class game4code extends StatelessWidget {
         '/home': (context) => Home(),
         '/profile': (context) => Profile(),
         '/registerAluno': (context) => RegisterPage(),
-        '/dashboard': (context) => ResultadosPage(),
+        '/dashboard': (context) => Dashboard(),
         '/Login': (context) => Login(),
         '/SeletorLinguagem': (context) => SeletorLinguagem(),
       },

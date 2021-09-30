@@ -92,6 +92,8 @@ flutter:
    - assets/appBar/navbar_diamont.png
    - assets/appBar/navbar_fire.png
    - assets/appBar/java.png
+   - assets/bone.png
+
   
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
