@@ -19,6 +19,7 @@ class game4code extends StatelessWidget {
         '/dashboard': (context) => Dashboard(),
         '/Login': (context) => Login(),
         '/SeletorLinguagem': (context) => SeletorLinguagem(),
+        // '/nivel1': (context) => Nivel1(),
       },
       debugShowCheckedModeBanner: false,
       onGenerateRoute: _getRoute,

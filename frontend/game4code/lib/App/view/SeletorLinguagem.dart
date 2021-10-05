@@ -1,104 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:game4code/App/Utils/imagens.dart';
+import 'package:game4code/App/bars/AppBar.dart';
+import 'package:game4code/App/bars/bottomNavigatorBar.dart';
 import 'package:game4code/App/colors/colors.dart';
-import 'package:game4code/App/drawer/drawer.dart';
 import 'package:game4code/App/custom/app_icons.dart';
+import 'package:game4code/App/view/dashboard.dart';
+import 'package:game4code/App/view/home.dart';
+import 'package:game4code/App/view/profile.dart';
 
-class SeletorLinguagem extends StatelessWidget {
+class SeletorLinguagem extends StatefulWidget {
+  @override
+  _SeletorLinguagemState createState() => _SeletorLinguagemState();
+}
+
+class _SeletorLinguagemState extends State<SeletorLinguagem> {
+  int _currentIndex = 0;
+  final List<Widget> telas = [
+    Home(),
+    Profile(),
+    Dashboard(),
+  ];
+
+  Widget currentScreen = Home();
+
   @override
   Widget build(BuildContext context) {
+    const double _iconSize = 41;
+    const double _iconSizeSelected = 53;
+    final AppBarScreen appBar = AppBarScreen();
+    final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
+
     return Scaffold(
         backgroundColor: corBranco,
-        appBar: AppBar(
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color(0xFF57ebde),
-                Color(0xFFaefb2a),
-              ],
-            )),
-          ),
-          leading: IconButton(
-            padding: const EdgeInsets.only(left: 16),
-            icon: Icon(
-              Icons.account_circle,
-              size: 30,
-              color: Colors.redAccent,
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, '/profile');
-            },
-          ),
-          actions: <Widget>[
-            Row(
-              children: <Widget>[
-                IconButton(
-                  padding: const EdgeInsets.only(left: 16),
-                  icon: Image.asset(
-                    "assets/appBar/java.png",
-                    height: 29,
-                  ),
-                  iconSize: 40,
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/home');
-                  },
-                ),
-                Text(
-                  "Java",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red,
-                      fontSize: 17),
-                ),
-                const SizedBox(
-                  width: 40,
-                ),
-                Text('GAME4CODE', style: TextStyle(color: corBranco)),
-                const SizedBox(
-                  width: 40,
-                ),
-                Icon(
-                  Icons.dashboard_outlined,
-                  color: Colors.red,
-                ),
-                const SizedBox(
-                  width: 0,
-                ),
-                IconButton(
-                  padding: const EdgeInsets.only(left: 16),
-                  icon: Image.asset(
-                    "assets/appBar/navbar_diamont.png",
-                    height: 29,
-                  ),
-                  onPressed: () {},
-                ),
-                Text(
-                  "0",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red,
-                      fontSize: 17),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-              ],
-            ),
-          ],
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(45),
+          child: appBar,
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: 0,
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person), title: Text("Minha conta")),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_basket), title: Text("Meus pedidos")),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), title: Text("Favoritos")),
-          ],
-        ),
+        bottomNavigationBar:
+            PreferredSize(preferredSize: const Size.fromHeight(45), child: bnb),
         body: getLingBody(context));
   }
 }

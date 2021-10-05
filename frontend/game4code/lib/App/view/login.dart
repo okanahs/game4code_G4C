@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game4code/App/colors/colors.dart';
 import 'package:game4code/App/view/SeletorLinguagem.dart';
-import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/register.dart';
 
 //aluno
@@ -25,7 +23,7 @@ class Login extends StatelessWidget {
             SizedBox(
               width: 200,
               height: 200,
-              child: Image.asset("assets/logo.png"),
+              child: Image.asset("assets/profile_logo/logo.png"),
             ),
             SizedBox(
               height: 20,

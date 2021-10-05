@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:game4code/App/Utils/imagens.dart';
+import 'package:game4code/App/bars/AppBar.dart';
+import 'package:game4code/App/bars/bottomNavigatorBar.dart';
 import 'package:game4code/App/colors/colors.dart';
 import 'package:game4code/App/drawer/drawer.dart';
-import 'package:game4code/App/custom/app_icons.dart';
-import 'package:path/path.dart';
+import 'package:game4code/App/view/dashboard.dart';
+import 'package:game4code/App/view/profile.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,61 +13,30 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+  final List<Widget> telas = [
+    Home(),
+    Profile(),
+    Dashboard(),
+  ];
+
+  Widget currentScreen = Home();
+
   @override
   Widget build(BuildContext context) {
+    const double _iconSize = 41;
+    const double _iconSizeSelected = 53;
+    final AppBarScreen appBar = AppBarScreen();
+    final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
+
     return Scaffold(
         backgroundColor: corBranco,
-        appBar: AppBar(
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color(0xFF57ebde),
-                Color(0xFFaefb2a),
-              ],
-            )),
-          ),
-          actions: <Widget>[
-            Row(
-              children: <Widget>[
-                IconButton(
-                    padding: const EdgeInsets.only(left: 16),
-                    icon: Image.asset(
-                      "assets/appBar/java.png",
-                      height: 29,
-                    ),
-                    iconSize: 20,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/home');
-                    }),
-                const SizedBox(
-                  width: 5,
-                ),
-                IconButton(
-                  padding: const EdgeInsets.only(left: 16),
-                  icon: Image.asset(
-                    "assets/appBar/navbar_diamont.png",
-                    height: 29,
-                  ),
-                  onPressed: () {},
-                ),
-                Text(
-                  "0",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red,
-                      fontSize: 17),
-                ),
-                const SizedBox(
-                  width: 30,
-                ),
-              ],
-            ),
-          ],
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(45),
+          child: appBar,
         ),
-        drawer: DrawerHomeWidget(),
+        bottomNavigationBar:
+            PreferredSize(preferredSize: const Size.fromHeight(45), child: bnb),
         body: getBody(context));
   }
 }
@@ -204,4 +176,3 @@ Widget getBody(BuildContext context) {
     ],
   ));
 }
-
