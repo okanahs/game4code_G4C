@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:game4code/App/Splash/splashscreen.dart';
 import 'package:game4code/App/view/SeletorLinguagem.dart';
 import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/login.dart';
+import 'package:game4code/App/view/nivelamento.dart';
 import 'package:game4code/App/view/profile.dart';
 import 'package:game4code/App/view/register.dart';
 import 'package:game4code/App/view/dashboard.dart';
@@ -11,8 +13,10 @@ class game4code extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GAME4CODE',
-      initialRoute: '/Login',
+      initialRoute: '/Splash',
       routes: {
+        //'/Nivelamento': (context) => Nivelamento(),
+        '/Splash': (context) => SplashPage(),
         '/home': (context) => Home(),
         '/profile': (context) => Profile(),
         '/registerAluno': (context) => RegisterPage(),
@@ -27,7 +31,7 @@ class game4code extends StatelessWidget {
   }
 
   Route<dynamic> _getRoute(RouteSettings settings) {
-    if (settings.name != '/Login') {
+    if (settings.name != '/Splash') {
       return null;
     }
 

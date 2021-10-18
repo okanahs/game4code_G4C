@@ -174,5 +174,6 @@ Widget getBody(BuildContext context) {
         ),
       ),
     ],
-  ));
+  )
+  );
 }
