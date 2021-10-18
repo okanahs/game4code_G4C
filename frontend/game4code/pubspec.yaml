@@ -75,23 +75,26 @@ flutter:
           weight: 500
     
   assets:
-   - assets/profile_logo/semfoto.png
-   - assets/profile_logo/logo.png
-   - assets/appBar/crown_stroke.png
-   - assets/appBar/flag.png
-   - assets/appBar/navbar_diamont.png
-   - assets/appBar/navbar_fire.png
-   - assets/appBar/java.png
-   - assets/bottom_navigation_bar/tab_lessons.png
-   - assets/bottom_navigation_bar/tab_stories.png
-   - assets/bottom_navigation_bar/tab_profile.png
-   - assets/bottom_navigation_bar/tab_ranking.png
-   -  assets/bottom_navigation_bar/tab_store.png
-   - assets/bottom_navigation_bar/tab_lessons_selected.png
-   - assets/bottom_navigation_bar/tab_stories_selected.png
-   - assets/bottom_navigation_bar/tab_profile_selected.png
-   - assets/bottom_navigation_bar/tab_ranking_selected.png
-   - assets/bottom_navigation_bar/tab_store_selected.png
+   - assets/profile_logo/
+   - assets/appBar/
+   - assets/bottom_navigation_bar/
+  #  - assets/profile_logo/semfoto.png
+  #  - assets/profile_logo/logo.png
+  #  - assets/appBar/crown_stroke.png
+  #  - assets/appBar/flag.png
+  #  - assets/appBar/navbar_diamont.png
+  #  - assets/appBar/navbar_fire.png
+  #  - assets/appBar/java.png
+  #  - assets/bottom_navigation_bar/tab_lessons.png
+  #  - assets/bottom_navigation_bar/tab_stories.png
+  #  - assets/bottom_navigation_bar/tab_profile.png
+  #  - assets/bottom_navigation_bar/tab_ranking.png
+  #  -  assets/bottom_navigation_bar/tab_store.png
+  #  - assets/bottom_navigation_bar/tab_lessons_selected.png
+  #  - assets/bottom_navigation_bar/tab_stories_selected.png
+  #  - assets/bottom_navigation_bar/tab_profile_selected.png
+  #  - assets/bottom_navigation_bar/tab_ranking_selected.png
+  #  - assets/bottom_navigation_bar/tab_store_selected.png
    
   
   # An image asset can refer to one or more resolution-specific "variants", see
