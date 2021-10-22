@@ -95,7 +95,7 @@ class Login extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SeletorLinguagem(), //mudar mais pra frente
+                        builder: (context) => Nivelamento(), //mudar mais pra frente
                       ),
                     );
                   },

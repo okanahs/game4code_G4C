@@ -65,7 +65,7 @@ Widget getBody(BuildContext context) {
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () async {
-            Navigator.pushNamed(context, '/nivel1');
+            Navigator.pushNamed(context, '/nivel1Q1');
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,7 +106,7 @@ Widget getBody(BuildContext context) {
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () async {
-            Navigator.pushNamed(context, '/gaussCad');
+            Navigator.pushNamed(context, '/nivel1Q1');
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -147,7 +147,7 @@ Widget getBody(BuildContext context) {
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: () async {
-            Navigator.pushNamed(context, '/gaussCad');
+            Navigator.pushNamed(context, '/nivel1Q1');
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -174,6 +174,5 @@ Widget getBody(BuildContext context) {
         ),
       ),
     ],
-  )
-  );
+  ));
 }

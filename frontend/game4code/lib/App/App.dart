@@ -3,6 +3,7 @@ import 'package:game4code/App/Splash/splashscreen.dart';
 import 'package:game4code/App/view/SeletorLinguagem.dart';
 import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/login.dart';
+import 'package:game4code/App/view/nivel1.dart';
 import 'package:game4code/App/view/nivelamento.dart';
 import 'package:game4code/App/view/profile.dart';
 import 'package:game4code/App/view/register.dart';
@@ -15,7 +16,8 @@ class game4code extends StatelessWidget {
       title: 'GAME4CODE',
       initialRoute: '/Splash',
       routes: {
-        //'/Nivelamento': (context) => Nivelamento(),
+        '/Nivelamento': (context) => Nivelamento(),
+        '/Nivelamento2': (context) => NivelamentoQ2(),
         '/Splash': (context) => SplashPage(),
         '/home': (context) => Home(),
         '/profile': (context) => Profile(),
@@ -23,7 +25,8 @@ class game4code extends StatelessWidget {
         '/dashboard': (context) => Dashboard(),
         '/Login': (context) => Login(),
         '/SeletorLinguagem': (context) => SeletorLinguagem(),
-        // '/nivel1': (context) => Nivel1(),
+        '/nivel1Q1': (context) => Nivel1Q1(),
+        '/nivel1Q2': (context) => Nivel1Q2(),
       },
       debugShowCheckedModeBanner: false,
       onGenerateRoute: _getRoute,
