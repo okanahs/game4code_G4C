@@ -5,8 +5,10 @@ import 'package:game4code/App/bars/bottomNavigatorBar.dart';
 import 'dart:ui' as ui;
 import 'package:game4code/App/drawer/drawer.dart';
 import 'package:game4code/App/colors/colors.dart';
+import 'package:game4code/App/view/AlterarSenha.dart';
 import 'package:game4code/App/view/dashboard.dart';
 import 'package:game4code/App/view/home.dart';
+import 'package:game4code/App/view/login.dart';
 
 class Profile extends StatefulWidget {
   Profile({Key key}) : super(key: key);
@@ -51,25 +53,25 @@ Widget getBody(BuildContext context) {
     child: new Column(
       children: <Widget>[
         new SizedBox(
-          height: _height / 12,
+          height: 20,
         ),
         new CircleAvatar(
-          radius: _width < _height ? _width / 4 : _height / 4,
-          backgroundColor: corPowderBlues,
+          radius: 150,
+          backgroundColor: Colors.white,
           child: Container(
             decoration: new BoxDecoration(
                 color: corUSABlue,
                 shape: BoxShape.circle,
                 border: new Border.all(
-                  color: Color(0xFF57ebde),
-                  width: 3,
+                  color: Colors.white,
+                  width: 0,
                 )),
             child: new CircleAvatar(
-              radius: 200.0,
-              backgroundColor: corPowderBlues,
+              radius: 150,
+              backgroundColor: Colors.white,
               child: ClipOval(
                 child: Image.asset(
-                  'assets/profile_logo/semfoto.png',
+                  'assets/bottom_navigation_bar/tab_profile_selected.png',
                 ),
               ),
             ),
@@ -91,10 +93,67 @@ Widget getBody(BuildContext context) {
           ),
         ),
         new SizedBox(
-          height: _height / 25.0,
+          height: _height / 25,
         ),
-      ],
+        Container(
+              height: 40,
+              width: 230,
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(12.0)),
+              child: SizedBox.expand(
+                child: FlatButton(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Alterar Senha",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AlterarPage(), //mudar mais pra frente
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 40,
+              child: FlatButton(
+                child: Text(
+                  "Sair",
+                  textAlign: TextAlign.center,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Login(),
+                    ),
+                  );
+                },
+              ),
+            ),
+      ],  
     ),
+
+            
+
   );
 }
 

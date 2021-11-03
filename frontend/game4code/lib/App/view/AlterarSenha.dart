@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:game4code/App/bars/AppBar.dart';
 import 'package:game4code/App/colors/colors.dart';
+import 'package:game4code/App/view/profile.dart';
 
-class RegisterPage extends StatelessWidget {
+class AlterarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +46,7 @@ Widget getBody(BuildContext context) {
         SizedBox(height: 50),
         Center(
           child: Text(
-            'Faça seu cadastro',
+            'Alterar Senha',
             style: TextStyle(fontSize: 30, color: Colors.black),
           ),
         ),
@@ -56,51 +57,7 @@ Widget getBody(BuildContext context) {
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15.0),
             ),
-            labelText: 'Nome completo',
-            labelStyle: TextStyle(
-              color: Colors.black,
-              fontSize: 15.0,
-            ),
-            prefixIcon: IconTheme(
-              data: IconThemeData(
-                color: Colors.green[600],
-              ),
-              child: Icon(Icons.person),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 12.0,
-        ),
-        TextField(
-          controller: null,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-            labelText: 'Email',
-            labelStyle: TextStyle(
-              color: Colors.black,
-              fontSize: 15.0,
-            ),
-            prefixIcon: IconTheme(
-              data: IconThemeData(
-                color: Colors.green[600],
-              ),
-              child: Icon(Icons.mail),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 12.0,
-        ),
-        TextField(
-          controller: null,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-            labelText: 'Senha',
+            labelText: 'Digite a nova senha',
             labelStyle: TextStyle(
               color: Colors.black,
               fontSize: 15.0,
@@ -112,7 +69,6 @@ Widget getBody(BuildContext context) {
               child: Icon(Icons.lock),
             ),
           ),
-          obscureText: true,
         ),
         SizedBox(
           height: 12.0,
@@ -123,7 +79,7 @@ Widget getBody(BuildContext context) {
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15.0),
             ),
-            labelText: 'Repita sua senha',
+            labelText: 'Repita a nova senha',
             labelStyle: TextStyle(
               color: Colors.black,
               fontSize: 15.0,
@@ -135,32 +91,43 @@ Widget getBody(BuildContext context) {
               child: Icon(Icons.lock),
             ),
           ),
-          obscureText: true,
         ),
         SizedBox(
-          height: 12.0,
+          height: 20.0,
         ),
-        ButtonBar(children: <Widget>[
-          FlatButton(
-            child: Text('CANCELAR',
-                style: TextStyle(color: Colors.black, fontSize: 15)),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          RaisedButton(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0),
+        Container(
+              height: 40,
+              width: 230,
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(12.0)),
+              child: SizedBox.expand(
+                child: FlatButton(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Confirmar",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Profile(), //mudar mais pra frente
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
-            color: Colors.black,
-            child: Text(
-              'CADASTRAR',
-              style: TextStyle(color: Colors.white, fontSize: 15),
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, '/Login');
-            },
-          ),
-        ]),
       ]));
 }

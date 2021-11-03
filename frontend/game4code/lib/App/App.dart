@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game4code/App/Splash/splashscreen.dart';
+import 'package:game4code/App/view/AlterarSenha.dart';
 import 'package:game4code/App/view/SeletorLinguagem.dart';
 import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/login.dart';
@@ -27,6 +28,7 @@ class game4code extends StatelessWidget {
         '/SeletorLinguagem': (context) => SeletorLinguagem(),
         '/nivel1Q1': (context) => Nivel1Q1(),
         '/nivel1Q2': (context) => Nivel1Q2(),
+        '/Alterar': (context) => AlterarPage(),
       },
       debugShowCheckedModeBanner: false,
       onGenerateRoute: _getRoute,

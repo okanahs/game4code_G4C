@@ -44,7 +44,7 @@ class _bottomNavigatorBarState extends State<bottomNavigatorBarScreen> {
             onPressed: () {
               Navigator.pushNamed(context, '/home');
             },
-            iconSize: _currentIndex == 0 ? _iconSizeSelected : _iconSize,
+            iconSize: _currentIndex == 1 ? _iconSizeSelected : _iconSize,
           ),
           title: const Padding(padding: EdgeInsets.all(0)),
         ),

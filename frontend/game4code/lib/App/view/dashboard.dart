@@ -82,7 +82,7 @@ class _MinhaDashboardState extends State<MinhaDashboard>
                   Container(
                       height: 250.0,
                       width: double.infinity,
-                      color: Colors.cyan[100]),
+                      color: Colors.white),
                   Positioned(
                     bottom: 50.0,
                     right: 100.0,
@@ -91,7 +91,7 @@ class _MinhaDashboardState extends State<MinhaDashboard>
                       width: 400.0,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(200.0),
-                          color: Colors.cyan[100]),
+                          color: Colors.white),
                     ),
                   ),
                   Positioned(
@@ -102,7 +102,7 @@ class _MinhaDashboardState extends State<MinhaDashboard>
                         width: 300.0,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(150.0),
-                            color: Colors.cyan[100])),
+                            color: Colors.white)),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,18 +112,28 @@ class _MinhaDashboardState extends State<MinhaDashboard>
                         children: <Widget>[
                           SizedBox(width: 15.0),
                           Container(
-                            alignment: Alignment.topLeft,
-                            height: 50.0,
-                            width: 50.0,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25.0),
-                                border: Border.all(
-                                    color: Colors.white,
-                                    style: BorderStyle.solid,
-                                    width: 2.0),
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/profile_logo/semfoto.png'))),
+                            child: CircleAvatar(
+                              radius: 50,
+                              backgroundColor: Colors.white,
+                              child: Container(
+                                decoration: new BoxDecoration(
+                                    color: corUSABlue,
+                                    shape: BoxShape.circle,
+                                    border: new Border.all(
+                                      color: Colors.white,
+                                      width: 0,
+                                    )),
+                                child: new CircleAvatar(
+                                  radius: 50,
+                                  backgroundColor: Colors.white,
+                                  child: ClipOval(
+                                    child: Image.asset(
+                                      'assets/bottom_navigation_bar/tab_profile_selected.png',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                           SizedBox(
                               width: MediaQuery.of(context).size.width - 120.0),
@@ -164,232 +174,96 @@ class _MinhaDashboardState extends State<MinhaDashboard>
                   )
                 ],
               ),
-              itemCard1('Teste 01'),
-              itemCard2('Teste 02'),
-              itemCard3('Teste 03'),
+              GridView(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,
+                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 5,
+                  mainAxisExtent: 120,
+                ),
+                children: [
+                  Card(
+                    color: Color(0xFFf5c900),
+                    child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          const ListTile(
+                            leading: Icon(
+                              Icons.menu_book,
+                              size: 85,
+                            ),
+                            title: Text(
+                              'Teste 1',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text(
+                              'Pontos Conquistados: 6.0',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.black),
+                            ),
+                          ),
+                        ]),
+                  ),
+                  Card(
+                    color: Color(0xFFf64c18),
+                    child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          const ListTile(
+                            leading: Icon(
+                              Icons.code_outlined,
+                              size: 85,
+                            ),
+                            title: Text(
+                              'Teste 2',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text(
+                              'Pontos Conquistados: 5.0',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.black),
+                            ),
+                          ),
+                        ]),
+                  ),
+                  Card(
+                    color: Color(0xFF8752a3),
+                    child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          const ListTile(
+                            leading: Icon(
+                              Icons.add,
+                              size: 85,
+                            ),
+                            title: Text(
+                              'Teste 3',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text(
+                              'Pontos Conquistados: 7.0',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.black),
+                            ),
+                          ),
+                        ]),
+                  ),
+                ],
+              ),
             ],
           )
         ],
-      ),
-    );
-  }
-
-  Widget itemCard1(String title) {
-    return Padding(
-      padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
-      child: Container(
-        height: 150.0,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(0xFFf64c18),
-              Color(0xFFee9539),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        child: Row(
-          children: <Widget>[
-            AspectRatio(
-              aspectRatio: 13 / 11,
-              child: IconTheme(
-                data: IconThemeData(
-                  color: Colors.black,
-                ),
-                child: Icon(Icons.code_outlined, size: 70.0),
-              ),
-            ),
-            SizedBox(width: 4.0),
-            Column(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Text(
-                      title,
-                      style: TextStyle(
-                          fontFamily: 'Quicksand',
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 45.0),
-                  ],
-                ),
-                SizedBox(height: 5.0),
-                Column(
-                  children: [
-                    Container(
-                      width: 175.0,
-                      child: Text(
-                        'Scandinavian small sized double sofa imported full leather / Dale Italia oil wax leather black',
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                          fontFamily: 'Quicksand',
-                          color: Colors.black,
-                          fontSize: 12.0,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 5.0),
-                Row(
-                  children: <Widget>[
-                    SizedBox(width: 35.0),
-                  ],
-                )
-              ],
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget itemCard2(String title) {
-    return Padding(
-      padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
-      child: Container(
-        height: 150.0,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(0xFF9d80cb),
-              Color(0xFF8752a3),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        child: Row(
-          children: <Widget>[
-            AspectRatio(
-              aspectRatio: 13 / 11,
-              child: IconTheme(
-                data: IconThemeData(
-                  color: Colors.black,
-                ),
-                child: Icon(Icons.add, size: 70.0),
-              ),
-            ),
-            SizedBox(width: 4.0),
-            Column(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Text(
-                      title,
-                      style: TextStyle(
-                          fontFamily: 'Quicksand',
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 45.0),
-                  ],
-                ),
-                SizedBox(height: 5.0),
-                Column(
-                  children: [
-                    Container(
-                      width: 175.0,
-                      child: Text(
-                        'Syyy7in6vi1n tesll 444ed 444ble sofa imported full leather / Dale Italia oil wax leather black',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            fontFamily: 'Quicksand',
-                            color: Colors.black,
-                            fontSize: 12.0),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 5.0),
-                Row(
-                  children: <Widget>[
-                    SizedBox(width: 35.0),
-                  ],
-                )
-              ],
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget itemCard3(String title) {
-    return Padding(
-      padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
-      child: Container(
-        height: 150.0,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(0xFFf5c900),
-              Color(0xFFfaff89),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        child: Row(
-          children: <Widget>[
-            AspectRatio(
-              aspectRatio: 13 / 11,
-              child: IconTheme(
-                data: IconThemeData(
-                  color: Colors.black,
-                ),
-                child: Icon(Icons.menu_book, size: 80.0),
-              ),
-            ),
-            SizedBox(width: 4.0),
-            Column(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Text(
-                      title,
-                      style: TextStyle(
-                          fontFamily: 'Quicksand',
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 45.0),
-                  ],
-                ),
-                SizedBox(height: 5.0),
-                Column(
-                  children: [
-                    Container(
-                      width: 175.0,
-                      child: Text(
-                        'Scandinavian small sized double sofa imported full leather / Dale Italia oil wax leather black',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            fontFamily: 'Quicksand',
-                            color: Colors.grey,
-                            fontSize: 12.0),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 5.0),
-                Row(
-                  children: <Widget>[
-                    SizedBox(width: 35.0),
-                  ],
-                )
-              ],
-            )
-          ],
-        ),
       ),
     );
   }

@@ -70,7 +70,7 @@ Widget getBody1(BuildContext context) {
           ),
           children: [
             Card(
-                color: Colors.green,
+                color: Color(0xFFf5c900),
                 child: InkWell(
                   onTap: () async {
                     Navigator.push(
@@ -87,7 +87,7 @@ Widget getBody1(BuildContext context) {
                   ),
                 )),
             Card(
-                color: Colors.green,
+                color: Color(0xFFf64c18),
                 child: InkWell(
                   onTap: () async {
                     Navigator.push(
@@ -104,7 +104,7 @@ Widget getBody1(BuildContext context) {
                   ),
                 )),
             Card(
-                color: Colors.green,
+                color: Color(0xFF8752a3),
                 child: InkWell(
                   onTap: () async {
                     Navigator.push(
@@ -121,7 +121,7 @@ Widget getBody1(BuildContext context) {
                   ),
                 )),
             Card(
-                color: Colors.green,
+                color: Color(0xFFaefb2a),
                 child: InkWell(
                   onTap: () async {
                     Navigator.push(
@@ -207,7 +207,7 @@ Widget get2Body(BuildContext context) {
           ),
           children: [
             Card(
-                color: Colors.green,
+                color: Color(0xFFf5c900),
                 child: InkWell(
                   onTap: () async {
                     Navigator.push(
@@ -223,7 +223,7 @@ Widget get2Body(BuildContext context) {
                   ),
                 )),
             Card(
-                color: Colors.green,
+                color: Color(0xFFf64c18),
                 child: InkWell(
                   onTap: () async {
                     Navigator.push(
@@ -239,7 +239,7 @@ Widget get2Body(BuildContext context) {
                   ),
                 )),
             Card(
-                color: Colors.green,
+                color: Color(0xFF8752a3),
                 child: InkWell(
                   onTap: () async {
                     Navigator.push(
@@ -255,7 +255,7 @@ Widget get2Body(BuildContext context) {
                   ),
                 )),
             Card(
-                color: Colors.green,
+                color: Color(0xFFaefb2a),
                 child: InkWell(
                   onTap: () async {
                     Navigator.push(
