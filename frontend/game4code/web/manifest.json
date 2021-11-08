@@ -1,6 +1,6 @@
 {
-    "name": "progaapp",
-    "short_name": "progaapp",
+    "name": "game4code",
+    "short_name": "game4code",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
