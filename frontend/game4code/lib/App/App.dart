@@ -29,6 +29,7 @@ class game4code extends StatelessWidget {
         '/nivel1Q1': (context) => Nivel1Q1(),
         '/nivel1Q2': (context) => Nivel1Q2(),
         '/Alterar': (context) => AlterarPage(),
+        '/Aviso': (context) => Aviso(),
       },
       debugShowCheckedModeBanner: false,
       onGenerateRoute: _getRoute,

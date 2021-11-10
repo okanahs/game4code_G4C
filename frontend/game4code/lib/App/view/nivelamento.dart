@@ -280,3 +280,96 @@ Widget get2Body(BuildContext context) {
     ),
   );
 }
+
+// Aviso Nivelamento
+
+class Aviso extends StatefulWidget {
+  @override
+  _AvisoState createState() => _AvisoState();
+}
+
+class _AvisoState extends State<Aviso> {
+  int _currentIndex = 0;
+  final List<Widget> telas = [
+    Home(),
+    Profile(),
+    Dashboard(),
+  ];
+
+  Widget currentScreen = Home();
+
+  @override
+  Widget build(BuildContext context) {
+    final AppBarScreen appBar = AppBarScreen();
+    
+
+    return Scaffold(
+        backgroundColor: corBranco,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(45),
+          child: appBar,
+        ),
+        body: getAvisoBody(context));
+  }
+}
+
+Widget getAvisoBody(BuildContext context) {
+  return Center(
+    child: Column(
+      children: [
+        SizedBox(
+          height: 200,
+        ),
+        Row(children: [
+          Text(
+            "          BEM VINDO \n "
+            "      Como é sua primeira vez \n"
+            "       utilizando o GAME4CODE,\n" 
+            "       iremos realizar um pequeno \n"
+            "       teste para sabermos melhor \n"
+            "       seu nivel de conhecimento!",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold)
+          ),
+        ]),
+        SizedBox(
+          height: 30,
+        ),
+        Container(
+              height: 40,
+              width: 300,
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(12.0)),
+              child: SizedBox.expand(
+                child: FlatButton(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "COMEÇAR",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Nivelamento(), //mudar mais pra frente
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+      ],
+    ),
+  );
+}
