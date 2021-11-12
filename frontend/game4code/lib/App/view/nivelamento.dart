@@ -301,7 +301,6 @@ class _AvisoState extends State<Aviso> {
   @override
   Widget build(BuildContext context) {
     final AppBarScreen appBar = AppBarScreen();
-    
 
     return Scaffold(
         backgroundColor: corBranco,
@@ -321,54 +320,56 @@ Widget getAvisoBody(BuildContext context) {
           height: 200,
         ),
         Row(children: [
-          Text(
-            "          BEM VINDO \n "
-            "      Como é sua primeira vez \n"
-            "       utilizando o GAME4CODE,\n" 
-            "       iremos realizar um pequeno \n"
-            "       teste para sabermos melhor \n"
-            "       seu nivel de conhecimento!",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold)
-          ),
+          Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Text(
+                  "          Bem Vindo (a) \n"
+                  "Como é a sua primeira vez \n"
+                  "utilizando o GAME4CODE,\n"
+                  "iremos realizar um pequeno \n"
+                  "teste para sabermos melhor \n"
+                  "seu nivel de conhecimento!",
+                  style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold)),
+            ),
+          )
         ]),
         SizedBox(
           height: 30,
         ),
         Container(
-              height: 40,
-              width: 300,
-              alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(12.0)),
-              child: SizedBox.expand(
-                child: FlatButton(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        "COMEÇAR",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+          height: 40,
+          width: 300,
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+              color: Colors.black, borderRadius: BorderRadius.circular(12.0)),
+          child: SizedBox.expand(
+            child: FlatButton(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "COMEÇAR",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Nivelamento(), //mudar mais pra frente
-                      ),
-                    );
-                  },
-                ),
+                ],
               ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Nivelamento(), //mudar mais pra frente
+                  ),
+                );
+              },
             ),
+          ),
+        ),
       ],
     ),
   );

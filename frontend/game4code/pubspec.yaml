@@ -73,7 +73,7 @@ flutter:
       fonts:
         - asset: fonts/gems.ttf
           weight: 500
-    
+    #
   assets:
    - assets/profile_logo/
    - assets/appBar/
