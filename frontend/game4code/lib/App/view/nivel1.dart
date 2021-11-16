@@ -42,19 +42,23 @@ class _Nivel1Q1State extends State<Nivel1Q1> {
 }
 
 Widget getBody1(BuildContext context) {
-  return Center(
+  return SingleChildScrollView(
     child: Column(
       children: [
         SizedBox(
           height: 10,
         ),
         Row(children: [
-          Text(
-            "    1) Qual tipo de dado é \n "
-            "   aceito em uma variável INT?",
+          Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+          child: Text(
+            "    1) Qual tipo de dado é aceito em uma variável INT?",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 25),
           ),
+           ),
+          )
         ]),
         SizedBox(
           height: 30,
@@ -179,19 +183,23 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
 }
 
 Widget get2Body(BuildContext context) {
-  return Center(
+  return SingleChildScrollView(
     child: Column(
       children: [
         SizedBox(
           height: 10,
         ),
         Row(children: [
-          Text(
-            "    2) Qual tipo de dado é \n "
-            "   aceito em uma variável FLOAT?",
+          Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+          child: Text(
+            "    2) Qual tipo de dado é aceito em uma variável FLOAT?",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 25),
           ),
+           ),
+          )
         ]),
         SizedBox(
           height: 30,

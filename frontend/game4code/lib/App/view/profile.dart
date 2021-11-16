@@ -49,7 +49,7 @@ class _ProfileState extends State<Profile> {
 Widget getBody(BuildContext context) {
   final _width = MediaQuery.of(context).size.width;
   final _height = MediaQuery.of(context).size.height;
-  return Center(
+  return SingleChildScrollView(
     child: new Column(
       children: <Widget>[
         new SizedBox(

@@ -42,19 +42,23 @@ class _NivelamentoState extends State<Nivelamento> {
 }
 
 Widget getBody(BuildContext context) {
-  return Center(
+  return SingleChildScrollView(
     child: Column(
       children: [
         SizedBox(
           height: 10,
         ),
         Row(children: [
-          Text(
-            "    1) Qual tipo de dado é \n "
-            "   aceito em uma variável INT?",
+          Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+          child: Text(
+            "    1) Qual tipo de dado é aceito em uma variável INT?",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 25),
           ),
+           ),
+          )
         ]),
         SizedBox(
           height: 30,
@@ -179,19 +183,23 @@ class _NivelamentoQ2State extends State<NivelamentoQ2> {
 }
 
 Widget get2Body(BuildContext context) {
-  return Center(
+  return SingleChildScrollView(
     child: Column(
       children: [
         SizedBox(
           height: 10,
         ),
         Row(children: [
-          Text(
-            "    2) Qual tipo de dado é \n "
-            "   aceito em uma variável FLOAT?",
+          Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+          child: Text(
+            "    2) Qual tipo de dado é aceito em uma variável FLOAT?",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 25),
           ),
+           ),
+          )
         ]),
         SizedBox(
           height: 30,
@@ -313,7 +321,8 @@ class _AvisoState extends State<Aviso> {
 }
 
 Widget getAvisoBody(BuildContext context) {
-  return Center(
+  
+  return SingleChildScrollView(
     child: Column(
       children: [
         SizedBox(
@@ -324,7 +333,7 @@ Widget getAvisoBody(BuildContext context) {
             child: Align(
               alignment: Alignment.topCenter,
               child: Text(
-                  "          Bem Vindo (a) \n"
+                  "           Bem Vindo (a) \n"
                   "Como é a sua primeira vez \n"
                   "utilizando o GAME4CODE,\n"
                   "iremos realizar um pequeno \n"
