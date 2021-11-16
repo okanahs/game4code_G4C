@@ -81,11 +81,15 @@ Widget getBody(BuildContext context) {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10),
-                child: Center(
-                  child: Text('Nivel 1          Introdução a java',
+                child: Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+                  child: Text('Nivel 1 \n'
+                              'Introdução a java',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.black)),
-                ),
+                 ),
+          )
               )
             ],
           ),
@@ -122,11 +126,15 @@ Widget getBody(BuildContext context) {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10),
-                child: Center(
-                  child: Text('Nivel 2               Fundamentos',
+                child: Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+                  child: Text('Nivel 2\n'
+                              'Fundamentos',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.black)),
-                ),
+                 ),
+          )
               )
             ],
           ),
@@ -163,11 +171,15 @@ Widget getBody(BuildContext context) {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10),
-                child: Center(
-                  child: Text('Nivel 3          Operadores Logicos',
+                child: Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+                  child: Text('Nivel 3\n'
+                              'Operadores Logicos',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.black)),
-                ),
+                 ),
+          )
               )
             ],
           ),
