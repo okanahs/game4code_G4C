@@ -11,7 +11,7 @@ import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/login.dart';
 
 class Profile extends StatefulWidget {
-  Profile({Key key}) : super(key: key);
+  Profile({Key? key}) : super(key: key);
 
   @override
   _ProfileState createState() => new _ProfileState();

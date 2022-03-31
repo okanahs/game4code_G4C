@@ -19,7 +19,7 @@ class CustomIcon {
   CustomIcon._();
 
   static const _kFontFam = 'icomoon';
-  static const _kFontPkg = null;
+  static const dynamic _kFontPkg = null;
 
   static const IconData java =
       IconData(0xe900, fontFamily: _kFontFam, fontPackage: _kFontPkg);

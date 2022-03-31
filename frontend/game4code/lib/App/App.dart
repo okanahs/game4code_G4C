@@ -36,7 +36,7 @@ class game4code extends StatelessWidget {
     );
   }
 
-  Route<dynamic> _getRoute(RouteSettings settings) {
+  Route<dynamic>? _getRoute(RouteSettings settings) {
     if (settings.name != '/Splash') {
       return null;
     }

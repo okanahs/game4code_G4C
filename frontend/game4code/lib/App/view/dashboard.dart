@@ -32,7 +32,7 @@ class MinhaDashboard extends StatefulWidget {
 
 class _MinhaDashboardState extends State<MinhaDashboard>
     with SingleTickerProviderStateMixin {
-  TabController controller;
+  late TabController controller;
 
   int getColorHexFromStr(String colorStr) {
     colorStr = "FF" + colorStr;
