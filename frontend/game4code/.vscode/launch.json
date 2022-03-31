@@ -8,7 +8,8 @@
             "name": "game4code",
             "request": "launch",
             "type": "dart",
-            "program": "${workspaceFolder}/lib/main.dart"
+            "program": "${workspaceFolder}/lib/main.dart",
+            "args": ["-d", "edge","--web-port", "1234"],
         }
     ]
 }
