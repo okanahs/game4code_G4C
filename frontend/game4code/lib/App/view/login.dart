@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:game4code/App/view/SeletorLinguagem.dart';
 import 'package:game4code/App/view/nivelamento.dart';
-import 'package:game4code/App/view/register.dart';
-//dsdsffsdfsfsd
-class Login extends StatelessWidget {
+import 'package:game4code/App/view/registrar.dart';
+
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,7 +120,7 @@ class Login extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => RegisterPage(),
+                      builder: (context) => Registrar(),
                     ),
                   );
                 },

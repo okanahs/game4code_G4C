@@ -3,8 +3,6 @@ import 'package:game4code/App/Utils/imagens.dart';
 import 'package:game4code/App/bars/AppBar.dart';
 import 'package:game4code/App/bars/bottomNavigatorBar.dart';
 import 'package:game4code/App/colors/colors.dart';
-import 'package:game4code/App/drawer/drawer.dart';
-import 'package:game4code/App/view/SeletorLinguagem.dart';
 import 'package:game4code/App/view/dashboard.dart';
 import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/profile.dart';

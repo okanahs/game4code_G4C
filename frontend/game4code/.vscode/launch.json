@@ -9,7 +9,7 @@
             "request": "launch",
             "type": "dart",
             "program": "${workspaceFolder}/lib/main.dart",
-            "args": ["-d", "edge","--web-port", "1234"],
+           // "args": ["-d", "edge","--web-port", "1234"],
         }
     ]
 }

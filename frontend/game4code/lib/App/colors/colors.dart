@@ -49,3 +49,4 @@ const Color corInputError = Color.fromRGBO(252, 179, 164, 1.0);
 const Color corMuted = Color.fromRGBO(136, 152, 170, 1.0);
 
 const Color corText = Color.fromRGBO(50, 50, 93, 1.0);
+

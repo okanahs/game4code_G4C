@@ -3,8 +3,6 @@ import 'package:game4code/App/Utils/imagens.dart';
 import 'package:game4code/App/bars/AppBar.dart';
 import 'package:game4code/App/bars/bottomNavigatorBar.dart';
 import 'package:game4code/App/colors/colors.dart';
-import 'package:game4code/App/drawer/drawer.dart';
-import 'package:game4code/App/view/SeletorLinguagem.dart';
 import 'package:game4code/App/view/dashboard.dart';
 import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/profile.dart';
@@ -52,12 +50,12 @@ Widget getBody(BuildContext context) {
           Expanded(
             child: Align(
               alignment: Alignment.topCenter,
-          child: Text(
-            "    1) Qual tipo de dado é aceito em uma variável INT?",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 25),
-          ),
-           ),
+              child: Text(
+                "    1) Qual tipo de dado é aceito em uma variável INT?",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
           )
         ]),
         SizedBox(
@@ -193,12 +191,12 @@ Widget get2Body(BuildContext context) {
           Expanded(
             child: Align(
               alignment: Alignment.topCenter,
-          child: Text(
-            "    2) Qual tipo de dado é aceito em uma variável FLOAT?",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 25),
-          ),
-           ),
+              child: Text(
+                "    2) Qual tipo de dado é aceito em uma variável FLOAT?",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
           )
         ]),
         SizedBox(
@@ -221,8 +219,7 @@ Widget get2Body(BuildContext context) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            SeletorLinguagem(), //mudar mais pra frente
+                        builder: (context) => Home(), //mudar mais pra frente
                       ),
                     );
                   },
@@ -238,8 +235,7 @@ Widget get2Body(BuildContext context) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            SeletorLinguagem(), //mudar mais pra frente
+                        builder: (context) => Home(), //mudar mais pra frente
                       ),
                     );
                   },
@@ -255,8 +251,7 @@ Widget get2Body(BuildContext context) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            SeletorLinguagem(), //mudar mais pra frente
+                        builder: (context) => Home(), //mudar mais pra frente
                       ),
                     );
                   },
@@ -272,8 +267,7 @@ Widget get2Body(BuildContext context) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            SeletorLinguagem(), //mudar mais pra frente
+                        builder: (context) => Home(), //mudar mais pra frente
                       ),
                     );
                   },
@@ -321,7 +315,6 @@ class _AvisoState extends State<Aviso> {
 }
 
 Widget getAvisoBody(BuildContext context) {
-  
   return SingleChildScrollView(
     child: Column(
       children: [

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:game4code/App/Splash/splashscreen.dart';
 import 'package:game4code/App/view/AlterarSenha.dart';
-import 'package:game4code/App/view/SeletorLinguagem.dart';
 import 'package:game4code/App/view/home.dart';
 import 'package:game4code/App/view/login.dart';
 import 'package:game4code/App/view/nivel1.dart';
 import 'package:game4code/App/view/nivelamento.dart';
 import 'package:game4code/App/view/profile.dart';
-import 'package:game4code/App/view/register.dart';
+import 'package:game4code/App/view/registrar.dart';
 import 'package:game4code/App/view/dashboard.dart';
 
 class game4code extends StatelessWidget {
@@ -15,17 +13,15 @@ class game4code extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GAME4CODE',
-      initialRoute: '/Splash',
+      initialRoute: '/Login',
       routes: {
         '/Nivelamento': (context) => Nivelamento(),
         '/Nivelamento2': (context) => NivelamentoQ2(),
-        '/Splash': (context) => SplashPage(),
         '/home': (context) => Home(),
         '/profile': (context) => Profile(),
-        '/registerAluno': (context) => RegisterPage(),
+        '/registrar': (context) => Registrar(),
         '/dashboard': (context) => Dashboard(),
         '/Login': (context) => Login(),
-        '/SeletorLinguagem': (context) => SeletorLinguagem(),
         '/nivel1Q1': (context) => Nivel1Q1(),
         '/nivel1Q2': (context) => Nivel1Q2(),
         '/Alterar': (context) => AlterarPage(),
@@ -37,7 +33,7 @@ class game4code extends StatelessWidget {
   }
 
   Route<dynamic>? _getRoute(RouteSettings settings) {
-    if (settings.name != '/Splash') {
+    if (settings.name != '/Login') {
       return null;
     }
 

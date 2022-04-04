@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:game4code/App/bars/AppBar.dart';
 import 'package:game4code/App/colors/colors.dart';
 
-class RegisterPage extends StatelessWidget {
+class Registrar extends StatefulWidget {
+  @override
+  _RegistrarState createState() => _RegistrarState();
+}
+class _RegistrarState extends State<Registrar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
