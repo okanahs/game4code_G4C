@@ -11,7 +11,6 @@ Desenvolvimento da aplicação [GAME4CODE](https://github.com/iamkanashirolandre
 
 ## Ferramentas
 
-* [ANDROID STUDIO](https://developer.android.com/studio) - IDE para programação java/flutter/dart para mobile.
 * [VISUAL STUDIO CODE](https://code.visualstudio.com/) - IDE para programação de várias linguagens.
 
 ## Tecnologias
