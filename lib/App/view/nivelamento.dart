@@ -13,28 +13,24 @@ class Nivelamento extends StatefulWidget {
 }
 
 class _NivelamentoState extends State<Nivelamento> {
-  int _currentIndex = 0;
-  final List<Widget> telas = [
-    Home(),
-    Profile(),
-    Dashboard(),
-  ];
+  // int _currentIndex = 0;
+  // final List<Widget> telas = [
+  //   Home(),
+  //   Profile(),
+  //   Dashboard(),
+  // ];
 
   Widget currentScreen = Home();
 
   @override
   Widget build(BuildContext context) {
     final AppBarScreen appBar = AppBarScreen();
-    final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
-
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(45),
           child: appBar,
         ),
-        bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(45), child: bnb),
         body: getBody(context));
   }
 }
@@ -154,19 +150,11 @@ class NivelamentoQ2 extends StatefulWidget {
 }
 
 class _NivelamentoQ2State extends State<NivelamentoQ2> {
-  int _currentIndex = 0;
-  final List<Widget> telas = [
-    Home(),
-    Profile(),
-    Dashboard(),
-  ];
-
   Widget currentScreen = Home();
 
   @override
   Widget build(BuildContext context) {
     final AppBarScreen appBar = AppBarScreen();
-    final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
 
     return Scaffold(
         backgroundColor: corBranco,
@@ -174,8 +162,6 @@ class _NivelamentoQ2State extends State<NivelamentoQ2> {
           preferredSize: const Size.fromHeight(45),
           child: appBar,
         ),
-        bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(45), child: bnb),
         body: get2Body(context));
   }
 }

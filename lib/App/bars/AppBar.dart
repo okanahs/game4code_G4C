@@ -25,9 +25,7 @@ class AppBarScreen extends StatelessWidget {
                   height: 29,
                 ),
                 iconSize: 20,
-                onPressed: () {
-                  Navigator.pushNamed(context, '/home');
-                }),
+                onPressed: () {}),
             const SizedBox(
               width: 5,
             ),
