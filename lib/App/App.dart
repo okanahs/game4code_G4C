@@ -8,6 +8,7 @@ import 'package:g4c/App/view/profile.dart';
 import 'package:g4c/App/view/registrar.dart';
 import 'package:g4c/App/view/dashboard.dart';
 
+//
 class g4c extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
