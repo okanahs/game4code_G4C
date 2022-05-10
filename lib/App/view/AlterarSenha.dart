@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/profile.dart';
+import 'package:g4c/App/widgets/novaSenha.dart';
+import 'package:g4c/App/widgets/repeteNovaSenha.dart';
 
 class AlterarPage extends StatelessWidget {
   @override
@@ -48,46 +50,19 @@ Widget getBody(BuildContext context) {
           ),
         ),
         SizedBox(height: 50),
-        TextField(
-          controller: null,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-            labelText: 'Digite a nova senha',
-            labelStyle: TextStyle(
-              color: Colors.black,
-              fontSize: 15.0,
-            ),
-            prefixIcon: IconTheme(
-              data: IconThemeData(
-                color: Colors.green[600],
-              ),
-              child: Icon(Icons.lock),
-            ),
-          ),
-        ),
+        Padding(
+            padding: const EdgeInsets.only(
+                left: 15.0, right: 15.0, top: 15, bottom: 0),
+            child: CustomNovaSenha(
+              onPressed: () {},
+            )),
         SizedBox(
           height: 12.0,
         ),
-        TextField(
-          controller: null,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-            labelText: 'Repita a nova senha',
-            labelStyle: TextStyle(
-              color: Colors.black,
-              fontSize: 15.0,
-            ),
-            prefixIcon: IconTheme(
-              data: IconThemeData(
-                color: Colors.green[600],
-              ),
-              child: Icon(Icons.lock),
-            ),
-          ),
+        Padding(
+          padding: const EdgeInsets.only(
+              left: 15.0, right: 15.0, top: 15, bottom: 0),
+          child: CustomRepeteSenha(onPressed: () {}),
         ),
         SizedBox(
           height: 20.0,

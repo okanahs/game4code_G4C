@@ -17,15 +17,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  int _currentIndex = 0;
-  final List<Widget> telas = [
-    Home(),
-    Profile(),
-    Dashboard(),
-  ];
-
-  Widget currentScreen = Home();
-
+ 
   @override
   Widget build(BuildContext context) {
     const double _iconSize = 41;

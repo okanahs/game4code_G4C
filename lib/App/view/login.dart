@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:g4c/App/view/nivelamento.dart';
 import 'package:g4c/App/view/registrar.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:g4c/App/widgets/customBotaoLogin.dart';
+import 'package:g4c/App/widgets/customBotaoRegistra.dart';
+import 'package:g4c/App/widgets/customEmailInput.dart';
+import 'package:g4c/App/widgets/customSenhaInput.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class Login extends StatefulWidget {
+class Login extends HookConsumerWidget {
   @override
-  _LoginState createState() => _LoginState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final email = useState('');
+    final senha = useState('');
 
-class _LoginState extends State<Login> {
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
@@ -32,68 +36,27 @@ class _LoginState extends State<Login> {
             SizedBox(
               height: 20,
             ),
-            TextFormField(
-                // autofocus: true,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  labelText: "E-mail",
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                ),
-                style: TextStyle(fontSize: 15)),
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: CustomEmailInput(
+                  onChanged: (value) => {email.value = value},
+                )),
             SizedBox(
               height: 10,
             ),
-            TextFormField(
-              // autofocus: true,
-              keyboardType: TextInputType.text,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: "Senha",
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                  borderSide: BorderSide(color: Colors.white),
-                ),
-              ),
-              style: TextStyle(fontSize: 15),
-            ),
+            Padding(
+                padding: const EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 15, bottom: 0),
+                child: CustomSenhaInput(
+                  onChanged: (value) => {senha.value = value},
+                )),
             SizedBox(
               height: 30,
             ),
-            Container(
-              height: 60,
-              alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(12.0)),
-              child: SizedBox.expand(
-                child: FlatButton(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        "LOGIN",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
+            Padding(
+                padding: const EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 15, bottom: 0),
+                child: CustomBotaoLogin(
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -102,24 +65,19 @@ class _LoginState extends State<Login> {
                       ),
                     );
                   },
-                ),
-              ),
-            ),
+                )),
             SizedBox(
               height: 10,
             ),
-            Container(
-              height: 40,
-              child: FlatButton(
-                child: Text(
-                  "Cadastre-se",
-                  textAlign: TextAlign.center,
-                ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 15.0, right: 15.0, top: 15, bottom: 0),
+              child: CustomBotaoRegistro(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Registrar(),
+                      builder: (context) => Registrar(), //mudar mais pra frente
                     ),
                   );
                 },
