@@ -25,6 +25,8 @@ class g4c extends StatelessWidget {
         '/Login': (context) => Login(),
         '/nivel1Q1': (context) => Nivel1Q1(),
         '/nivel1Q2': (context) => Nivel1Q2(),
+        '/nivel1Q3': (context) => Nivel1Q3(),
+        '/nivel1Q4': (context) => Nivel1Q4(),
         '/Alterar': (context) => AlterarPage(),
         '/Aviso': (context) => Aviso(),
       },
