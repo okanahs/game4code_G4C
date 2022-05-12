@@ -17,17 +17,12 @@ class bottomNavigatorBarScreen extends StatefulWidget {
 class _bottomNavigatorBarState extends State<bottomNavigatorBarScreen> {
   int _selectedIndex = 1;
 
-  final _widgetOptions = [
-    Home(),
-    Dashboard(),
-    Profile(),
-  ];
-
   Widget build(BuildContext context) {
-    const double _iconSize = 41;
-    const double _iconSizeSelected = 53;
+    const double _iconSize = 20;
+    const double _iconSizeSelected = 23;
 
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       backgroundColor: Color(0xFFaefb2a),
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(

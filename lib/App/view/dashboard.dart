@@ -18,7 +18,7 @@ class Dashboard extends StatelessWidget {
         child: appBar,
       ),
       bottomNavigationBar:
-          PreferredSize(preferredSize: const Size.fromHeight(45), child: bnb),
+          PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
       body: MinhaDashboard(),
     );
   }

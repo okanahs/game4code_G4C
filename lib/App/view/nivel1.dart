@@ -22,7 +22,7 @@ class Nivel1Q1 extends HookConsumerWidget {
           child: appBarAlt,
         ),
         bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(45), child: bnb),
+            PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -114,16 +114,16 @@ class Nivel1Q1 extends HookConsumerWidget {
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Nivel1Q2(), //mudar mais pra frente
-                            ),
-                          );
-                        },
-                        child: Center(
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Nivel1Q2(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
                             child: Text(
                               "Nenhuma opção!",
                               textAlign: TextAlign.center,
@@ -136,16 +136,16 @@ class Nivel1Q1 extends HookConsumerWidget {
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Nivel1Q2(), //mudar mais pra frente
-                            ),
-                          );
-                        },
-                        child: Center(
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Nivel1Q2(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
                             child: Text(
                               "Você errou!",
                               textAlign: TextAlign.center,
@@ -174,7 +174,7 @@ class Nivel1Q2 extends HookConsumerWidget {
           child: appBarAlt,
         ),
         bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(45), child: bnb),
+            PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -209,87 +209,91 @@ class Nivel1Q2 extends HookConsumerWidget {
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Nivel1Q3(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Nivel1Q3(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "É um elemento que possui características próprias, denotadas por atributos",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "É um elemento que possui características próprias, denotadas por atributos",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Nivel1Q3(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Nivel1Q3(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "É uma elemento de entrada de dados.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "\nÉ uma elemento de entrada de dados.",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Nivel1Q3(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Nivel1Q3(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "É uma estrutura condicional",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "\n\nÉ uma estrutura condicional",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Nivel1Q3(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Nivel1Q3(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "É um elemento do código Java que utilizamos para representar objetos do mundo real.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "É um elemento do código Java que utilizamos para representar objetos do mundo real.",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 23,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                 ],
               ),
             ],
@@ -309,7 +313,7 @@ class Nivel1Q3 extends HookConsumerWidget {
           child: appBarAlt,
         ),
         bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(45), child: bnb),
+            PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -344,87 +348,91 @@ class Nivel1Q3 extends HookConsumerWidget {
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Nivel1Q4(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Nivel1Q4(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "&& - || - !",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "\n&& - || - !",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Nivel1Q4(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Nivel1Q4(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "“",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "\n “ ",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Nivel1Q4(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Nivel1Q4(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              ">=",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "\n >= ",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Nivel1Q4(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Nivel1Q4(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "Do-while",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "\n Do-while ",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 23,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                 ],
               ),
             ],
@@ -434,7 +442,6 @@ class Nivel1Q3 extends HookConsumerWidget {
 }
 
 //Questão 04
-
 class Nivel1Q4 extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -445,7 +452,7 @@ class Nivel1Q4 extends HookConsumerWidget {
           child: appBarAlt,
         ),
         bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(45), child: bnb),
+            PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -484,87 +491,94 @@ class Nivel1Q4 extends HookConsumerWidget {
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Home(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Home(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "if-else",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "\n if-else ",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Home(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Home(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "for",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "\n for ",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Home(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Home(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "while",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "\n while ",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
                   Card(
                       color: corBlueNCS,
                       child: InkWell(
-                        onTap: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Home(), //mudar mais pra frente
+                          onTap: () async {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Home(), //mudar mais pra frente
+                              ),
+                            );
+                          },
+                          child: Center(
+                            child: Text(
+                              "Do-while",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "\n Do-while ",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 23,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      )),
+                          ))),
+                  SizedBox(
+                    height: 50,
+                  )
                 ],
               ),
             ],

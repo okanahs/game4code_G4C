@@ -4,10 +4,11 @@ import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/profile.dart';
 import 'package:g4c/App/widgets/novaSenha.dart';
 import 'package:g4c/App/widgets/repeteNovaSenha.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class AlterarPage extends StatelessWidget {
+class AlterarPage extends HookConsumerWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         appBar: AppBar(
           title: SizedBox.fromSize(
@@ -33,72 +34,70 @@ class AlterarPage extends StatelessWidget {
             )),
           ),
         ),
-        body: getBody(context));
-  }
-}
-
-Widget getBody(BuildContext context) {
-  return Scaffold(
-      body: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 25),
-          children: <Widget>[
-        SizedBox(height: 50),
-        Center(
-          child: Text(
-            'Alterar Senha',
-            style: TextStyle(fontSize: 30, color: Colors.black),
-          ),
-        ),
-        SizedBox(height: 50),
-        Padding(
-            padding: const EdgeInsets.only(
-                left: 15.0, right: 15.0, top: 15, bottom: 0),
-            child: CustomNovaSenha(
-              onPressed: () {},
-            )),
-        SizedBox(
-          height: 12.0,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-              left: 15.0, right: 15.0, top: 15, bottom: 0),
-          child: CustomRepeteSenha(onPressed: () {}),
-        ),
-        SizedBox(
-          height: 20.0,
-        ),
-        Container(
-          height: 40,
-          width: 230,
-          alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.black, borderRadius: BorderRadius.circular(12.0)),
-          child: SizedBox.expand(
-            child: FlatButton(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+        body: Scaffold(
+            body: ListView(
+                padding: EdgeInsets.symmetric(horizontal: 25),
                 children: <Widget>[
-                  Text(
-                    "Confirmar",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+              SizedBox(height: 50),
+              Center(
+                child: Text(
+                  'Alterar Senha',
+                  style: TextStyle(fontSize: 30, color: Colors.black),
+                ),
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Profile(), //mudar mais pra frente
+              SizedBox(height: 50),
+              Padding(
+                  padding: const EdgeInsets.only(
+                      left: 15.0, right: 15.0, top: 15, bottom: 0),
+                  child: CustomNovaSenha(
+                    onPressed: () {},
+                  )),
+              SizedBox(
+                height: 12.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 15, bottom: 0),
+                child: CustomRepeteSenha(onPressed: () {}),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                height: 40,
+                width: 230,
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(12.0)),
+                child: SizedBox.expand(
+                  child: FlatButton(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "Confirmar",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              Profile(), //mudar mais pra frente
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
-          ),
-        ),
-      ]));
+                ),
+              ),
+            ])));
+  }
 }
