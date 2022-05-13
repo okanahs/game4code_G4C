@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:g4c/App/Utils/imagens.dart';
 import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/bars/AppBarAlt.dart';
 import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
-import 'package:g4c/App/view/dashboard.dart';
 import 'package:g4c/App/view/home.dart';
-import 'package:g4c/App/view/profile.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final AppBarScreen appBar = AppBarScreen();
@@ -49,7 +46,7 @@ class Nivel1Q1 extends HookConsumerWidget {
                           "  considerando o valor da variável resposta,\n" +
                           "  qual das opções serão escritas?",
                       textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
@@ -188,7 +185,7 @@ class Nivel1Q2 extends HookConsumerWidget {
                     child: Text(
                       "2) O que é uma classe?",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
@@ -327,7 +324,7 @@ class Nivel1Q3 extends HookConsumerWidget {
                     child: Text(
                       "3) Quais das opções a seguir são Operadores Lógicos?",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
@@ -470,7 +467,7 @@ class Nivel1Q4 extends HookConsumerWidget {
                           " sob determinadas condições. É correto afirmar que, quando se sabe de antemão" +
                           " quantas vezes o loop deverá ser \n executado, o comando utilizado é:",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )

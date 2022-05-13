@@ -90,7 +90,7 @@ class Home extends HookConsumerWidget {
               clipBehavior: Clip.antiAlias,
               child: InkWell(
                 onTap: () async {
-                  Navigator.pushNamed(context, '/nivel1Q1');
+                  Navigator.pushNamed(context, '/nivel2Q1');
                 },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -136,7 +136,7 @@ class Home extends HookConsumerWidget {
               clipBehavior: Clip.antiAlias,
               child: InkWell(
                 onTap: () async {
-                  Navigator.pushNamed(context, '/nivel1Q1');
+                  Navigator.pushNamed(context, '/nivel2Q1');
                 },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -8,6 +8,8 @@ import 'package:g4c/App/view/profile.dart';
 import 'package:g4c/App/view/registrar.dart';
 import 'package:g4c/App/view/dashboard.dart';
 
+import 'view/nivel2.dart';
+
 //
 class g4c extends StatelessWidget {
   @override
@@ -18,6 +20,7 @@ class g4c extends StatelessWidget {
       routes: {
         '/Nivelamento': (context) => Nivelamento(),
         '/Nivelamento2': (context) => NivelamentoQ2(),
+        '/Nivelamento3': (context) => NivelamentoQ3(),
         '/home': (context) => Home(),
         '/profile': (context) => Profile(),
         '/registrar': (context) => Registrar(),
@@ -27,6 +30,10 @@ class g4c extends StatelessWidget {
         '/nivel1Q2': (context) => Nivel1Q2(),
         '/nivel1Q3': (context) => Nivel1Q3(),
         '/nivel1Q4': (context) => Nivel1Q4(),
+        '/nivel2Q1': (context) => Nivel2Q1(),
+        '/nivel2Q2': (context) => Nivel2Q2(),
+        '/nivel2Q3': (context) => Nivel2Q3(),
+        '/nivel2Q4': (context) => Nivel2Q4(),
         '/Alterar': (context) => AlterarPage(),
         '/Aviso': (context) => Aviso(),
       },
