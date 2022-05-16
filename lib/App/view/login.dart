@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:g4c/App/view/nivelamento.dart';
 import 'package:g4c/App/view/registrar.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:g4c/App/widgets/customBotaoLogin.dart';
 import 'package:g4c/App/widgets/customBotaoRegistra.dart';
 import 'package:g4c/App/widgets/customEmailInput.dart';
 import 'package:g4c/App/widgets/customSenhaInput.dart';
@@ -56,15 +55,33 @@ class Login extends HookConsumerWidget {
             Padding(
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
-                child: CustomBotaoLogin(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Aviso(), //mudar mais pra frente
+                child: Container(
+                  height: 60,
+                  alignment: Alignment.centerLeft,
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(12.0)),
+                  child: SizedBox.expand(
+                    child: FlatButton(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "LOGIN",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
-                    );
-                  },
+                      onPressed: () {
+                        showAlertDialog(context);
+                      },
+                    ),
+                  ),
                 )),
             SizedBox(
               height: 10,
@@ -86,6 +103,40 @@ class Login extends HookConsumerWidget {
           ],
         ),
       ),
+    );
+  }
+
+  showAlertDialog(BuildContext context) {
+    // Create button
+    Widget okButton = FlatButton(
+      child: Text("OK"),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Nivelamento(), //mudar mais pra frente
+          ),
+        );
+      },
+    );
+
+    // Create AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Bem Vindo (a)"),
+      content: Text(
+          "Como é a sua primeira vez utilizando o GAME4CODE iremos realizar um pequeno teste para sabermos melhor seu nivel de conhecimento!",
+          style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
+      actions: [
+        okButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 }

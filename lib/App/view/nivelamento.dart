@@ -34,7 +34,8 @@ class Nivelamento extends HookConsumerWidget {
                     child: Text(
                       "1) Qual é a classe de código responsável pela entrada de dados em Java?",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
@@ -172,7 +173,8 @@ class NivelamentoQ2 extends HookConsumerWidget {
                     child: Text(
                       "    2) Sendo que tanto Vetores, quanto Matrizes são array. Qual a diferença entre ambos?",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
@@ -180,7 +182,7 @@ class NivelamentoQ2 extends HookConsumerWidget {
               SizedBox(
                 height: 30,
               ),
-            GridView(
+              GridView(
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -286,7 +288,6 @@ class NivelamentoQ2 extends HookConsumerWidget {
   }
 }
 
-
 class NivelamentoQ3 extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -309,7 +310,8 @@ class NivelamentoQ3 extends HookConsumerWidget {
                     child: Text(
                       "    3) Qual o tipo de dados que permite que apenas um caractere seja salvo?",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
@@ -317,7 +319,7 @@ class NivelamentoQ3 extends HookConsumerWidget {
               SizedBox(
                 height: 30,
               ),
-            GridView(
+              GridView(
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -416,83 +418,6 @@ class NivelamentoQ3 extends HookConsumerWidget {
                             ),
                           ))),
                 ],
-              ),
-            ],
-          ),
-        ));
-  }
-}
-
-// Aviso Nivelamento
-
-class Aviso extends HookConsumerWidget {
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-        backgroundColor: corBranco,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 200,
-              ),
-              Row(children: [
-                Expanded(
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: Text(
-                        "           Bem Vindo (a) \n"
-                        "Como é a sua primeira vez \n"
-                        "utilizando o GAME4CODE,\n"
-                        "iremos realizar um pequeno \n"
-                        "teste para sabermos melhor \n"
-                        "seu nivel de conhecimento!",
-                        style: TextStyle(
-                            fontSize: 23, fontWeight: FontWeight.bold)),
-                  ),
-                )
-              ]),
-              SizedBox(
-                height: 30,
-              ),
-              Container(
-                height: 40,
-                width: 300,
-                alignment: Alignment.centerLeft,
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(12.0)),
-                child: SizedBox.expand(
-                  child: FlatButton(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "COMEÇAR",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              Nivelamento(), //mudar mais pra frente
-                        ),
-                      );
-                    },
-                  ),
-                ),
               ),
             ],
           ),

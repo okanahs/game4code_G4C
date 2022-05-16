@@ -35,7 +35,6 @@ class g4c extends StatelessWidget {
         '/nivel2Q3': (context) => Nivel2Q3(),
         '/nivel2Q4': (context) => Nivel2Q4(),
         '/Alterar': (context) => AlterarPage(),
-        '/Aviso': (context) => Aviso(),
       },
       debugShowCheckedModeBanner: false,
       onGenerateRoute: _getRoute,
