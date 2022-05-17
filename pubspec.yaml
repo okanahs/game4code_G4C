@@ -41,17 +41,17 @@ flutter:
   fonts:
     - family: JosefinSans
       fonts:
-        - asset: fonts/JosefinSans-Regular.ttf
-        - asset: fonts/JosefinSans-Bold.ttf
+        - asset: assets/fonts/JosefinSans-Regular.ttf
+        - asset: assets/fonts/JosefinSans-Bold.ttf
           weight: 500
     - family: icomoon
       fonts:
-        - asset: fonts/javaicon.ttf
-        - asset: fonts/rubygems.ttf
+        - asset: assets/fonts/javaicon.ttf
+        - asset: assets/fonts/rubygems.ttf
           weight: 500
     - family: gems
       fonts:
-        - asset: fonts/gems.ttf
+        - asset: assets/fonts/gems.ttf
           weight: 500
   assets:
    - assets/imagens/
