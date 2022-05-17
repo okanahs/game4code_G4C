@@ -50,7 +50,7 @@ class Profile extends HookConsumerWidget {
                     backgroundColor: Colors.white,
                     child: ClipOval(
                       child: Image.asset(
-                        'assets/bottom_navigation_bar/tab_profile_selected.png',
+                        'assets/imagens/tab_profile_selected.png',
                       ),
                     ),
                   ),

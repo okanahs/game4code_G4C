@@ -5,6 +5,7 @@ class AppBarScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return AppBar(
+      automaticallyImplyLeading: false,
       flexibleSpace: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -22,7 +23,7 @@ class AppBarScreen extends HookConsumerWidget {
             IconButton(
                 padding: const EdgeInsets.only(left: 16),
                 icon: Image.asset(
-                  "assets/appBar/java.png",
+                  "assets/imagens/java.png",
                   height: 29,
                 ),
                 iconSize: 20,
@@ -33,7 +34,7 @@ class AppBarScreen extends HookConsumerWidget {
             IconButton(
               padding: const EdgeInsets.only(left: 16),
               icon: Image.asset(
-                "assets/appBar/navbar_diamont.png",
+                "assets/imagens/navbar_diamont.png",
                 height: 29,
               ),
               onPressed: () {},

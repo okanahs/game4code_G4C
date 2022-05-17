@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:g4c/App/Utils/imagens.dart';
 import 'package:g4c/App/bars/AppBar.dart';
-import 'package:g4c/App/bars/AppBarAlt.dart';
-import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
-import 'package:g4c/App/view/dashboard.dart';
 import 'package:g4c/App/view/home.dart';
-import 'package:g4c/App/view/nivel1.dart';
-import 'package:g4c/App/view/profile.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final AppBarAltScreen appBarAlt = AppBarAltScreen();
+final AppBarScreen appBar = AppBarScreen();
 
 class Nivelamento extends HookConsumerWidget {
   @override
@@ -19,7 +13,7 @@ class Nivelamento extends HookConsumerWidget {
         backgroundColor: corBranco,
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
+          child: appBar,
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -158,7 +152,7 @@ class NivelamentoQ2 extends HookConsumerWidget {
         backgroundColor: corBranco,
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
+          child: appBar,
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -295,7 +289,7 @@ class NivelamentoQ3 extends HookConsumerWidget {
         backgroundColor: corBranco,
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
+          child: appBar,
         ),
         body: SingleChildScrollView(
           child: Column(

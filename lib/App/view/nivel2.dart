@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:g4c/App/bars/AppBar.dart';
-import 'package:g4c/App/bars/AppBarAlt.dart';
+import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/home.dart';
@@ -9,7 +9,7 @@ import '../widgets/customBotaoEnviar.dart';
 
 final AppBarScreen appBar = AppBarScreen();
 final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
-final AppBarAltScreen appBarAlt = AppBarAltScreen();
+final AppBarScreen appBarAlt = AppBarScreen();
 
 class Nivel2Q1 extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {

@@ -16,7 +16,7 @@ class Registrar extends HookConsumerWidget {
             child: IconButton(
               padding: const EdgeInsets.only(left: 70),
               icon: Image.asset(
-                "assets/profile_logo/logo.png",
+                "assets/imagens/logo.png",
                 height: 90,
               ),
               onPressed: () {},

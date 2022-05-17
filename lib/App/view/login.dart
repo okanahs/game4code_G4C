@@ -30,7 +30,7 @@ class Login extends HookConsumerWidget {
             SizedBox(
               width: 200,
               height: 200,
-              child: Image.asset("assets/profile_logo/logo.png"),
+              child: Image.asset("assets/imagens/logo.png"),
             ),
             SizedBox(
               height: 20,

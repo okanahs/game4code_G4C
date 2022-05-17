@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:g4c/App/bars/AppBar.dart';
-import 'package:g4c/App/bars/AppBarAlt.dart';
 import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/home.dart';
@@ -8,7 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final AppBarScreen appBar = AppBarScreen();
 final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
-final AppBarAltScreen appBarAlt = AppBarAltScreen();
+final AppBarScreen appBarAlt = AppBarScreen();
 
 class Nivel1Q1 extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,28 +27,35 @@ class Nivel1Q1 extends HookConsumerWidget {
               ),
               Row(children: [
                 Expanded(
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      " 1) Analise o exemplo abaixo:\n\n" +
-                          "  package br.com.treinaweb;\n" +
-                          "  public class Exemplo {\n" +
-                          "    public static void main(String[] args) {\n" +
-                          "       int resposta = 10;\n" +
-                          "       if (resposta == 10) {\n" +
-                          "           System.out.println(“Você acertou!”);\n" +
-                          "       } else {\n" +
-                          "           System.out.println(“Você errou!”);\n" +
-                          "       }\n" +
-                          "    }\n" +
-                          " }\n\n" +
-                          "  considerando o valor da variável resposta,\n" +
-                          "  qual das opções serão escritas?",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    child: Center(
+                  //alignment: Alignment.topLeft,
+                  child: RichText(
+                    text: TextSpan(
+                      text: " 1) Analise o exemplo abaixo:\n\n",
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: '  package br.com.treinaweb;\n' +
+                                '  public class Exemplo {\n' +
+                                '    public static void main(String[] args) {\n' +
+                                '         int resposta = 10;\n' +
+                                '       if (resposta == 10) {\n' +
+                                '           System.out.println(“Você acertou!”);\n' +
+                                '         } else {\n' +
+                                '           System.out.println(“Você errou!”);\n' +
+                                '       }\n' +
+                                '    }\n' +
+                                ' }\n\n',
+                            style: TextStyle(color: Colors.red, fontSize: 20)),
+                        TextSpan(
+                          text:
+                              '  considerando o valor da variável resposta,\n' +
+                                  '  qual das opções serão escritas?',
+                        ),
+                      ],
                     ),
                   ),
-                )
+                ))
               ]),
               SizedBox(
                 height: 30,
@@ -185,7 +191,8 @@ class Nivel1Q2 extends HookConsumerWidget {
                     child: Text(
                       "2) O que é uma classe?",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
@@ -324,7 +331,8 @@ class Nivel1Q3 extends HookConsumerWidget {
                     child: Text(
                       "3) Quais das opções a seguir são Operadores Lógicos?",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
@@ -467,7 +475,8 @@ class Nivel1Q4 extends HookConsumerWidget {
                           " sob determinadas condições. É correto afirmar que, quando se sabe de antemão" +
                           " quantas vezes o loop deverá ser \n executado, o comando utilizado é:",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
                 )
