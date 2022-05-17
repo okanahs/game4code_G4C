@@ -5,6 +5,24 @@ class AppBarScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return AppBar(
+      centerTitle: true,
+      title: const Padding(
+        padding: const EdgeInsets.only(left: 16),
+        child: ClipOval(
+          child: Image(
+            image: AssetImage("assets/imagens/logo.png"),
+            height: 90,
+          ),
+        ),
+      ),
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 16),
+        child: ClipOval(
+          child: Image(
+            image: AssetImage("assets/imagens/java.png"),
+          ),
+        ),
+      ),
       automaticallyImplyLeading: false,
       flexibleSpace: Container(
         decoration: BoxDecoration(
@@ -20,29 +38,18 @@ class AppBarScreen extends HookConsumerWidget {
       actions: <Widget>[
         Row(
           children: <Widget>[
-            IconButton(
-                padding: const EdgeInsets.only(left: 16),
-                icon: Image.asset(
-                  "assets/imagens/java.png",
-                  height: 29,
-                ),
-                iconSize: 20,
-                onPressed: () {}),
             const SizedBox(
               width: 5,
             ),
-            IconButton(
+            Padding(
               padding: const EdgeInsets.only(left: 16),
-              icon: Image.asset(
-                "assets/imagens/navbar_diamont.png",
-                height: 29,
+              child: Text(
+                "0 pts",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                    fontSize: 17),
               ),
-              onPressed: () {},
-            ),
-            Text(
-              "0",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold, color: Colors.red, fontSize: 17),
             ),
             const SizedBox(
               width: 30,
