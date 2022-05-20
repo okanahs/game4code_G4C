@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:g4c/App/Utils/imagens.dart';
 import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/bars/bottomNavigatorBar.dart';
-import 'dart:ui' as ui;
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/AlterarSenha.dart';
-import 'package:g4c/App/view/dashboard.dart';
-import 'package:g4c/App/view/home.dart';
 import 'package:g4c/App/view/login.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-const double _iconSize = 41;
-const double _iconSizeSelected = 53;
+
 final AppBarScreen appBar = AppBarScreen();
 final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
 

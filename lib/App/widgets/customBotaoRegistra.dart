@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:g4c/App/view/nivelamento.dart';
 
 class CustomBotaoRegistro extends StatelessWidget {
   const CustomBotaoRegistro({

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:g4c/App/bars/AppBar.dart';
-import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/profile.dart';
 import 'package:g4c/App/widgets/novaSenha.dart';
 import 'package:g4c/App/widgets/repeteNovaSenha.dart';

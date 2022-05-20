@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:g4c/App/bars/AppBar.dart';
-import 'package:g4c/App/bars/AppBar.dart';
-import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/home.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../widgets/customBotaoEnviar.dart';
 
 final AppBarScreen appBar = AppBarScreen();
-final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
 final AppBarScreen appBarAlt = AppBarScreen();
 
+//Questão 1
 class Nivel2Q1 extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
@@ -19,8 +17,6 @@ class Nivel2Q1 extends HookConsumerWidget {
           preferredSize: const Size.fromHeight(45),
           child: appBarAlt,
         ),
-        bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -159,8 +155,6 @@ class Nivel2Q2 extends HookConsumerWidget {
           preferredSize: const Size.fromHeight(45),
           child: appBarAlt,
         ),
-        bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -257,8 +251,6 @@ class Nivel2Q3 extends HookConsumerWidget {
           preferredSize: const Size.fromHeight(45),
           child: appBarAlt,
         ),
-        bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -387,7 +379,7 @@ class Nivel2Q3 extends HookConsumerWidget {
   }
 }
 
-//Questão 04
+//Questão 4
 class Nivel2Q4 extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -397,8 +389,6 @@ class Nivel2Q4 extends HookConsumerWidget {
           preferredSize: const Size.fromHeight(45),
           child: appBarAlt,
         ),
-        bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -464,9 +454,14 @@ class Nivel2Q4 extends HookConsumerWidget {
       ),
     ]),
 
-      ),   
+      ), 
+      SizedBox(
+                height: 20,
+              ),    
             ],
+            
           ),
+          
         ));
   }
 }

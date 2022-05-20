@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:g4c/App/colors/colors.dart';
-import 'package:g4c/App/view/nivelamento.dart';
 
 class CustomBotaoEnviar extends StatelessWidget {
   const CustomBotaoEnviar({

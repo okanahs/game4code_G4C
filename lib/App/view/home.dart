@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:g4c/App/Utils/imagens.dart';
 import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
-import 'package:g4c/App/view/dashboard.dart';
-import 'package:g4c/App/view/profile.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final AppBarScreen appBar = AppBarScreen();
@@ -64,11 +61,10 @@ class Home extends HookConsumerWidget {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Text(
-                                'Nivel 1 \n'
-                                'Introdução a java',
+                                'Nivel 1',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontSize: 16, color: Colors.black)),
+                                    fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold)),
                           ),
                         ))
                   ],
@@ -110,57 +106,10 @@ class Home extends HookConsumerWidget {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Text(
-                                'Nivel 2\n'
-                                'Fundamentos',
+                                'Nivel 2',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontSize: 16, color: Colors.black)),
-                          ),
-                        ))
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color(0xFF9d80cb),
-                    Color(0xFF8752a3),
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              clipBehavior: Clip.antiAlias,
-              child: InkWell(
-                onTap: () async {
-                  Navigator.pushNamed(context, '/nivel2Q1');
-                },
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    AspectRatio(
-                      aspectRatio: 20 / 13,
-                      child: IconTheme(
-                        data: IconThemeData(
-                          color: Colors.black,
-                        ),
-                        child: Icon(Icons.add, size: 100.0),
-                      ),
-                    ),
-                    Padding(
-                        padding: EdgeInsets.only(top: 10),
-                        child: Expanded(
-                          child: Align(
-                            alignment: Alignment.topCenter,
-                            child: Text(
-                                'Nivel 3\n'
-                                'Operadores Logicos',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.black)),
+                                    fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold)),
                           ),
                         ))
                   ],

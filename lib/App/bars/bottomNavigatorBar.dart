@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:g4c/App/Utils/imagens.dart';
-import 'package:g4c/App/Utils/imagens.dart';
-import 'package:g4c/App/bars/AppBar.dart';
-import 'package:g4c/App/colors/colors.dart';
-import 'package:g4c/App/view/dashboard.dart';
-import 'package:g4c/App/view/home.dart';
-import 'package:g4c/App/view/profile.dart';
+
 
 class bottomNavigatorBarScreen extends StatefulWidget {
   bottomNavigatorBarScreen({Key? key}) : super(key: key);
@@ -22,8 +17,8 @@ class _bottomNavigatorBarState extends State<bottomNavigatorBarScreen> {
     const double _iconSizeSelected = 23;
 
     return BottomNavigationBar(
-      type: BottomNavigationBarType.shifting,
-      backgroundColor: Colors.black,
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Color(0xFFaefb2a),
       items: [
         BottomNavigationBarItem(
           icon: IconButton(
@@ -63,7 +58,7 @@ class _bottomNavigatorBarState extends State<bottomNavigatorBarScreen> {
         ),
       ],
       currentIndex: _selectedIndex,
-      selectedItemColor: Colors.black,
+      selectedItemColor: Colors.blue,
       unselectedItemColor: Colors.blue,
       showUnselectedLabels: true,
       elevation: 0,
