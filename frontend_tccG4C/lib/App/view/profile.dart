@@ -6,13 +6,27 @@ import 'package:g4c/App/view/AlterarSenha.dart';
 import 'package:g4c/App/view/login.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-
 final AppBarScreen appBar = AppBarScreen();
 final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
 
-class Profile extends HookConsumerWidget {
+/*
+class class Profile extends StatefulWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _ProfileState createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  @override
+  Widget build(BuildContext context) {
+*/
+class Profile extends StatefulWidget {
+  @override
+  _ProfileState createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  @override
+  Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
     return Scaffold(

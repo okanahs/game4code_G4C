@@ -3,7 +3,22 @@ import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 
-class Dashboard extends StatelessWidget {
+/*
+class Dashboard extends StatefulWidget {
+  @override
+  _dashboardState createState() => _dashboardState();
+}
+
+class _dashboardState extends State<Dashboard> {
+  @override
+  Widget build(BuildContext context) {
+*/
+class Dashboard extends StatefulWidget {
+  @override
+  _dashboardState createState() => _dashboardState();
+}
+
+class _dashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     const double _iconSize = 41;

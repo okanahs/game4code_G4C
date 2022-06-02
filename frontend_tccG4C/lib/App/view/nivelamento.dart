@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/home.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final AppBarScreen appBar = AppBarScreen();
 
-class Nivelamento extends HookConsumerWidget {
+class Nivelamento extends StatefulWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _NivelamentoState createState() => _NivelamentoState();
+}
+
+class _NivelamentoState extends State<Nivelamento> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(
@@ -145,9 +149,14 @@ class Nivelamento extends HookConsumerWidget {
 
 //Questão 2
 
-class NivelamentoQ2 extends HookConsumerWidget {
+class NivelamentoQ2 extends StatefulWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _Nivelamento2State createState() => _Nivelamento2State();
+}
+
+class _Nivelamento2State extends State<NivelamentoQ2> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(
@@ -282,9 +291,14 @@ class NivelamentoQ2 extends HookConsumerWidget {
   }
 }
 
-class NivelamentoQ3 extends HookConsumerWidget {
+class NivelamentoQ3 extends StatefulWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _NivelamentoQ3State createState() => _NivelamentoQ3State();
+}
+
+class _NivelamentoQ3State extends State<NivelamentoQ3> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(

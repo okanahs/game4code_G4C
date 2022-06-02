@@ -15,7 +15,7 @@ dependencies:
 #  path:
   flutter_progress_button: ^1.0.0
   material_design_icons_flutter: ^5.0.6595
-  
+  http: ^0.13.4
   cupertino_icons: ^1.0.2
   flutter_hooks: ^0.18.3
   hooks_riverpod: ^1.0.3

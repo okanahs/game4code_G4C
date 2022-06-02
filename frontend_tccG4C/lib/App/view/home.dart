@@ -7,9 +7,14 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 final AppBarScreen appBar = AppBarScreen();
 final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
 
-class Home extends HookConsumerWidget {
+class Home extends StatefulWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(
@@ -60,11 +65,12 @@ class Home extends HookConsumerWidget {
                         child: Expanded(
                           child: Align(
                             alignment: Alignment.topCenter,
-                            child: Text(
-                                'Nivel 1',
+                            child: Text('Nivel 1',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold)),
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold)),
                           ),
                         ))
                   ],
@@ -105,11 +111,12 @@ class Home extends HookConsumerWidget {
                         child: Expanded(
                           child: Align(
                             alignment: Alignment.topCenter,
-                            child: Text(
-                                'Nivel 2',
+                            child: Text('Nivel 2',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold)),
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold)),
                           ),
                         ))
                   ],

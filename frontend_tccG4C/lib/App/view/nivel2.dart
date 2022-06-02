@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/home.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final AppBarScreen appBar = AppBarScreen();
 final AppBarScreen appBarAlt = AppBarScreen();
 
 //Questão 1
-class Nivel1Q1 extends HookConsumerWidget {
-  Widget build(BuildContext context, WidgetRef ref) {
+class Nivel2Q1 extends StatefulWidget {
+  @override
+  _Nivel2Q1State createState() => _Nivel2Q1State();
+}
+
+class _Nivel2Q1State extends State<Nivel2Q1> {
+  @override
+  Widget build(
+    BuildContext context,
+  ) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(
@@ -20,40 +27,21 @@ class Nivel1Q1 extends HookConsumerWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 10,
+                height: 15,
               ),
               Row(children: [
                 Expanded(
-                    child: Center(
-                  //alignment: Alignment.topLeft,
-                  child: RichText(
-                    text: TextSpan(
-                      text: " 1) Analise o exemplo abaixo:\n\n",
-                      style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: '  package br.com.treinaweb;\n' +
-                                '  public class Exemplo {\n' +
-                                '    public static void main(String[] args) {\n' +
-                                '         int resposta = 10;\n' +
-                                '       if (resposta == 10) {\n' +
-                                '           System.out.println(“Você acertou!”);\n' +
-                                '         } else {\n' +
-                                '           System.out.println(“Você errou!”);\n' +
-                                '       }\n' +
-                                '    }\n' +
-                                ' }\n\n',
-                            style: TextStyle(color: Color.fromARGB(255, 255, 17, 0), fontSize: 20, fontWeight: FontWeight.bold)),
-                        TextSpan(
-                          text:
-                              '  considerando o valor da variável resposta,\n' +
-                                  '  qual das opções serão escritas?',
-                                  style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                      ],
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "1) Sabe-se que em JAVA, todas as classes herdam características direta, ou indiretamente, de uma classe específica." +
+                          " Assinale a alternativa que contém tal classe.",
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                   ),
-                ))
+                )
               ]),
               SizedBox(
                 height: 30,
@@ -76,13 +64,13 @@ class Nivel1Q1 extends HookConsumerWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q2(), //mudar mais pra frente
+                                    Nivel2Q2(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "Você não acertou!",
+                              "this",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Color.fromARGB(255, 255, 255, 255),
@@ -98,13 +86,13 @@ class Nivel1Q1 extends HookConsumerWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q2(), //mudar mais pra frente
+                                    Nivel2Q2(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "Você acertou!",
+                              "object",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Color.fromARGB(255, 255, 255, 255),
@@ -120,13 +108,13 @@ class Nivel1Q1 extends HookConsumerWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q2(), //mudar mais pra frente
+                                    Nivel2Q2(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "Nenhuma opção!",
+                              "interface",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Color.fromARGB(255, 255, 255, 255),
@@ -142,13 +130,13 @@ class Nivel1Q1 extends HookConsumerWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q2(), //mudar mais pra frente
+                                    Nivel2Q2(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "Você errou!",
+                              "override",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Color.fromARGB(255, 255, 255, 255),
@@ -158,9 +146,6 @@ class Nivel1Q1 extends HookConsumerWidget {
                           ))),
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
             ],
           ),
         ));
@@ -168,9 +153,14 @@ class Nivel1Q1 extends HookConsumerWidget {
 }
 
 //Questão 2
-class Nivel1Q2 extends HookConsumerWidget {
+class Nivel2Q2 extends StatefulWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _Nivel2Q2State createState() => _Nivel2Q2State();
+}
+
+class _Nivel2Q2State extends State<Nivel2Q2> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(
@@ -188,7 +178,8 @@ class Nivel1Q2 extends HookConsumerWidget {
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Text(
-                      "2) O que é uma classe?",
+                      "2) A respeito da linguagem de programação Java, julgue o item:\n" +
+                          "\n Na linguagem Java, a criação de um array é realizada por meio da palavra-chave create.",
                       textAlign: TextAlign.center,
                       style:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
@@ -206,7 +197,7 @@ class Nivel1Q2 extends HookConsumerWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 5,
                   mainAxisSpacing: 5,
-                  mainAxisExtent: 220,
+                  mainAxisExtent: 100,
                 ),
                 children: [
                   Card(
@@ -217,13 +208,13 @@ class Nivel1Q2 extends HookConsumerWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q3(), //mudar mais pra frente
+                                    Nivel2Q3(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "É um elemento que possui características próprias, denotadas por atributos",
+                              "Verdadeiro",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
@@ -239,61 +230,17 @@ class Nivel1Q2 extends HookConsumerWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q3(), //mudar mais pra frente
+                                    Nivel2Q3(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "É uma elemento de entrada de dados.",
+                              "Falso",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Nivel1Q3(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "É uma estrutura condicional",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Nivel1Q3(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "É um elemento do código Java que utilizamos para representar objetos do mundo real.",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 23,
                                   fontWeight: FontWeight.bold),
                             ),
                           ))),
@@ -306,9 +253,14 @@ class Nivel1Q2 extends HookConsumerWidget {
 }
 
 //Questão 3
-class Nivel1Q3 extends HookConsumerWidget {
+class Nivel2Q3 extends StatefulWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _Nivel2Q3State createState() => _Nivel2Q3State();
+}
+
+class _Nivel2Q3State extends State<Nivel2Q3> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(
@@ -326,7 +278,8 @@ class Nivel1Q3 extends HookConsumerWidget {
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Text(
-                      "3) Quais das opções a seguir são Operadores Lógicos?",
+                      "3) Na linguagem de programação JAVA, pode-se executar repetidamente uma sequência de código criando um laço." +
+                          "\n JAVA fornece um grupo poderoso de estruturas de laço e a forma mais simples de implementá-lo é:",
                       textAlign: TextAlign.center,
                       style:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
@@ -344,7 +297,7 @@ class Nivel1Q3 extends HookConsumerWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 5,
                   mainAxisSpacing: 5,
-                  mainAxisExtent: 110,
+                  mainAxisExtent: 150,
                 ),
                 children: [
                   Card(
@@ -355,17 +308,17 @@ class Nivel1Q3 extends HookConsumerWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q4(), //mudar mais pra frente
+                                    Nivel2Q4(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "&& - || - !",
+                              "for (iteração; iteração; condição) inicialização;",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 25,
+                                  fontSize: 22,
                                   fontWeight: FontWeight.bold),
                             ),
                           ))),
@@ -377,17 +330,17 @@ class Nivel1Q3 extends HookConsumerWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q4(), //mudar mais pra frente
+                                    Nivel2Q4(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "“",
+                              "for (inicialização; condição; iteração) instrução;",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 25,
+                                  fontSize: 22,
                                   fontWeight: FontWeight.bold),
                             ),
                           ))),
@@ -399,17 +352,17 @@ class Nivel1Q3 extends HookConsumerWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q4(), //mudar mais pra frente
+                                    Nivel2Q4(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              ">=",
+                              "while (inicialização; instrução; iteração) condição;",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 25,
+                                  fontSize: 22,
                                   fontWeight: FontWeight.bold),
                             ),
                           ))),
@@ -421,17 +374,17 @@ class Nivel1Q3 extends HookConsumerWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q4(), //mudar mais pra frente
+                                    Nivel2Q4(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "Do-while",
+                              "while (instrução; condição; inicialização) iteração;",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 23,
+                                  fontSize: 22,
                                   fontWeight: FontWeight.bold),
                             ),
                           ))),
@@ -444,9 +397,14 @@ class Nivel1Q3 extends HookConsumerWidget {
 }
 
 //Questão 4
-class Nivel1Q4 extends HookConsumerWidget {
+class Nivel2Q4 extends StatefulWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _Nivel2Q4State createState() => _Nivel2Q4State();
+}
+
+class _Nivel2Q4State extends State<Nivel2Q4> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(
@@ -464,11 +422,8 @@ class Nivel1Q4 extends HookConsumerWidget {
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Text(
-                      "4) As estruturas de repetição, na linguagem Java," +
-                          " permitem executar mais de uma vez um mesmo trecho de código." +
-                          " Trata-se de uma forma de executar blocos de comandos somente" +
-                          " sob determinadas condições. É correto afirmar que, quando se sabe de antemão" +
-                          " quantas vezes o loop deverá ser \n executado, o comando utilizado é:",
+                      " 4) Criar um programa que calcule a média de salários de uma empresa," +
+                          " pedindo ao usuário a grade de funcionários e os salários, e devolvendo a média salarial.",
                       textAlign: TextAlign.center,
                       style:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
@@ -479,108 +434,59 @@ class Nivel1Q4 extends HookConsumerWidget {
               SizedBox(
                 height: 50,
               ),
-              GridView(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 5,
-                  mainAxisSpacing: 5,
-                  mainAxisExtent: 110,
-                ),
-                children: [
+              Column(
+                children: <Widget>[
                   Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Home(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "if-else",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Home(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "for",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Home(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "while",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Home(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "Do-while",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 23,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  SizedBox(
-                    height: 50,
-                  )
+                      child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: TextField(
+                      maxLines: 20,
+                      decoration: InputDecoration.collapsed(
+                        hintText: "Digite seu texto aqui",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(1.0),
+                        ),
+                      ),
+                    ),
+                  ))
                 ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 60,
+                child: ButtonBar(children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 15.0, right: 15.0, top: 15, bottom: 0),
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      color: Colors.black,
+                      child: Text(
+                        'Enviar',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                Home(), //mudar mais pra frente
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ]),
+              ),
+              SizedBox(
+                height: 20,
               ),
             ],
           ),
