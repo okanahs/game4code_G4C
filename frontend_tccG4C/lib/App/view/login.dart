@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:g4c/App/view/home.dart';
 import 'package:g4c/App/view/nivelamento.dart';
-
+import 'package:g4c/App/view/registrar.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -113,28 +113,27 @@ class _LoginState extends State<Login> {
                   ),
                 )),
             SizedBox(
-              height: 10,
+              height: 5,
             ),
             Padding(
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
-              child: RaisedButton(
+              child: FlatButton(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5.0),
                 ),
-                color: Colors.black,
                 child: Text(
-                  'Enviar',
+                  'Cadastre-se',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.black,
+                    fontSize: 12,
+                  ),
                 ),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(), //mudar mais pra frente
+                      builder: (context) => Registrar(), //mudar mais pra frente
                     ),
                   );
                 },
