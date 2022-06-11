@@ -91,7 +91,7 @@ class _ProfileState extends State<Profile> {
                     color: Colors.black,
                     borderRadius: BorderRadius.circular(12.0)),
                 child: SizedBox.expand(
-                  child: FlatButton(
+                  child: ElevatedButton(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -123,7 +123,7 @@ class _ProfileState extends State<Profile> {
               ),
               Container(
                 height: 40,
-                child: FlatButton(
+                child: ElevatedButton(
                   child: Text(
                     "Sair",
                     textAlign: TextAlign.center,

@@ -3,6 +3,49 @@ import 'package:flutter/material.dart';
 import 'package:g4c/App/bars/AppBarAlt.dart';
 import 'package:http/http.dart' as http;
 
+//aqui começa o codigo de post e cadastrar o usuario, organizar depois
+Future<Album> createAlbum(String user, String email, String password) async {
+  final response = await http.post(
+    Uri.parse('http://127.0.0.1:5000/users'),
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: jsonEncode(
+        <String, String>{'user': user, 'email': email, 'password': password}),
+  );
+
+  if (response.statusCode == 200) {
+    // If the server did return a 201 CREATED response,
+    // then parse the JSON.
+    return Album.fromJson(jsonDecode(response.body));
+  } else {
+    // If the server did not return a 201 CREATED response,
+    // then throw an exception.
+    throw Exception('Failed to create album.');
+  }
+}
+
+class Album {
+  //final int id;
+  final String user;
+  final String email;
+  final String password;
+
+  //const Album({required this.id, required this.title});
+
+  const Album(
+      {required this.user, required this.email, required this.password});
+
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
+        //id: json['id'],
+        user: json['user'],
+        email: json['email'],
+        password: json['password']);
+  }
+}
+//aqui termina o codigo de post e cadastrar o usuario, organizar depois
+
 final AppBarAltScreen aBAlt = AppBarAltScreen();
 String greetings = '';
 
@@ -12,6 +55,9 @@ class Registrar extends StatefulWidget {
 }
 
 class _RegistrarState extends State<Registrar> {
+  final TextEditingController _user = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +81,7 @@ class _RegistrarState extends State<Registrar> {
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextField(
-                  controller: null,
+                  controller: _user,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15.0),
@@ -61,7 +107,7 @@ class _RegistrarState extends State<Registrar> {
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextField(
-                  controller: null,
+                  controller: _email,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15.0),
@@ -87,7 +133,7 @@ class _RegistrarState extends State<Registrar> {
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextField(
-                  controller: null,
+                  controller: _password,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15.0),
@@ -114,7 +160,7 @@ class _RegistrarState extends State<Registrar> {
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 15.0, right: 15.0, top: 15, bottom: 0),
-                  child: FlatButton(
+                  child: ElevatedButton(
                       child: Text('CANCELAR',
                           style: TextStyle(color: Colors.black, fontSize: 15)),
                       onPressed: () {
@@ -124,16 +170,13 @@ class _RegistrarState extends State<Registrar> {
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 15.0, right: 15.0, top: 15, bottom: 0),
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    color: Colors.black,
+                  child: ElevatedButton(
                     child: Text(
                       'CADASTRAR',
                       style: TextStyle(color: Colors.white, fontSize: 15),
                     ),
                     onPressed: () {
+                      createAlbum(_user.text, _email.text, _password.text);
                       Navigator.pushNamed(context, '/Login');
                     },
                   ),

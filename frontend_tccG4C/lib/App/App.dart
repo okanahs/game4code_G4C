@@ -8,6 +8,7 @@ import 'package:g4c/App/view/profile.dart';
 import 'package:g4c/App/view/registrar.dart';
 import 'package:g4c/App/view/dashboard.dart';
 
+import 'DataModel/Questao24.dart';
 import 'view/nivel2.dart';
 
 //
@@ -18,7 +19,7 @@ class g4c extends StatelessWidget {
       title: 'GAME4CODE',
       initialRoute: '/Login',
       routes: {
-        '/Nivelamento': (context) => Nivelamento(),
+        '/Nivelamento': (context) => NivelamentoQ1(),
         '/Nivelamento2': (context) => NivelamentoQ2(),
         '/Nivelamento3': (context) => NivelamentoQ3(),
         '/home': (context) => Home(),

@@ -1,32 +1,36 @@
 #from crypt import methods
 from email.mime import application
+import json
 from flask import Flask, request, jsonify, Response
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
 from bson import json_util
 from bson.objectid import ObjectId
 import os
+import re
+
+
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb://localhost/g4c'
+#posteriormente mudar o nome do banco para organização
+app.config['MONGO_URI'] = 'mongodb://127.0.0.1/g4c'
 mongo = PyMongo(app)
 
-
+#criar usuário
 @app.route('/users', methods=['POST'])
-#criando um usuário com os atributos username, email, password
 def create_user():
-    username = request.json['username']
+    username = request.json['user']
     password = request.json['password']
     email = request.json['email']
     hashed_password = generate_password_hash(password)
 
     if username and email and password:
         id = mongo.db.users.insert_one(
-            {'username':username,'email':email,'password':hashed_password}
+            {'user':username,'email':email,'password':hashed_password}
         )
         response = {
                 'id':str(id),
-                'username':username,
+                'user':username,
                 'password':hashed_password,
                 'email':email
         }
@@ -35,16 +39,16 @@ def create_user():
         return not_found()
 
     return {'message': 'received'}
-
+'''
 #buscando todos os usuários que estão cadastrados
 @app.route('/users',methods=['GET'])
 def get_users():
     users = mongo.db.users.find()
     response = json_util.dumps(users)
     return Response(response, mimetype='application/json')
+'''
 
-
-#buscando um usuário pelo ID
+#buscando um usuário pelo email
 @app.route('/users/<email>',methods=['GET'])
 #def get_user(id):
 def get_user(email):
@@ -55,11 +59,7 @@ def get_user(email):
     response = json_util.dumps(user)
     return response
 
-@app.route('/users/<id>',methods=['DELETE'])
-def delete_user(id):
-    mongo.db.users.delete_one({'_id':ObjectId(id)})
-    response = jsonify({'message': 'User '+id+' was deleted sucessfully'})
-    return response
+
 
 #atualizando um usuário
 @app.route('/users/<id>', methods=['PUT'])
@@ -78,14 +78,7 @@ def update_user(id):
         response = jsonify({'message':'User '+id+'was updated successfully'})
         return response
 
-@app.errorhandler(404)
-def not_found(error=None):
-    response = jsonify({
-        'message':'Resource not found: '+request.url,
-        'status': 404
-    })
-    response.status_code = 404
-    return response
+
 
 #post da questão do compilador
 @app.route('/compile',methods=['POST'])
@@ -98,6 +91,7 @@ def create_code():
         response = {
                 'id':str(id),
                 'code':code,
+            
         }
         #a = str(response)
         #print(a[7:32])
@@ -108,28 +102,13 @@ def create_code():
 
     return {'message': 'received'}
 
-#buscando um usuário pelo ID
 @app.route('/compile/<id>',methods=['GET'])
-#def get_user(id):
 def get_code(id):
-    #user = mongo.db.users.find_one({'_id':ObjectId(id)})
-    #response = json_util.dumps(user)
-    #return Response(response, mimetype='application/json')
     compile = mongo.db.compile.find_one({'_id':ObjectId(id)})
     response = json_util.dumps(compile)
-    codigo = request.json['code']
-    print(codigo)
-    x = codigo[14:]
-    y = codigo.find('(')
-    nome = codigo[14:y]
-    texto = f'public class App' +'{'+f'{codigo}\n'+'public static void main(String[] args) throws Exception'+' {\n'+f' System.out.println({nome}(2));\n'+f' System.out.println({nome}(9));\n'+f' System.out.println({nome}(65));\n'+f' System.out.println({nome}(10));\n'+'}'+'}'
-    with open('App.java','w') as a:
-        a.write(texto)
-    os.chdir('/home/henrique/Desktop/python_mongodb_rest_api/')
-    os.system('sudo  cd /home/henrique/Desktop/python_mongodb_rest_api/App.java')
-    #os.system('App.java 5')
-    #os.system('App.java 6')
-    #os.system('App.java 7')
+    #print(json.loads(response)['_id']['$oid'])
+    #print(json.loads(response)['code'])
+    
     return response
 
 #post da pergunta de 4 opcções
@@ -158,7 +137,60 @@ def create_question():
 
     return {'message': 'received'}
 
+#post da pergunta de 4 opcções
+@app.route('/codigo',methods=['POST'])
+def create_codigo():
+    codigo = request.json['codigo']
+    if codigo:
+        id = mongo.db.codigo.insert_one(
+            {'codigo':codigo}
+        )
+        response = {
+                'id':str(id),
+                'codigo':codigo
+        }
+        return response
+    else:
+        return not_found()
 
+    return {'message': 'received'}
+
+@app.route('/codigo/<id>',methods=['GET'])
+def get_codigo(id):
+    codigo = mongo.db.codigo.find_one({'_id':ObjectId(id)})
+    response = json_util.dumps(codigo)
+    #x = response
+    #print(json.loads(x)['codigo'])
+    return response
+
+#deletar usuário
+@app.route('/users/<id>',methods=['DELETE'])
+def delete_user(id):
+    mongo.db.users.delete_one({'_id':ObjectId(id)})
+    response = jsonify({'message': 'User '+id+' was deleted sucessfully'})
+    return response
+#deletar codigo
+@app.route('/compile/<id>',methods=['DELETE'])
+def delete_code(id):
+    mongo.db.compile.delete_one({'_id':ObjectId(id)})
+    response = jsonify({'message': 'Codigo '+id+' was deleted sucessfully'})
+    return response
+#deletar questao de codigo
+@app.route('/codigo/<id>',methods=['DELETE'])
+def delete_questao(id):
+    mongo.db.codigo.delete_one({'_id':ObjectId(id)})
+    response = jsonify({'message': 'Questao de código '+id+' was deleted sucessfully'})
+    return response
+
+
+@app.errorhandler(404)
+def not_found(error=None):
+    response = jsonify({
+        'message':'Resource not found: '+request.url,
+        'status': 404
+    })
+    response.status_code = 404
+    return response
 if __name__ == "__main__":
     #app.run(host='0.0.0.0')
     app.run(debug=True)

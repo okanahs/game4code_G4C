@@ -1,18 +1,37 @@
 import 'package:flutter/material.dart';
+
 import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/home.dart';
+import 'package:g4c/App/DataModel/Code.dart';
+
+
+import '../DataModel/Questao21.dart';
+import '../DataModel/Questao22.dart';
+import '../DataModel/Questao24.dart';
+import '../DataModel/Questao23.dart';
+
 
 final AppBarScreen appBar = AppBarScreen();
 final AppBarScreen appBarAlt = AppBarScreen();
 
+
 //Questão 1
+
 class Nivel2Q1 extends StatefulWidget {
   @override
   _Nivel2Q1State createState() => _Nivel2Q1State();
 }
 
 class _Nivel2Q1State extends State<Nivel2Q1> {
+  late Future<Questao1> futureQ1;
+
+  @override
+  void initState() {
+    super.initState();
+    futureQ1 = fetchQuestao1();
+  }
+
   @override
   Widget build(
     BuildContext context,
@@ -32,15 +51,23 @@ class _Nivel2Q1State extends State<Nivel2Q1> {
               Row(children: [
                 Expanded(
                   child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "1) Sabe-se que em JAVA, todas as classes herdam características direta, ou indiretamente, de uma classe específica." +
-                          " Assinale a alternativa que contém tal classe.",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                  alignment: Alignment.center,
+                  child: 
+                  FutureBuilder<Questao1>(
+                    future: futureQ1,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Text(snapshot.data!.codigo,
+                        textAlign: TextAlign.center,
+                        style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),);
+                      } else if (snapshot.hasError) {
+                        return Text('${snapshot.error}');
+                      }
+                      // By default, show a loading spinner.
+                      return const CircularProgressIndicator();
+                    },
+                  ),),
                 )
               ]),
               SizedBox(
@@ -159,6 +186,13 @@ class Nivel2Q2 extends StatefulWidget {
 }
 
 class _Nivel2Q2State extends State<Nivel2Q2> {
+  late Future<Questao2> futureQ2;
+
+    @override
+  void initState() {
+    super.initState();
+    futureQ2 = fetchQuestao2();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -176,15 +210,23 @@ class _Nivel2Q2State extends State<Nivel2Q2> {
               Row(children: [
                 Expanded(
                   child: Align(
-                    alignment: Alignment.topCenter,
-                    child: Text(
-                      "2) A respeito da linguagem de programação Java, julgue o item:\n" +
-                          "\n Na linguagem Java, a criação de um array é realizada por meio da palavra-chave create.",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                  alignment: Alignment.topCenter,
+                  child: 
+                  FutureBuilder<Questao2>(
+                    future: futureQ2,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Text(snapshot.data!.codigo,
+                        textAlign: TextAlign.center,
+                        style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),);
+                      } else if (snapshot.hasError) {
+                        return Text('${snapshot.error}');
+                      }
+                      // By default, show a loading spinner.
+                      return const CircularProgressIndicator();
+                    },
+                  ),),
                 )
               ]),
               SizedBox(
@@ -259,6 +301,15 @@ class Nivel2Q3 extends StatefulWidget {
 }
 
 class _Nivel2Q3State extends State<Nivel2Q3> {
+
+  late Future<Questao3> futureQ3;
+
+  @override
+  void initState() {
+    super.initState();
+    futureQ3 = fetchQuestao3();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -276,15 +327,22 @@ class _Nivel2Q3State extends State<Nivel2Q3> {
               Row(children: [
                 Expanded(
                   child: Align(
-                    alignment: Alignment.topCenter,
-                    child: Text(
-                      "3) Na linguagem de programação JAVA, pode-se executar repetidamente uma sequência de código criando um laço." +
-                          "\n JAVA fornece um grupo poderoso de estruturas de laço e a forma mais simples de implementá-lo é:",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                  alignment: Alignment.topCenter,
+                  child: 
+                  FutureBuilder<Questao3>(
+                    future: futureQ3,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Text(snapshot.data!.codigo,textAlign: TextAlign.center,
+                        style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),);
+                      } else if (snapshot.hasError) {
+                        return Text('${snapshot.error}');
+                      }
+                      // By default, show a loading spinner.
+                      return const CircularProgressIndicator();
+                    },
+                  ),),
                 )
               ]),
               SizedBox(
@@ -396,13 +454,22 @@ class _Nivel2Q3State extends State<Nivel2Q3> {
   }
 }
 
-//Questão 4
 class Nivel2Q4 extends StatefulWidget {
   @override
   _Nivel2Q4State createState() => _Nivel2Q4State();
 }
 
 class _Nivel2Q4State extends State<Nivel2Q4> {
+  late Future<Questao4> futureQ4;
+  final TextEditingController _codigo = TextEditingController();
+
+
+  @override
+  void initState() {
+    super.initState();
+    futureQ4 = fetchQuestao4();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -420,15 +487,22 @@ class _Nivel2Q4State extends State<Nivel2Q4> {
               Row(children: [
                 Expanded(
                   child: Align(
-                    alignment: Alignment.topCenter,
-                    child: Text(
-                      " 4) Criar um programa que calcule a média de salários de uma empresa," +
-                          " pedindo ao usuário a grade de funcionários e os salários, e devolvendo a média salarial.",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                  alignment: Alignment.topCenter,
+                  child: 
+                  FutureBuilder<Questao4>(
+                    future: futureQ4,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Text(snapshot.data!.codigo,textAlign: TextAlign.center,
+                        style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),);
+                      } else if (snapshot.hasError) {
+                        return Text('${snapshot.error}');
+                      }
+                      // By default, show a loading spinner.
+                      return const CircularProgressIndicator();
+                    },
+                  ),),
                 )
               ]),
               SizedBox(
@@ -440,6 +514,7 @@ class _Nivel2Q4State extends State<Nivel2Q4> {
                       child: Padding(
                     padding: EdgeInsets.all(8.0),
                     child: TextField(
+                      controller: _codigo,
                       maxLines: 20,
                       decoration: InputDecoration.collapsed(
                         hintText: "Digite seu texto aqui",
@@ -460,11 +535,7 @@ class _Nivel2Q4State extends State<Nivel2Q4> {
                   Padding(
                     padding: const EdgeInsets.only(
                         left: 15.0, right: 15.0, top: 15, bottom: 0),
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      color: Colors.black,
+                    child: ElevatedButton(
                       child: Text(
                         'Enviar',
                         style: TextStyle(
@@ -473,11 +544,12 @@ class _Nivel2Q4State extends State<Nivel2Q4> {
                             fontWeight: FontWeight.bold),
                       ),
                       onPressed: () {
+                        createCode(_codigo.text);
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                Home(), //mudar mais pra frente
+                                Home(),
                           ),
                         );
                       },

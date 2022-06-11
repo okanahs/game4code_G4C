@@ -5,6 +5,11 @@ import 'package:g4c/App/view/dashboard.dart';
 import 'package:g4c/App/view/home.dart';
 import 'package:g4c/App/view/profile.dart';
 
+import '../DataModel/Questao11.dart';
+import '../DataModel/Questao12.dart';
+import '../DataModel/Questao13.dart';
+import '../DataModel/Questao14.dart';
+
 final AppBarScreen appBar = AppBarScreen();
 final AppBarScreen appBarAlt = AppBarScreen();
 
@@ -15,8 +20,6 @@ class Nivel1Q1 extends StatefulWidget {
 }
 
 class _Nivel1Q1State extends State<Nivel1Q1> {
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +41,10 @@ class _Nivel1Q1State extends State<Nivel1Q1> {
                   child: RichText(
                     text: TextSpan(
                       text: " 1) Analise o exemplo abaixo:\n\n",
-                      style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                       children: <TextSpan>[
                         TextSpan(
                             text: '  package br.com.treinaweb;\n' +
@@ -52,12 +58,18 @@ class _Nivel1Q1State extends State<Nivel1Q1> {
                                 '       }\n' +
                                 '    }\n' +
                                 ' }\n\n',
-                            style: TextStyle(color: Color.fromARGB(255, 255, 17, 0), fontSize: 20, fontWeight: FontWeight.bold)),
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 255, 17, 0),
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold)),
                         TextSpan(
                           text:
                               '  considerando o valor da variável resposta,\n' +
                                   '  qual das opções serão escritas?',
-                                  style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -183,8 +195,18 @@ class Nivel1Q2 extends StatefulWidget {
 }
 
 class _Nivel1Q2State extends State<Nivel1Q2> {
+  late Future<Questao12> futureQ12;
+
   @override
-  Widget build(BuildContext context, ) {
+  void initState() {
+    super.initState();
+    futureQ12 = fetchQuestao12();
+  }
+
+  @override
+  Widget build(
+    BuildContext context,
+  ) {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(
@@ -201,11 +223,22 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                 Expanded(
                   child: Align(
                     alignment: Alignment.topCenter,
-                    child: Text(
-                      "2) O que é uma classe?",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    child: FutureBuilder<Questao12>(
+                      future: futureQ12,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
                     ),
                   ),
                 )
@@ -320,13 +353,22 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
 }
 
 //Questão 3
+
 class Nivel1Q3 extends StatefulWidget {
   @override
   _Nivel1Q3State createState() => _Nivel1Q3State();
 }
 
 class _Nivel1Q3State extends State<Nivel1Q3> {
-   @override
+  late Future<Questao13> futureQ13;
+
+  @override
+  void initState() {
+    super.initState();
+    futureQ13 = fetchQuestao13();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
@@ -344,11 +386,22 @@ class _Nivel1Q3State extends State<Nivel1Q3> {
                 Expanded(
                   child: Align(
                     alignment: Alignment.topCenter,
-                    child: Text(
-                      "3) Quais das opções a seguir são Operadores Lógicos?",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    child: FutureBuilder<Questao13>(
+                      future: futureQ13,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
                     ),
                   ),
                 )
@@ -468,7 +521,15 @@ class Nivel1Q4 extends StatefulWidget {
   _Nivel1Q4State createState() => _Nivel1Q4State();
 }
 
-class _Nivel1Q4State extends State<Nivel1Q4> {
+class _Nivel1Q4State extends State<Nivel1Q3> {
+  late Future<Questao14> futureQ14;
+
+  @override
+  void initState() {
+    super.initState();
+    futureQ14 = fetchQuestao14();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -487,15 +548,22 @@ class _Nivel1Q4State extends State<Nivel1Q4> {
                 Expanded(
                   child: Align(
                     alignment: Alignment.topCenter,
-                    child: Text(
-                      "4) As estruturas de repetição, na linguagem Java," +
-                          " permitem executar mais de uma vez um mesmo trecho de código." +
-                          " Trata-se de uma forma de executar blocos de comandos somente" +
-                          " sob determinadas condições. É correto afirmar que, quando se sabe de antemão" +
-                          " quantas vezes o loop deverá ser \n executado, o comando utilizado é:",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    child: FutureBuilder<Questao14>(
+                      future: futureQ14,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
                     ),
                   ),
                 )

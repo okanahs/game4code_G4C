@@ -115,7 +115,7 @@ class _AlterarPageState extends State<AlterarPage> {
                     color: Colors.black,
                     borderRadius: BorderRadius.circular(12.0)),
                 child: SizedBox.expand(
-                  child: FlatButton(
+                  child: ElevatedButton(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[

@@ -91,7 +91,7 @@ class _LoginState extends State<Login> {
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(12.0)),
                   child: SizedBox.expand(
-                    child: FlatButton(
+                    child: ElevatedButton(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -118,10 +118,7 @@ class _LoginState extends State<Login> {
             Padding(
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
-              child: FlatButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                ),
+              child: ElevatedButton(
                 child: Text(
                   'Cadastre-se',
                   style: TextStyle(
@@ -147,13 +144,13 @@ class _LoginState extends State<Login> {
 
   showAlertDialog(BuildContext context) {
     // Create button
-    Widget okButton = FlatButton(
+    Widget okButton = ElevatedButton(
       child: Text("OK"),
       onPressed: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Nivelamento(), //mudar mais pra frente
+            builder: (context) => NivelamentoQ1(), //mudar mais pra frente
           ),
         );
       },

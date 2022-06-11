@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:g4c/App/DataModel/NivelamentoQ1.dart';
 import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/home.dart';
 
+import '../DataModel/NivelamentoQ1.dart';
+import '../DataModel/NivelamentoQ2.dart';
+import '../DataModel/NivelamentoQ3.dart';
+//import '../DataModel/NivelamentoQ4.dart';
+import '../DataModel/Questao13.dart';
+
 final AppBarScreen appBar = AppBarScreen();
 
-class Nivelamento extends StatefulWidget {
+class NivelamentoQ1 extends StatefulWidget {
   @override
-  _NivelamentoState createState() => _NivelamentoState();
+  _NivelamentoQ1State createState() => _NivelamentoQ1State();
 }
 
-class _NivelamentoState extends State<Nivelamento> {
+class _NivelamentoQ1State extends State<NivelamentoQ1> {
+  late Future<NivelQ1> futureNQ1;
+
+  @override
+  void initState() {
+    super.initState();
+    futureNQ1 = fetchNivelQ1();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,11 +44,22 @@ class _NivelamentoState extends State<Nivelamento> {
                 Expanded(
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text(
-                      "1) Qual é a classe de código responsável pela entrada de dados em Java?",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    child: FutureBuilder<NivelQ1>(
+                      future: futureNQ1,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
                     ),
                   ),
                 )
@@ -155,6 +181,14 @@ class NivelamentoQ2 extends StatefulWidget {
 }
 
 class _Nivelamento2State extends State<NivelamentoQ2> {
+  late Future<NivelQ2> futureNQ2;
+
+  @override
+  void initState() {
+    super.initState();
+    futureNQ2 = fetchNivelQ2();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -173,11 +207,22 @@ class _Nivelamento2State extends State<NivelamentoQ2> {
                 Expanded(
                   child: Align(
                     alignment: Alignment.topCenter,
-                    child: Text(
-                      "    2) Sendo que tanto Vetores, quanto Matrizes são array. Qual a diferença entre ambos?",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    child: FutureBuilder<NivelQ2>(
+                      future: futureNQ2,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
                     ),
                   ),
                 )
@@ -293,10 +338,18 @@ class _Nivelamento2State extends State<NivelamentoQ2> {
 
 class NivelamentoQ3 extends StatefulWidget {
   @override
-  _NivelamentoQ3State createState() => _NivelamentoQ3State();
+  _Nivelamento3State createState() => _Nivelamento3State();
 }
 
-class _NivelamentoQ3State extends State<NivelamentoQ3> {
+class _Nivelamento3State extends State<NivelamentoQ3> {
+  late Future<NivelQ3> futureNQ3;
+
+  @override
+  void initState() {
+    super.initState();
+    futureNQ3 = fetchNivelQ3();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -315,18 +368,26 @@ class _NivelamentoQ3State extends State<NivelamentoQ3> {
                 Expanded(
                   child: Align(
                     alignment: Alignment.topCenter,
-                    child: Text(
-                      "    3) Qual o tipo de dados que permite que apenas um caractere seja salvo?",
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    child: FutureBuilder<NivelQ3>(
+                      future: futureNQ3,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
                     ),
                   ),
                 )
               ]),
-              SizedBox(
-                height: 30,
-              ),
               GridView(
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
