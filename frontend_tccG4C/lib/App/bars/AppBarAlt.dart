@@ -7,7 +7,7 @@ class AppBarAltScreen extends HookConsumerWidget {
     return AppBar(
       centerTitle: true,
       title: const Padding(
-        padding: EdgeInsets.all(110),
+        padding: EdgeInsets.symmetric(horizontal: 148, vertical: 148),
         child: ClipOval(
           child: Image(
             image: AssetImage("assets/imagens/logo.png"),

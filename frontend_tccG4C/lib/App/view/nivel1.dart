@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:g4c/App/DataModel/NivelamentoQ4.dart';
 import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/dashboard.dart';
@@ -19,7 +20,17 @@ class Nivel1Q1 extends StatefulWidget {
   _Nivel1Q1State createState() => _Nivel1Q1State();
 }
 
+late Future<Questao1> futureQ11;
+
 class _Nivel1Q1State extends State<Nivel1Q1> {
+  late Future<Questao11> futureQ11;
+
+  @override
+  void initState() {
+    super.initState();
+    futureQ11 = fetchQuestao11();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,45 +47,27 @@ class _Nivel1Q1State extends State<Nivel1Q1> {
               ),
               Row(children: [
                 Expanded(
-                    child: Center(
-                  //alignment: Alignment.topLeft,
-                  child: RichText(
-                    text: TextSpan(
-                      text: " 1) Analise o exemplo abaixo:\n\n",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: '  package br.com.treinaweb;\n' +
-                                '  public class Exemplo {\n' +
-                                '    public static void main(String[] args) {\n' +
-                                '         int resposta = 10;\n' +
-                                '       if (resposta == 10) {\n' +
-                                '           System.out.println(“Você acertou!”);\n' +
-                                '         } else {\n' +
-                                '           System.out.println(“Você errou!”);\n' +
-                                '       }\n' +
-                                '    }\n' +
-                                ' }\n\n',
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: FutureBuilder<Questao11>(
+                      future: futureQ11,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
                             style: TextStyle(
-                                color: Color.fromARGB(255, 255, 17, 0),
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold)),
-                        TextSpan(
-                          text:
-                              '  considerando o valor da variável resposta,\n' +
-                                  '  qual das opções serão escritas?',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
                     ),
                   ),
-                ))
+                )
               ]),
               SizedBox(
                 height: 30,
@@ -521,7 +514,7 @@ class Nivel1Q4 extends StatefulWidget {
   _Nivel1Q4State createState() => _Nivel1Q4State();
 }
 
-class _Nivel1Q4State extends State<Nivel1Q3> {
+class _Nivel1Q4State extends State<Nivel1Q4> {
   late Future<Questao14> futureQ14;
 
   @override

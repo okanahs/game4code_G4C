@@ -1,4 +1,4 @@
-#from crypt import methods
+from crypt import methods
 from email.mime import application
 import json
 from flask import Flask, request, jsonify, Response
@@ -13,7 +13,7 @@ import re
 
 app = Flask(__name__)
 #posteriormente mudar o nome do banco para organização
-app.config['MONGO_URI'] = 'mongodb://127.0.0.1/g4c'
+app.config['MONGO_URI'] = 'mongodb://localhost/pythonmongodb'
 mongo = PyMongo(app)
 
 #criar usuário

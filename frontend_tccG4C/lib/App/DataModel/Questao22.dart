@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 Future<Questao2> fetchQuestao2() async {
-  final String q2 = '62a2bb9a17c0193c4307b374';
+  final String q2 = '62a5fba186ab49540495b82e';
   final response =
       await http.get(Uri.parse('http://127.0.0.1:5000/codigo/${q2}'));
 
@@ -30,4 +30,3 @@ class Questao2 {
     );
   }
 }
-
