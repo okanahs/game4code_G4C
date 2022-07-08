@@ -12,6 +12,7 @@ Desenvolvimento da aplicação [GAME4CODE](https://github.com/iamkanashirolandre
 ## Ferramentas
 
 * [VISUAL STUDIO CODE](https://code.visualstudio.com/) - IDE para programação de várias linguagens.
+* [MySQL Workbench](https://www.mysql.com/downloads/) - Siga esses passos e baixe.
 
 ## Tecnologias
 
