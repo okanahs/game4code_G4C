@@ -6,44 +6,74 @@ import 'package:g4c/App/bars/AppBarAlt.dart';
 import 'package:http/http.dart' as http;
 
 // //aqui começa o codigo de post e cadastrar o usuario, organizar depois
-Future<Album> createAlbum(String user, String email, String password) async {
-  final response = await http.post(
-    Uri.parse('http://127.0.0.1:5000/users'),
-    headers: <String, String>{
-      'Content-Type': 'application/json; charset=UTF-8',
+// Future<Album> createAlbum(String username, String email, String password) async {
+//   final response = await http.post(
+//     Uri.parse('http://localhost:5000/create'),
+//     headers: <String, String>{
+//       'Content-Type': 'application/json; charset=UTF-8',
+//     },
+//     body: jsonEncode(
+//         <String, String>{'username': username, 'email': email, 'password': password}),
+//   );
+
+//   if (response.statusCode == 200) {
+//     // If the server did return a 201 CREATED response,
+//     // then parse the JSON.
+//     return Album.fromJson(jsonDecode(response.body));
+//   } else {
+//     // If the server did not return a 201 CREATED response,
+//     // then throw an exception.
+//     throw Exception('Failed to create album.');
+//   }
+// }
+
+// class Album {
+//   //final int id;
+//   final String username;
+//   final String email;
+//   final int password;
+
+//   //const Album({required this.id, required this.title});
+
+//   const Album(
+//       {required this.username, required this.email, required this.password});
+
+//   factory Album.fromJson(Map<String, dynamic> json) {
+//     return Album(
+//         //id: json['id'],
+//         username: json['username'],
+//         email: json['email'],
+//         password: json['password']);
+//   }
+// }
+register(
+    String username, String email, String password, String cpassword) async {
+  Map data = {
+    'username': username,
+    'email': email,
+    'password': password,
+    'cpassword': cpassword,
+  };
+  print(data);
+
+  String body = json.encode(data);
+  var url = 'http://localhost:5000/create';
+  var response = await http.post(
+    Uri.parse(url),
+    body: body,
+    headers: {
+      "Content-Type": "application/json",
+      "accept": "application/json",
+      "Access-Control-Allow-Origin": "*"
     },
-    body: jsonEncode(
-        <String, String>{'user': user, 'email': email, 'password': password}),
   );
-
+  print(response.body);
+  print(response.statusCode);
   if (response.statusCode == 200) {
-    // If the server did return a 201 CREATED response,
-    // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    //Or put here your next screen using Navigator.push() method
+    print('success');
   } else {
-    // If the server did not return a 201 CREATED response,
-    // then throw an exception.
-    throw Exception('Failed to create album.');
-  }
-}
-
-class Album {
-  //final int id;
-  final String user;
-  final String email;
-  final String password;
-
-  //const Album({required this.id, required this.title});
-
-  const Album(
-      {required this.user, required this.email, required this.password});
-
-  factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-        //id: json['id'],
-        user: json['user'],
-        email: json['email'],
-        password: json['password']);
+    print('error');
   }
 }
 //aqui termina o codigo de post e cadastrar o usuario, organizar depois
@@ -57,9 +87,11 @@ class Registrar extends StatefulWidget {
 }
 
 class _RegistrarState extends State<Registrar> {
-  final TextEditingController _user = TextEditingController();
+  final TextEditingController _username = TextEditingController();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
+  final TextEditingController _cpassword = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -98,8 +130,9 @@ class _RegistrarState extends State<Registrar> {
                           left: 15.0, right: 15.0, top: 15, bottom: 0),
                       child: TextFormField(
                         // autofocus: true,
+                        controller: _username,
                         keyboardType: TextInputType.text,
-                        obscureText: true,
+                        obscureText: false,
                         decoration: InputDecoration(
                           labelText: "Nome de usuário",
                           prefixIcon: IconTheme(
@@ -128,8 +161,9 @@ class _RegistrarState extends State<Registrar> {
                           left: 15.0, right: 15.0, top: 15, bottom: 0),
                       child: TextFormField(
                         // autofocus: true,
+                        controller: _email,
                         keyboardType: TextInputType.text,
-                        obscureText: true,
+                        obscureText: false,
                         decoration: InputDecoration(
                           labelText: "Email",
                           prefixIcon: IconTheme(
@@ -158,6 +192,7 @@ class _RegistrarState extends State<Registrar> {
                           left: 15.0, right: 15.0, top: 15, bottom: 0),
                       child: TextFormField(
                         // autofocus: true,
+                        controller: _password,
                         keyboardType: TextInputType.text,
                         obscureText: true,
                         decoration: InputDecoration(
@@ -183,8 +218,39 @@ class _RegistrarState extends State<Registrar> {
                       ),
                     ),
                     SizedBox(
-                      height: 26,
+                      height: 10,
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 15.0, right: 15.0, top: 15, bottom: 0),
+                      child: TextFormField(
+                        // autofocus: true,
+                        controller: _cpassword,
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          labelText: "Confirmar Senha",
+                          prefixIcon: IconTheme(
+                            data: IconThemeData(
+                              color: Colors.green,
+                            ),
+                            child: Icon(Icons.lock),
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                        ),
+                        onChanged: null,
+                        style: TextStyle(fontSize: 15),
+                      ),
+                    ),
+                    SizedBox(height: 26),
                     Padding(
                       padding: const EdgeInsets.only(
                           left: 15.0, right: 15.0, top: 15, bottom: 0),
@@ -194,7 +260,9 @@ class _RegistrarState extends State<Registrar> {
                           style: TextStyle(color: Colors.white, fontSize: 15),
                         ),
                         onPressed: () {
-                          createAlbum(_user.text, _email.text, _password.text);
+                          // createAlbum(_username.text, _email.text, _password.text);
+                          register(_username.text, _email.text, _password.text,
+                              _cpassword.text);
                           Navigator.pushNamed(context, '/Login');
                         },
                         style: ElevatedButton.styleFrom(
