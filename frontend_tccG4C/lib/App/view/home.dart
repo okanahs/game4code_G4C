@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:g4c/App/bars/AppBar.dart';
+import 'package:g4c/App/bars/SpeedDial.dart';
 import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -18,9 +19,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
         backgroundColor: corBranco,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBar,
-        ),
+            preferredSize: const Size.fromHeight(45), child: appBar),
         bottomNavigationBar:
             PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
         body: Center(

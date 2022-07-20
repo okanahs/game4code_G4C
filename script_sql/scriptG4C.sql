@@ -20,7 +20,16 @@ ALTER TABLE `user`
  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 select * from `user`;
+
+SELECT `id`, `username`, `email`, `password`, `cpassword` FROM `user` WHERE `username` = 'romeu' and `password` = '123456'; 
+
+
+
+
 describe `user`;
+
+insert into `user` (`id`, `username`, `email`, `password`, `cpassword`) values(1,'joel', 'j@gmail.com', '123456', '123456'); 
+insert into `user` (`id`, `username`, `email`, `password`, `cpassword`) values(2,'romeu', 'shakispere@gmail.com', '123456', '123456'); 
 
 -- Comandos caso necessário
 drop database db_g4c;

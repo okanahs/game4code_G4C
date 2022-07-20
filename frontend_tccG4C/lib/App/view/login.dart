@@ -4,6 +4,7 @@ import 'package:g4c/App/view/nivelamento.dart';
 import 'package:g4c/App/view/registrar.dart';
 
 import 'package:flutter/material.dart';
+import 'package:g4c/App/view/userguide.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -182,7 +183,7 @@ showAlertDialog(BuildContext context) {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => NivelamentoQ1(), //mudar mais pra frente
+          builder: (context) => UserGuide(), //mudar mais pra frente
         ),
       );
     },
