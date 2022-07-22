@@ -21,9 +21,15 @@ class _HomeState extends State<Home> {
     "NÍVEL 1",
     "NÍVEL 2",
   ];
+
   var iconCard = [
     "assets/imagens/flag.png",
     "assets/imagens/java.png",
+  ];
+
+  var routeCard = [
+    '/nivel1Q1',
+    '/nivel2Q1',
   ];
 
   var corGrad1 = [0xFFf5c900, 0xFFf64c18];
@@ -120,17 +126,21 @@ class _HomeState extends State<Home> {
                           width: 50,
                         ),
                         Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Text(
-                            services[index],
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: "Montserrat",
-                                height: 1.2,
-                                fontWeight: FontWeight.w600),
-                            textAlign: TextAlign.center,
-                          ),
-                        )
+                            padding: EdgeInsets.all(20),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, routeCard[index]);
+                              },
+                              child: Text(
+                                services[index],
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontFamily: "Montserrat",
+                                    height: 1.2,
+                                    fontWeight: FontWeight.w600),
+                                textAlign: TextAlign.center,
+                              ),
+                            ))
                       ],
                     ),
                   ),
