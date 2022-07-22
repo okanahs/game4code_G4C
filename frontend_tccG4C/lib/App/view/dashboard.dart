@@ -2,17 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
+import 'package:g4c/App/view/home.dart';
+import 'package:g4c/App/view/profile.dart';
+import 'package:simple_speed_dial/simple_speed_dial.dart';
 
-/*
-class Dashboard extends StatefulWidget {
-  @override
-  _dashboardState createState() => _dashboardState();
-}
-
-class _dashboardState extends State<Dashboard> {
-  @override
-  Widget build(BuildContext context) {
-*/
 class Dashboard extends StatefulWidget {
   @override
   _dashboardState createState() => _dashboardState();
@@ -28,12 +21,57 @@ class _dashboardState extends State<Dashboard> {
 
     return Scaffold(
       backgroundColor: corBranco,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(45),
-        child: appBar,
+      floatingActionButton: SpeedDial(
+        child: const Icon(Icons.add),
+        speedDialChildren: <SpeedDialChild>[
+          SpeedDialChild(
+            child: const Icon(Icons.book),
+            foregroundColor: Colors.white,
+            backgroundColor: Colors.red,
+            label: 'Tarefas!',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Home(), //mudar mais pra frente
+                ),
+              );
+            },
+          ),
+          SpeedDialChild(
+            child: const Icon(Icons.dashboard),
+            foregroundColor: Colors.black,
+            backgroundColor: Colors.yellow,
+            label: 'Dashboard',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Dashboard(), //mudar mais pra frente
+                ),
+              );
+            },
+          ),
+          SpeedDialChild(
+            child: const Icon(Icons.person),
+            foregroundColor: Colors.white,
+            backgroundColor: Colors.green,
+            label: 'Perfil',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Profile(), //mudar mais pra frente
+                ),
+              );
+            },
+          ),
+        ],
+        closedForegroundColor: Colors.black,
+        openForegroundColor: Colors.green,
+        closedBackgroundColor: Colors.green,
+        openBackgroundColor: Colors.black,
       ),
-      bottomNavigationBar:
-          PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
       body: MinhaDashboard(),
     );
   }
@@ -209,7 +247,7 @@ class _MinhaDashboardState extends State<MinhaDashboard>
                               size: 85,
                             ),
                             title: Text(
-                              'Teste 1',
+                              'Nivel 1',
                               style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
@@ -242,31 +280,6 @@ class _MinhaDashboardState extends State<MinhaDashboard>
                             ),
                             subtitle: Text(
                               'Pontos Conquistados: 5.0',
-                              style:
-                                  TextStyle(fontSize: 16, color: Colors.black),
-                            ),
-                          ),
-                        ]),
-                  ),
-                  Card(
-                    color: Color(0xFF8752a3),
-                    child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          const ListTile(
-                            leading: Icon(
-                              Icons.add,
-                              size: 85,
-                            ),
-                            title: Text(
-                              'Teste 3',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            subtitle: Text(
-                              'Pontos Conquistados: 7.0',
                               style:
                                   TextStyle(fontSize: 16, color: Colors.black),
                             ),

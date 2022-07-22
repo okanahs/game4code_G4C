@@ -119,7 +119,6 @@ class _UserGuideState extends State<UserGuide> {
 
       // Scrollbar
       verticalScrollbarBehavior: scrollbarBehavior.SHOW_ALWAYS,
-
     );
   }
 }

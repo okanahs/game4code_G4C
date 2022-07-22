@@ -24,6 +24,7 @@ dependencies:
   intro_slider: ^3.0.4
   flutter_speed_dial: ^6.0.0
   awesome_speed_dial: ^0.0.1
+  simple_speed_dial: ^0.1.7
 
 dev_dependencies:
   flutter_launcher_icons: ^0.9.2

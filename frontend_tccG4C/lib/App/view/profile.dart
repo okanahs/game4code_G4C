@@ -3,22 +3,14 @@ import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/AlterarSenha.dart';
+import 'package:g4c/App/view/dashboard.dart';
+import 'package:g4c/App/view/home.dart';
 import 'package:g4c/App/view/login.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:simple_speed_dial/simple_speed_dial.dart';
 
 final AppBarScreen appBar = AppBarScreen();
 final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
 
-/*
-class class Profile extends StatefulWidget {
-  @override
-  _ProfileState createState() => _ProfileState();
-}
-
-class _ProfileState extends State<Profile> {
-  @override
-  Widget build(BuildContext context) {
-*/
 class Profile extends StatefulWidget {
   @override
   _ProfileState createState() => _ProfileState();
@@ -31,12 +23,57 @@ class _ProfileState extends State<Profile> {
     final _height = MediaQuery.of(context).size.height;
     return Scaffold(
         backgroundColor: corBranco,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBar,
+        floatingActionButton: SpeedDial(
+          child: const Icon(Icons.add),
+          speedDialChildren: <SpeedDialChild>[
+            SpeedDialChild(
+              child: const Icon(Icons.book),
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.red,
+              label: 'Tarefas!',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Home(), //mudar mais pra frente
+                  ),
+                );
+              },
+            ),
+            SpeedDialChild(
+              child: const Icon(Icons.dashboard),
+              foregroundColor: Colors.black,
+              backgroundColor: Colors.yellow,
+              label: 'Dashboard',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Dashboard(), //mudar mais pra frente
+                  ),
+                );
+              },
+            ),
+            SpeedDialChild(
+              child: const Icon(Icons.person),
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.green,
+              label: 'Perfil',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Profile(), //mudar mais pra frente
+                  ),
+                );
+              },
+            ),
+          ],
+          closedForegroundColor: Colors.black,
+          openForegroundColor: Colors.green,
+          closedBackgroundColor: Colors.green,
+          openBackgroundColor: Colors.black,
         ),
-        bottomNavigationBar:
-            PreferredSize(preferredSize: const Size.fromHeight(30), child: bnb),
         body: SingleChildScrollView(
           child: new Column(
             children: <Widget>[
