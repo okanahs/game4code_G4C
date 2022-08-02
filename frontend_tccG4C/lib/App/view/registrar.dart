@@ -1,51 +1,8 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:g4c/App/bars/AppBarAlt.dart';
 import 'package:http/http.dart' as http;
 
-// //aqui começa o codigo de post e cadastrar o usuario, organizar depois
-// Future<Album> createAlbum(String username, String email, String password) async {
-//   final response = await http.post(
-//     Uri.parse('http://localhost:5000/create'),
-//     headers: <String, String>{
-//       'Content-Type': 'application/json; charset=UTF-8',
-//     },
-//     body: jsonEncode(
-//         <String, String>{'username': username, 'email': email, 'password': password}),
-//   );
-
-//   if (response.statusCode == 200) {
-//     // If the server did return a 201 CREATED response,
-//     // then parse the JSON.
-//     return Album.fromJson(jsonDecode(response.body));
-//   } else {
-//     // If the server did not return a 201 CREATED response,
-//     // then throw an exception.
-//     throw Exception('Failed to create album.');
-//   }
-// }
-
-// class Album {
-//   //final int id;
-//   final String username;
-//   final String email;
-//   final int password;
-
-//   //const Album({required this.id, required this.title});
-
-//   const Album(
-//       {required this.username, required this.email, required this.password});
-
-//   factory Album.fromJson(Map<String, dynamic> json) {
-//     return Album(
-//         //id: json['id'],
-//         username: json['username'],
-//         email: json['email'],
-//         password: json['password']);
-//   }
-// }
 register(
     String username, String email, String password, String cpassword) async {
   Map data = {
@@ -70,15 +27,11 @@ register(
   print(response.body);
   print(response.statusCode);
   if (response.statusCode == 200) {
-    //Or put here your next screen using Navigator.push() method
     print('success');
   } else {
     print('error');
   }
 }
-//aqui termina o codigo de post e cadastrar o usuario, organizar depois
-
-final AppBarAltScreen aBAlt = AppBarAltScreen();
 String greetings = '';
 
 class Registrar extends StatefulWidget {

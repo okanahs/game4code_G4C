@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:g4c/App/view/home.dart';
-import 'package:g4c/App/view/nivelamento.dart';
 import 'package:g4c/App/view/registrar.dart';
 
 import 'package:flutter/material.dart';

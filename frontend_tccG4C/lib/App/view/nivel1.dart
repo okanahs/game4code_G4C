@@ -1,44 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:g4c/App/DataModel/NivelamentoQ4.dart';
-import 'package:g4c/App/bars/AppBar.dart';
+import 'package:g4c/App/Utils/Content.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/dashboard.dart';
 import 'package:g4c/App/view/home.dart';
 import 'package:g4c/App/view/profile.dart';
+import 'package:swipe_cards/draggable_card.dart';
+import 'package:swipe_cards/swipe_cards.dart';
 
 import '../DataModel/Questao11.dart';
 import '../DataModel/Questao12.dart';
 import '../DataModel/Questao13.dart';
 import '../DataModel/Questao14.dart';
 
-final AppBarScreen appBar = AppBarScreen();
-final AppBarScreen appBarAlt = AppBarScreen();
+//  ██████  ██    ██ ███████ ███████ ████████  █████   ██████       ██
+// ██    ██ ██    ██ ██      ██         ██    ██   ██ ██    ██     ███
+// ██    ██ ██    ██ █████   ███████    ██    ███████ ██    ██      ██
+// ██ ▄▄ ██ ██    ██ ██           ██    ██    ██   ██ ██    ██      ██
+//  ██████   ██████  ███████ ███████    ██    ██   ██  ██████       ██
+//     ▀▀
 
-//Questão 1
 class Nivel1Q1 extends StatefulWidget {
   @override
   _Nivel1Q1State createState() => _Nivel1Q1State();
 }
 
-late Future<Questao1> futureQ11;
+// late Future<Questao1> futureQ11;
 
 class _Nivel1Q1State extends State<Nivel1Q1> {
-  late Future<Questao11> futureQ11;
+  // late Future<Questao11> futureQ11;
 
   @override
   void initState() {
     super.initState();
-    futureQ11 = fetchQuestao11();
+    // futureQ11 = fetchQuestao11();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
-        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -47,27 +48,44 @@ class _Nivel1Q1State extends State<Nivel1Q1> {
               ),
               Row(children: [
                 Expanded(
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: FutureBuilder<Questao11>(
-                      future: futureQ11,
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          return Text(
-                            snapshot.data!.codigo,
-                            textAlign: TextAlign.center,
+                    child: Center(
+                  child: RichText(
+                    text: TextSpan(
+                      text: " 1) Analise o exemplo abaixo:\n\n",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: '  package br.com.treinaweb;\n' +
+                                '  public class Exemplo {\n' +
+                                '    public static void main(String[] args) {\n' +
+                                '         int resposta = 10;\n' +
+                                '       if (resposta == 10) {\n' +
+                                '           System.out.println(“Você acertou!”);\n' +
+                                '         } else {\n' +
+                                '           System.out.println(“Você errou!”);\n' +
+                                '       }\n' +
+                                '    }\n' +
+                                ' }\n\n',
                             style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold),
-                          );
-                        } else if (snapshot.hasError) {
-                          return Text('${snapshot.error}');
-                        }
-                        // By default, show a loading spinner.
-                        return const CircularProgressIndicator();
-                      },
+                                color: Color.fromARGB(255, 255, 17, 0),
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold)),
+                        TextSpan(
+                          text:
+                              '  considerando o valor da variável resposta,\n' +
+                                  '  qual das opções serão escritas?',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
                   ),
-                )
+                ))
               ]),
               SizedBox(
                 height: 30,
@@ -181,31 +199,156 @@ class _Nivel1Q1State extends State<Nivel1Q1> {
   }
 }
 
-//Questão 2
+//  ██████  ██    ██ ███████ ███████ ████████  █████   ██████      ██████
+// ██    ██ ██    ██ ██      ██         ██    ██   ██ ██    ██          ██
+// ██    ██ ██    ██ █████   ███████    ██    ███████ ██    ██      █████
+// ██ ▄▄ ██ ██    ██ ██           ██    ██    ██   ██ ██    ██     ██
+//  ██████   ██████  ███████ ███████    ██    ██   ██  ██████      ███████
+//     ▀▀
+
 class Nivel1Q2 extends StatefulWidget {
   @override
   _Nivel1Q2State createState() => _Nivel1Q2State();
 }
 
+var SwipeImages = [
+  "assets/imagens/flag.png",
+];
+// late Future<Questao2> futureQ12;
+
 class _Nivel1Q2State extends State<Nivel1Q2> {
-  late Future<Questao12> futureQ12;
+  // late Future<Questao12> futureQ12;
+  List<SwipeItem> _swipeItems = <SwipeItem>[];
+  MatchEngine? _matchEngine;
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+  List<String> _names = [
+    "Red",
+  ];
+  List<Color> _colors = [
+    Colors.red,
+  ];
 
   @override
   void initState() {
     super.initState();
-    futureQ12 = fetchQuestao12();
+    // futureQ12 = fetchQuestao12();
+    for (int i = 0; i < _names.length; i++) {
+      _swipeItems.add(SwipeItem(
+          content: Content(text: _names[i], color: _colors[i]),
+          likeAction: () {
+            _scaffoldKey.currentState?.showSnackBar(SnackBar(
+              content: Text("Liked ${_names[i]}"),
+              duration: Duration(milliseconds: 500),
+            ));
+          },
+          nopeAction: () {
+            _scaffoldKey.currentState?.showSnackBar(SnackBar(
+              content: Text("Nope ${_names[i]}"),
+              duration: Duration(milliseconds: 500),
+            ));
+          },
+          superlikeAction: () {
+            _scaffoldKey.currentState?.showSnackBar(SnackBar(
+              content: Text("Superliked ${_names[i]}"),
+              duration: Duration(milliseconds: 500),
+            ));
+          },
+          onSlideUpdate: (SlideRegion? region) async {
+            print("Region $region");
+          }));
+    }
+
+    _matchEngine = MatchEngine(swipeItems: _swipeItems);
+    super.initState();
   }
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
+    return Scaffold(
+        key: _scaffoldKey,
+        body: Container(
+            child: Stack(children: [
+          Container(
+            height: MediaQuery.of(context).size.height - kToolbarHeight,
+            child: SwipeCards(
+              matchEngine: _matchEngine!,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  alignment: Alignment.center,
+                  color: _swipeItems[index].content.color,
+                  child: Text(
+                    _swipeItems[index].content.text,
+                    style: TextStyle(fontSize: 100),
+                  ),
+                );
+              },
+              onStackFinished: () {
+                _scaffoldKey.currentState!.showSnackBar(SnackBar(
+                  content: Text("Stack Finished"),
+                  duration: Duration(milliseconds: 500),
+                ));
+              },
+              itemChanged: (SwipeItem item, int index) {
+                print("item: ${item.content.text}, index: $index");
+              },
+              upSwipeAllowed: true,
+              fillSpace: true,
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    _matchEngine!.currentItem?.nope();
+                    Navigator.pushNamed(context, '/home');
+                  },
+                  child: Text("Nope")),
+              ElevatedButton(
+                  onPressed: () {
+                    _matchEngine!.currentItem?.superLike();
+                    Navigator.pushNamed(context, '/home');
+                  },
+                  child: Text("Superlike")),
+              ElevatedButton(
+                  onPressed: () {
+                    _matchEngine!.currentItem?.like();
+                    Navigator.pushNamed(context, '/home');
+                  },
+                  child: Text("Like"))
+            ],
+          )
+        ])));
+  }
+}
+
+//  ██████  ██    ██ ███████ ███████ ████████  █████   ██████      ██████
+// ██    ██ ██    ██ ██      ██         ██    ██   ██ ██    ██          ██
+// ██    ██ ██    ██ █████   ███████    ██    ███████ ██    ██      █████
+// ██ ▄▄ ██ ██    ██ ██           ██    ██    ██   ██ ██    ██          ██
+//  ██████   ██████  ███████ ███████    ██    ██   ██  ██████      ██████
+//     ▀▀
+
+class Nivel1Q3 extends StatefulWidget {
+  @override
+  _Nivel1Q3State createState() => _Nivel1Q3State();
+}
+
+// late Future<Questao3> futureQ13;
+
+class _Nivel1Q3State extends State<Nivel1Q3> {
+  // late Future<Questao13> futureQ13;
+
+  @override
+  void initState() {
+    super.initState();
+    // futureQ13 = fetchQuestao13();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
-        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -214,27 +357,44 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
               ),
               Row(children: [
                 Expanded(
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: FutureBuilder<Questao12>(
-                      future: futureQ12,
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          return Text(
-                            snapshot.data!.codigo,
-                            textAlign: TextAlign.center,
+                    child: Center(
+                  child: RichText(
+                    text: TextSpan(
+                      text: " 1) Analise o exemplo abaixo:\n\n",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: '  package br.com.treinaweb;\n' +
+                                '  public class Exemplo {\n' +
+                                '    public static void main(String[] args) {\n' +
+                                '         int resposta = 10;\n' +
+                                '       if (resposta == 10) {\n' +
+                                '           System.out.println(“Você acertou!”);\n' +
+                                '         } else {\n' +
+                                '           System.out.println(“Você errou!”);\n' +
+                                '       }\n' +
+                                '    }\n' +
+                                ' }\n\n',
                             style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold),
-                          );
-                        } else if (snapshot.hasError) {
-                          return Text('${snapshot.error}');
-                        }
-                        // By default, show a loading spinner.
-                        return const CircularProgressIndicator();
-                      },
+                                color: Color.fromARGB(255, 255, 17, 0),
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold)),
+                        TextSpan(
+                          text:
+                              '  considerando o valor da variável resposta,\n' +
+                                  '  qual das opções serão escritas?',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
                   ),
-                )
+                ))
               ]),
               SizedBox(
                 height: 30,
@@ -246,7 +406,7 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 5,
                   mainAxisSpacing: 5,
-                  mainAxisExtent: 220,
+                  mainAxisExtent: 90,
                 ),
                 children: [
                   Card(
@@ -257,16 +417,16 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q3(), //mudar mais pra frente
+                                    Home(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "É um elemento que possui características próprias, denotadas por atributos",
+                              "Você não acertou!",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -279,16 +439,16 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q3(), //mudar mais pra frente
+                                    Home(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "É uma elemento de entrada de dados.",
+                              "Você acertou!",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -301,16 +461,16 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q3(), //mudar mais pra frente
+                                    Home(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "É uma estrutura condicional",
+                              "Nenhuma opção!",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -323,349 +483,24 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    Nivel1Q3(), //mudar mais pra frente
+                                    Home(), //mudar mais pra frente
                               ),
                             );
                           },
                           child: Center(
                             child: Text(
-                              "É um elemento do código Java que utilizamos para representar objetos do mundo real.",
+                              "Você errou!",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 23,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 25,
                                   fontWeight: FontWeight.bold),
                             ),
                           ))),
                 ],
               ),
-            ],
-          ),
-        ));
-  }
-}
-
-//Questão 3
-
-class Nivel1Q3 extends StatefulWidget {
-  @override
-  _Nivel1Q3State createState() => _Nivel1Q3State();
-}
-
-class _Nivel1Q3State extends State<Nivel1Q3> {
-  late Future<Questao13> futureQ13;
-
-  @override
-  void initState() {
-    super.initState();
-    futureQ13 = fetchQuestao13();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: corBranco,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
               SizedBox(
                 height: 20,
-              ),
-              Row(children: [
-                Expanded(
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: FutureBuilder<Questao13>(
-                      future: futureQ13,
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          return Text(
-                            snapshot.data!.codigo,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold),
-                          );
-                        } else if (snapshot.hasError) {
-                          return Text('${snapshot.error}');
-                        }
-                        // By default, show a loading spinner.
-                        return const CircularProgressIndicator();
-                      },
-                    ),
-                  ),
-                )
-              ]),
-              SizedBox(
-                height: 50,
-              ),
-              GridView(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 5,
-                  mainAxisSpacing: 5,
-                  mainAxisExtent: 110,
-                ),
-                children: [
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Nivel1Q4(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "&& - || - !",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Nivel1Q4(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "“",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Nivel1Q4(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              ">=",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Nivel1Q4(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "Do-while",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 23,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                ],
-              ),
-            ],
-          ),
-        ));
-  }
-}
-
-//Questão 4
-class Nivel1Q4 extends StatefulWidget {
-  @override
-  _Nivel1Q4State createState() => _Nivel1Q4State();
-}
-
-class _Nivel1Q4State extends State<Nivel1Q4> {
-  late Future<Questao14> futureQ14;
-
-  @override
-  void initState() {
-    super.initState();
-    futureQ14 = fetchQuestao14();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: corBranco,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              Row(children: [
-                Expanded(
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: FutureBuilder<Questao14>(
-                      future: futureQ14,
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          return Text(
-                            snapshot.data!.codigo,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold),
-                          );
-                        } else if (snapshot.hasError) {
-                          return Text('${snapshot.error}');
-                        }
-                        // By default, show a loading spinner.
-                        return const CircularProgressIndicator();
-                      },
-                    ),
-                  ),
-                )
-              ]),
-              SizedBox(
-                height: 50,
-              ),
-              GridView(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 5,
-                  mainAxisSpacing: 5,
-                  mainAxisExtent: 110,
-                ),
-                children: [
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Home(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "if-else",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Home(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "for",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Home(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "while",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  Card(
-                      color: corBlueNCS,
-                      child: InkWell(
-                          onTap: () async {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    Home(), //mudar mais pra frente
-                              ),
-                            );
-                          },
-                          child: Center(
-                            child: Text(
-                              "Do-while",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 23,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ))),
-                  SizedBox(
-                    height: 50,
-                  )
-                ],
               ),
             ],
           ),

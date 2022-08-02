@@ -1,8 +1,9 @@
+from xmlrpc.client import ResponseError
 import pymysql
 from app import app
 from config import mysql
-from flask import jsonify
-from flask import flash, request
+from flask import flash, request, session, jsonify
+from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route('/create', methods=['POST'])
 def create_usr():
@@ -45,7 +46,33 @@ def user():
     finally:
         cursor.close() 
         conn.close()  
-
+#
+@app.route('/login', methods=['POST'])
+def login():
+    try:
+        _json = request.json
+        _username = _json['username']
+        _password = _json['password']
+        print(_password)
+        if _username and _password:
+            conn = mysql.connect()
+            cursor = conn.cursor(pymysql.cursors.DictCursor)      
+            sqlQuery = "SELECT * FROM user WHERE username=%s AND password=%s"
+            cursor.execute(sqlQuery)
+            conn.commit()
+            respone = jsonify("OK: Authenticated")
+            respone.status_code = 200
+            return respone
+        else:
+            reponeError = jsonify({'message' : 'Invalid credentials'})
+            reponeError.status_code = 400
+            return ResponseError
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+    
 @app.route('/user/<int:user_id>')
 def usr_details(user_id):
     try:

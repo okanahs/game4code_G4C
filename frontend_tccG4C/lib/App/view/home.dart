@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:g4c/App/bars/AppBar.dart';
-import 'package:g4c/App/bars/SpeedDial.dart';
-import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/dashboard.dart';
 import 'package:g4c/App/view/profile.dart';
 import 'package:simple_speed_dial/simple_speed_dial.dart';
-
-final AppBarScreen appBar = AppBarScreen();
-final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
-final SpeedDialPage sdial = SpeedDialPage();
 
 class Home extends StatefulWidget {
   @override

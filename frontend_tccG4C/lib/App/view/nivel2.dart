@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
-
-import 'package:g4c/App/bars/AppBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/home.dart';
 import 'package:g4c/App/DataModel/Code.dart';
-
 
 import '../DataModel/Questao21.dart';
 import '../DataModel/Questao22.dart';
 import '../DataModel/Questao24.dart';
 import '../DataModel/Questao23.dart';
-
-
-final AppBarScreen appBar = AppBarScreen();
-final AppBarScreen appBarAlt = AppBarScreen();
-
 
 //Questão 1
 
@@ -38,10 +30,6 @@ class _Nivel2Q1State extends State<Nivel2Q1> {
   ) {
     return Scaffold(
         backgroundColor: corBranco,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
-        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -51,23 +39,25 @@ class _Nivel2Q1State extends State<Nivel2Q1> {
               Row(children: [
                 Expanded(
                   child: Align(
-                  alignment: Alignment.center,
-                  child: 
-                  FutureBuilder<Questao1>(
-                    future: futureQ1,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        return Text(snapshot.data!.codigo,
-                        textAlign: TextAlign.center,
-                        style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),);
-                      } else if (snapshot.hasError) {
-                        return Text('${snapshot.error}');
-                      }
-                      // By default, show a loading spinner.
-                      return const CircularProgressIndicator();
-                    },
-                  ),),
+                    alignment: Alignment.center,
+                    child: FutureBuilder<Questao1>(
+                      future: futureQ1,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
+                    ),
+                  ),
                 )
               ]),
               SizedBox(
@@ -188,19 +178,16 @@ class Nivel2Q2 extends StatefulWidget {
 class _Nivel2Q2State extends State<Nivel2Q2> {
   late Future<Questao2> futureQ2;
 
-    @override
+  @override
   void initState() {
     super.initState();
     futureQ2 = fetchQuestao2();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
-        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -210,23 +197,25 @@ class _Nivel2Q2State extends State<Nivel2Q2> {
               Row(children: [
                 Expanded(
                   child: Align(
-                  alignment: Alignment.topCenter,
-                  child: 
-                  FutureBuilder<Questao2>(
-                    future: futureQ2,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        return Text(snapshot.data!.codigo,
-                        textAlign: TextAlign.center,
-                        style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),);
-                      } else if (snapshot.hasError) {
-                        return Text('${snapshot.error}');
-                      }
-                      // By default, show a loading spinner.
-                      return const CircularProgressIndicator();
-                    },
-                  ),),
+                    alignment: Alignment.topCenter,
+                    child: FutureBuilder<Questao2>(
+                      future: futureQ2,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
+                    ),
+                  ),
                 )
               ]),
               SizedBox(
@@ -301,7 +290,6 @@ class Nivel2Q3 extends StatefulWidget {
 }
 
 class _Nivel2Q3State extends State<Nivel2Q3> {
-
   late Future<Questao3> futureQ3;
 
   @override
@@ -314,10 +302,6 @@ class _Nivel2Q3State extends State<Nivel2Q3> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
-        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -327,22 +311,25 @@ class _Nivel2Q3State extends State<Nivel2Q3> {
               Row(children: [
                 Expanded(
                   child: Align(
-                  alignment: Alignment.topCenter,
-                  child: 
-                  FutureBuilder<Questao3>(
-                    future: futureQ3,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        return Text(snapshot.data!.codigo,textAlign: TextAlign.center,
-                        style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),);
-                      } else if (snapshot.hasError) {
-                        return Text('${snapshot.error}');
-                      }
-                      // By default, show a loading spinner.
-                      return const CircularProgressIndicator();
-                    },
-                  ),),
+                    alignment: Alignment.topCenter,
+                    child: FutureBuilder<Questao3>(
+                      future: futureQ3,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
+                    ),
+                  ),
                 )
               ]),
               SizedBox(
@@ -463,7 +450,6 @@ class _Nivel2Q4State extends State<Nivel2Q4> {
   late Future<Questao4> futureQ4;
   final TextEditingController _codigo = TextEditingController();
 
-
   @override
   void initState() {
     super.initState();
@@ -474,10 +460,6 @@ class _Nivel2Q4State extends State<Nivel2Q4> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: corBranco,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45),
-          child: appBarAlt,
-        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -487,22 +469,25 @@ class _Nivel2Q4State extends State<Nivel2Q4> {
               Row(children: [
                 Expanded(
                   child: Align(
-                  alignment: Alignment.topCenter,
-                  child: 
-                  FutureBuilder<Questao4>(
-                    future: futureQ4,
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        return Text(snapshot.data!.codigo,textAlign: TextAlign.center,
-                        style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),);
-                      } else if (snapshot.hasError) {
-                        return Text('${snapshot.error}');
-                      }
-                      // By default, show a loading spinner.
-                      return const CircularProgressIndicator();
-                    },
-                  ),),
+                    alignment: Alignment.topCenter,
+                    child: FutureBuilder<Questao4>(
+                      future: futureQ4,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.codigo,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('${snapshot.error}');
+                        }
+                        // By default, show a loading spinner.
+                        return const CircularProgressIndicator();
+                      },
+                    ),
+                  ),
                 )
               ]),
               SizedBox(
@@ -548,8 +533,7 @@ class _Nivel2Q4State extends State<Nivel2Q4> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                Home(),
+                            builder: (context) => Home(),
                           ),
                         );
                       },

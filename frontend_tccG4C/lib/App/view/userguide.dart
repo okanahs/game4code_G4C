@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:g4c/App/bars/AppBar.dart';
-import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/home.dart';
 import 'package:intro_slider/dot_animation_enum.dart';
@@ -24,25 +22,25 @@ class _UserGuideState extends State<UserGuide> {
 
     slides.add(
       new Slide(
-        title: "SLIDER 1",
+        title: "PASSO 1 1",
         description:
-            "Allow miles wound place the leave had. To sitting subject no improve studied limited",
+            "O usuário terá vários tipos de tarefas divididos em níveis. Em um dos níveis o uúario irá ter que responder perguntas com botões com as opções e se acertar ficará verte, se errada vermelho e seguirá para proxima pergunta.",
         pathImage: "assets/imagens/photo1.jpg",
         backgroundColor: Color(0xfff5a623),
       ),
     );
     slides.add(
       new Slide(
-        title: "SLIDER 2",
+        title: "PASSO 2 ",
         description:
-            "Ye indulgence unreserved connection alteration appearance",
+            "Toda pergunta será pontuada e será gravada em um placar/contador e depois guardado o resultado no Dashboard",
         pathImage: "assets/imagens/photo1.jpg",
         backgroundColor: Color(0xff203152),
       ),
     );
     slides.add(
       new Slide(
-        title: "SLIDER 3",
+        title: "PASSO 3",
         description:
             "Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our. Although finished blessing do of",
         pathImage: "assets/imagens/photo1.jpg",

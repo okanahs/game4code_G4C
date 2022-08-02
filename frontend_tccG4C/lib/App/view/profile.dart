@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:g4c/App/bars/AppBar.dart';
-import 'package:g4c/App/bars/bottomNavigatorBar.dart';
 import 'package:g4c/App/colors/colors.dart';
 import 'package:g4c/App/view/AlterarSenha.dart';
 import 'package:g4c/App/view/dashboard.dart';
 import 'package:g4c/App/view/home.dart';
 import 'package:g4c/App/view/login.dart';
 import 'package:simple_speed_dial/simple_speed_dial.dart';
-
-final AppBarScreen appBar = AppBarScreen();
-final bottomNavigatorBarScreen bnb = bottomNavigatorBarScreen();
 
 class Profile extends StatefulWidget {
   @override
