@@ -26,6 +26,8 @@ dependencies:
   swipeable_card_stack: ^0.0.5
   appinio_swiper: ^1.0.3
   hop_swipe_cards: ^1.0.0+1
+  flutter_swiper: ^1.1.6
+  audioplayers: ^1.0.1
 
 
 dev_dependencies:

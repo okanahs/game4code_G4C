@@ -256,56 +256,33 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
     super.initState();
   }
 
+  Color color = Colors.black;
   @override
   Widget build(BuildContext context) {
+    final showDraggable = color == Colors.black;
     return Scaffold(
-        key: _scaffoldKey,
-        body: Container(
-            child: Stack(children: [
-          Container(
-            height: 1000,
-            child: SwipeCards(
-              matchEngine: _matchEngine!,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  alignment: Alignment.center,
-                  color: _swipeItems[index].content.color,
-                  child: Text(
-                    _swipeItems[index].content.text,
-                    style: TextStyle(fontSize: 50),
-                  ),
-                );
-              },
-              onStackFinished: () {
-                _scaffoldKey.currentState!.showSnackBar(SnackBar(
-                  content: Text("Stack Finished"),
-                  duration: Duration(milliseconds: 500),
-                ));
-              },
-              itemChanged: (SwipeItem item, int index) {
-                print("item: ${item.content.text}, index: $index");
-              },
-              upSwipeAllowed: true,
-              fillSpace: true,
-            ),
+        body: Center(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+          DragTarget<Color>(
+            onAccept: (data) => setState(() => color = data),
+            builder: (context, _, __) =>
+                Container(width: 150, height: 150, color: color),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                  onPressed: () {
-                    _matchEngine!.currentItem?.nope();
-                    Navigator.pushNamed(context, '/home');
-                  },
-                  child: Text("Falso")),
-              ElevatedButton(
-                  onPressed: () {
-                    _matchEngine!.currentItem?.like();
-                    Navigator.pushNamed(context, '/home');
-                  },
-                  child: Text("Verdadeiro"))
-            ],
-          )
+          IgnorePointer(
+              ignoring: !showDraggable,
+              child: Opacity(
+                  opacity: showDraggable ? 1 : 0,
+                  child: Draggable<Color>(
+                    data: Colors.green,
+                    child:
+                        Container(width: 150, height: 150, color: Colors.green),
+                    feedback:
+                        Container(width: 150, height: 150, color: Colors.green),
+                    childWhenDragging:
+                        Container(width: 150, height: 150, color: Colors.blue),
+                  )))
         ])));
   }
 }
