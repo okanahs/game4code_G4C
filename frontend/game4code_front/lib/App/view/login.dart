@@ -134,7 +134,12 @@ class _LoginState extends State<Login> {
                           ],
                         ),
                         onPressed: () {
-                          showAlertDialog(context);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => UserGuide(),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.black, // Background color

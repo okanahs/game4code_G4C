@@ -218,57 +218,34 @@ var SwipeImages = [
 
 class _Nivel1Q2State extends State<Nivel1Q2> {
   // late Future<Questao12> futureQ12;
-  List<SwipeItem> _swipeItems = <SwipeItem>[];
-  MatchEngine? _matchEngine;
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
-  List<String> _names = [
-    "Red",
-  ];
-  List<Color> _colors = [
-    Colors.red,
+  var services = [
+    "NÍVEL 1",
+    "NÍVEL 2",
   ];
 
   @override
   void initState() {
     super.initState();
     // futureQ12 = fetchQuestao12();
-    for (int i = 0; i < _names.length; i++) {
-      _swipeItems.add(SwipeItem(
-          content: Content(text: _names[i], color: _colors[i]),
-          likeAction: () {
-            _scaffoldKey.currentState?.showSnackBar(SnackBar(
-              content: Text("Verdadeiro ${_names[i]}"),
-              duration: Duration(milliseconds: 500),
-            ));
-          },
-          nopeAction: () {
-            _scaffoldKey.currentState?.showSnackBar(SnackBar(
-              content: Text("Falso ${_names[i]}"),
-              duration: Duration(milliseconds: 500),
-            ));
-          },
-          onSlideUpdate: (SlideRegion? region) async {
-            print("Region $region");
-          }));
-    }
-
-    _matchEngine = MatchEngine(swipeItems: _swipeItems);
-    super.initState();
   }
 
   Color color = Colors.black;
+  Color color2 = Colors.grey;
   @override
   Widget build(BuildContext context) {
     final showDraggable = color == Colors.black;
+    final showDraggable2 = color2 == Colors.grey;
+
     return Scaffold(
-        body: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
+      body: ListView(children: [
+        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           DragTarget<Color>(
             onAccept: (data) => setState(() => color = data),
             builder: (context, _, __) =>
                 Container(width: 150, height: 150, color: color),
+          ),
+          SizedBox(
+            height: 30,
           ),
           IgnorePointer(
               ignoring: !showDraggable,
@@ -276,14 +253,174 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                   opacity: showDraggable ? 1 : 0,
                   child: Draggable<Color>(
                     data: Colors.green,
-                    child:
-                        Container(width: 150, height: 150, color: Colors.green),
-                    feedback:
-                        Container(width: 150, height: 150, color: Colors.green),
-                    childWhenDragging:
-                        Container(width: 150, height: 150, color: Colors.blue),
+                    child: Container(
+                        child: Center(
+                          child: Column(children: [
+                            Container(
+                              width: 150,
+                              height: 150,
+                              color: Colors.blue,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'IF',
+                                  maxLines: 3,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ]),
+                        ),
+                        width: 150,
+                        height: 150,
+                        color: Colors.green),
+                    feedback: Container(
+                        child: Center(
+                          child: Column(children: [
+                            Container(
+                              width: 150,
+                              height: 150,
+                              color: Colors.blue,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'IF',
+                                  maxLines: 3,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ]),
+                        ),
+                        width: 150,
+                        height: 150,
+                        color: Colors.blue),
+                    childWhenDragging: Container(
+                        child: Center(
+                          child: Column(children: [
+                            Container(
+                              width: 150,
+                              height: 150,
+                              color: Colors.blue,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'IF',
+                                  maxLines: 3,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ]),
+                        ),
+                        width: 150,
+                        height: 150,
+                        color: Colors.blue),
                   )))
-        ])));
+        ]),
+        SizedBox(
+          height: 30,
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          DragTarget<Color>(
+            onAccept: (data2) => setState(() => color2 = data2),
+            builder: (context, _, __) =>
+                Container(width: 150, height: 150, color: color2),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          IgnorePointer(
+              ignoring: !showDraggable2,
+              child: Opacity(
+                  opacity: showDraggable2 ? 1 : 0,
+                  child: Draggable<Color>(
+                    data: Colors.green,
+                    child: Container(
+                        child: Center(
+                          child: Column(children: [
+                            Container(
+                              width: 150,
+                              height: 150,
+                              color: Colors.blue,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'IF',
+                                  maxLines: 3,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ]),
+                        ),
+                        width: 150,
+                        height: 150,
+                        color: Colors.green),
+                    feedback: Container(
+                        child: Center(
+                          child: Column(children: [
+                            Container(
+                              width: 150,
+                              height: 150,
+                              color: Colors.blue,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'IF',
+                                  maxLines: 3,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ]),
+                        ),
+                        width: 150,
+                        height: 150,
+                        color: Colors.blue),
+                    childWhenDragging: Container(
+                        child: Center(
+                          child: Column(children: [
+                            Container(
+                              width: 150,
+                              height: 150,
+                              color: Colors.blue,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'IF',
+                                  maxLines: 3,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ]),
+                        ),
+                        width: 150,
+                        height: 150,
+                        color: Colors.blue),
+                  )))
+        ])
+      ]),
+    );
   }
 }
 
