@@ -22,11 +22,11 @@ class _UserGuideState extends State<UserGuide> {
 
     slides.add(
       new Slide(
-        title: "PASSO 1 1",
+        title: "PASSO 1",
         description:
             "O usuário terá vários tipos de tarefas divididos em níveis. Em um dos níveis o uúario irá ter que responder perguntas com botões com as opções e se acertar ficará verte, se errada vermelho e seguirá para proxima pergunta.",
         pathImage: "assets/imagens/photo1.jpg",
-        backgroundColor: Color(0xfff5a623),
+        backgroundColor: Color.fromARGB(255, 13, 0, 189),
       ),
     );
     slides.add(

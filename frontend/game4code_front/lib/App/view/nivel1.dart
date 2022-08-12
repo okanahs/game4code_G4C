@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:game4code_front/App/DataModel/NivelamentoQ4.dart';
@@ -243,6 +245,26 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
             child: Container(
           color: Colors.transparent,
           child: ListView(children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Center(
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 300,
+                        height: 150,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text('Pergunta 2: asjkdbailkesbcalkesbdcakesbdclkaebd claklesbhfd ckaesbdc', maxLines: 3, 
+                          style: TextStyle(fontSize: 20),),
+                        )
+                      )
+                    ],
+                  ),
+                ) 
+              ],
+            ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
               IgnorePointer(
                   ignoring: !showDraggable,
