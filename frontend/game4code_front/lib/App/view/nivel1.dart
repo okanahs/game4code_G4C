@@ -9,6 +9,7 @@ import 'package:game4code_front/App/view/dashboard.dart';
 import 'package:game4code_front/App/view/home.dart';
 import 'package:game4code_front/App/view/profile.dart';
 import 'package:swipe_cards/draggable_card.dart';
+import 'package:tcard/tcard.dart';
 
 import '../DataModel/Questao11.dart';
 import '../DataModel/Questao12.dart';
@@ -252,17 +253,19 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                   child: Column(
                     children: [
                       Container(
-                        width: 300,
-                        height: 150,
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Text('Pergunta 2: asjkdbailkesbcalkesbdcakesbdclkaebd claklesbhfd ckaesbdc', maxLines: 3, 
-                          style: TextStyle(fontSize: 20),),
-                        )
-                      )
+                          width: 300,
+                          height: 150,
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'Pergunta 2: asjkdbailkesbcalkesbdcakesbdclkaebd claklesbhfd ckaesbdc',
+                              maxLines: 3,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ))
                     ],
                   ),
-                ) 
+                )
               ],
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
@@ -484,6 +487,26 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
 //  ██████   ██████  ███████ ███████    ██    ██   ██  ██████      ██████
 //     ▀▀
 
+List<Color> corslist = [
+  Colors.blue,
+];
+
+List<Widget> cards = List.generate(
+  corslist.length,
+  (int index) {
+    return Container(
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: corslist[index],
+      ),
+      child: Text(
+        '${index + 1}',
+        style: TextStyle(fontSize: 100.0, color: Colors.white),
+      ),
+    );
+  },
+);
+
 class Nivel1Q3 extends StatefulWidget {
   @override
   _Nivel1Q3State createState() => _Nivel1Q3State();
@@ -493,17 +516,10 @@ class Nivel1Q3 extends StatefulWidget {
 
 class _Nivel1Q3State extends State<Nivel1Q3> {
   // late Future<Questao13> futureQ13;
-  String _message = 'Pergunta, se verdadeiro direita, falso a esquerda';
 
-  var cor = [
-    Colors.red,
-    Colors.orange,
-    Colors.yellow,
-    Colors.green,
-    Colors.blue,
-    Colors.indigo,
-    Colors.purple,
-  ];
+  TCardController _controller = TCardController();
+
+  int _index = 0;
 
   @override
   void initState() {
@@ -514,8 +530,57 @@ class _Nivel1Q3State extends State<Nivel1Q3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      height: 340,
-    ));
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            SizedBox(height: 200),
+            TCard(
+              cards: cards,
+              controller: _controller,
+              onForward: (index, info) {
+                _index = index;
+                print(info.direction);
+                setState(() {});
+              },
+              onBack: (index, info) {
+                _index = index;
+                setState(() {});
+              },
+              onEnd: () {
+                print('end');
+              },
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                OutlineButton(
+                  onPressed: () {
+                    _controller.back();
+                  },
+                  child: Text('Voltar'),
+                ),
+                OutlineButton(
+                  onPressed: () {
+                    _controller.forward();
+                  },
+                  child: Text('Verdadeiro'),
+                ),
+                OutlineButton(
+                  onPressed: () {
+                    _controller.reset();
+                  },
+                  child: Text('Reset'),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text(_index.toString()),
+      ),
+    );
   }
 }
