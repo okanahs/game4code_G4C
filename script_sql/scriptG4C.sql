@@ -1,3 +1,5 @@
+-- Active: 1665149632052@@127.0.0.1@3306@db_g4c
+
 -- Comandos Uteis
 create database db_g4c default character set utf8 collate utf8_general_ci;
 
