@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 -- Active: 1661200740398@@127.0.0.1@3306@db_g4c
+=======
+-- Active: 1665149632052@@127.0.0.1@3306@db_g4c
+
+>>>>>>> a3ae99ce5095e9e89af074221b08f78db7a0968e
 -- Comandos Uteis
 create database db_g4c default character set utf8 collate utf8_general_ci;
 

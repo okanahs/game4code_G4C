@@ -162,6 +162,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.4"
+  flip_card:
+    dependency: "direct main"
+    description:
+      name: flip_card
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -525,13 +532,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.1"
-  unicorndial:
-    dependency: "direct main"
-    description:
-      name: unicorndial
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.5"
   uuid:
     dependency: transitive
     description:
