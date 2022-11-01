@@ -2,8 +2,6 @@
 
 <br />
 
-# TrabalhoFilmesDB
-
 ## Sobre
 
 <table>
