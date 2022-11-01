@@ -11,9 +11,7 @@ environment:
   sdk: ">=2.17.6 <3.0.0"
 
 dependencies:
-
   appinio_swiper: ^1.0.3
-  audioplayers: ^1.0.1
   carousel_slider: ^4.1.1
   cupertino_icons: ^1.0.2
   
@@ -27,7 +25,7 @@ dependencies:
   flutter_swiper: ^1.1.6
   hooks_riverpod: ^1.0.3
   hop_swipe_cards: ^1.0.0+1
-  http: ^0.13.5
+  http: ^0.13.4
   material_design_icons_flutter: ^5.0.6595
   scaffold_gradient_background: ^1.0.3+1
   simple_speed_dial: ^0.1.7

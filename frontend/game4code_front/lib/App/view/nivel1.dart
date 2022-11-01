@@ -1,23 +1,10 @@
-//import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:game4code_front/App/DataModel/NivelamentoQ4.dart';
-import 'package:game4code_front/App/Utils/Content.dart';
 import 'package:game4code_front/App/colors/colors.dart';
 import 'package:game4code_front/App/view/cartas/cartaselecao.dart';
-import 'package:game4code_front/App/view/dashboard.dart';
 import 'package:game4code_front/App/view/home.dart';
-import 'package:game4code_front/App/view/profile.dart';
-import 'package:swipe_cards/draggable_card.dart';
-import 'package:tcard/tcard.dart';
-import 'package:simple_speed_dial/simple_speed_dial.dart';
-
-import '../DataModel/Questao11.dart';
-import '../DataModel/Questao12.dart';
-import '../DataModel/Questao13.dart';
-import '../DataModel/Questao14.dart';
 
 //  ██████  ██    ██ ███████ ███████ ████████  █████   ██████       ██
 // ██    ██ ██    ██ ██      ██         ██    ██   ██ ██    ██     ███
@@ -69,11 +56,14 @@ class _Nivel1Q1State extends State<Nivel1Q1> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  /*Expanded(
-                    child: RaisedButton(
-                      elevation: 0.0,
-                      color: Colors.white,
-                      hoverColor: Colors.white,
+                  Expanded(
+                    child: ElevatedButton(
+                      // elevation: 0.0,
+                      // color: Colors.white,
+                      // hoverColor: Colors.white,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.all(0.0),
                         child: Column(
@@ -94,10 +84,13 @@ class _Nivel1Q1State extends State<Nivel1Q1> {
                     ),
                   ),
                   Expanded(
-                    child: RaisedButton(
-                      elevation: 0.0,
-                      color: Colors.white,
-                      hoverColor: Colors.white,
+                    child: ElevatedButton(
+                      // elevation: 0.0,
+                      // color: Colors.white,
+                      // hoverColor: Colors.white,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: Column(
@@ -116,12 +109,15 @@ class _Nivel1Q1State extends State<Nivel1Q1> {
                       ),
                       onPressed: () {},
                     ),
-                  ),*/
-                  /*Expanded(
-                    child: RaisedButton(
-                      elevation: 0.0,
-                      color: Colors.white,
-                      hoverColor: Colors.white,
+                  ),
+                  Expanded(
+                    child: ElevatedButton(
+                      // elevation: 0.0,
+                      // color: Colors.white,
+                      // hoverColor: Colors.white,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: Column(
@@ -148,7 +144,7 @@ class _Nivel1Q1State extends State<Nivel1Q1> {
                         );
                       },
                     ),
-                  ),*/
+                  ),
                 ],
               ),
             ),
@@ -372,11 +368,14 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                 /* Expanded(
-                    child: RaisedButton(
-                      elevation: 0.0,
-                      color: Colors.white,
-                      hoverColor: Colors.white,
+                  Expanded(
+                    child: ElevatedButton(
+                      // elevation: 0.0,
+                      // color: Colors.white,
+                      // hoverColor: Colors.white,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.all(0.0),
                         child: Column(
@@ -395,12 +394,15 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                       ),
                       onPressed: () {},
                     ),
-                  ),*/
-                  /*Expanded(
-                    child: RaisedButton(
-                      elevation: 0.0,
-                      color: Colors.white,
-                      hoverColor: Colors.white,
+                  ),
+                  Expanded(
+                    child: ElevatedButton(
+                      // elevation: 0.0,
+                      // color: Colors.white,
+                      // hoverColor: Colors.white,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: Column(
@@ -419,12 +421,15 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                       ),
                       onPressed: () {},
                     ),
-                  ),*/
-                  /*Expanded(
-                    child: RaisedButton(
-                      elevation: 0.0,
-                      color: Colors.white,
-                      hoverColor: Colors.white,
+                  ),
+                  Expanded(
+                    child: ElevatedButton(
+                      // elevation: 0.0,
+                      // color: Colors.white,
+                      // hoverColor: Colors.white,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: Column(
@@ -451,7 +456,7 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                         );
                       },
                     ),
-                  ),*/
+                  ),
                 ],
               ),
             ),
@@ -688,7 +693,7 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Home(),
+                              builder: (context) => Nivel1Q3(),
                             ),
                           );
                         },
@@ -711,3 +716,375 @@ class _Nivel1Q2State extends State<Nivel1Q2> {
 //  ██████   ██████  ███████ ███████    ██    ██   ██  ██████      ██████
 //     ▀▀
 
+class Nivel1Q3 extends StatefulWidget {
+  @override
+  _Nivel1Q3State createState() => _Nivel1Q3State();
+}
+
+class _Nivel1Q3State extends State<Nivel1Q3> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  Color color = Colors.black;
+  Color color2 = Colors.grey;
+  @override
+  Widget build(BuildContext context) {
+    final showDraggable = color == Colors.black;
+    final showDraggable2 = color2 == Colors.grey;
+
+    return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
+      floatingActionButton: SizedBox(
+        height: 90.0,
+        width: 800.0,
+        child: Material(
+          shape: StadiumBorder(),
+          textStyle: Theme.of(context).textTheme.button,
+          elevation: 0,
+          child: Container(
+            //color: Colors.white,
+            decoration: const BoxDecoration(
+              border: Border(
+                top: BorderSide(color: Color(0xFFDFDFDF)),
+                left: BorderSide(color: Color(0xFFDFDFDF)),
+                right: BorderSide(color: Color(0xFFDFDFDF)),
+                bottom: BorderSide(color: Color(0xFFDFDFDF)),
+              ),
+              color: Color(0xFFDFDFDF),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Expanded(
+                  child: ElevatedButton(
+                    // elevation: 0.0,
+                    // color: Colors.white,
+                    // hoverColor: Colors.white,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(0.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.receipt,
+                            color: corCeruleanBlue,
+                            size: 30.0,
+                          ),
+                          Text("Cartas Adiquiridas",
+                              style: TextStyle(
+                                  color: corCeruleanBlue, fontSize: 12))
+                        ],
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                    // elevation: 0.0,
+                    // color: Colors.white,
+                    // hoverColor: Colors.white,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.monetization_on_outlined,
+                            color: corCeruleanBlue,
+                            size: 30.0,
+                          ),
+                          Text("0",
+                              style: TextStyle(
+                                  color: corCeruleanBlue, fontSize: 12))
+                        ],
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                    // elevation: 0.0,
+                    // color: Colors.white,
+                    // hoverColor: Colors.white,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.quiz,
+                            color: corCeruleanBlue,
+                            size: 30.0,
+                          ),
+                          Text("Pedir Ajuda",
+                              style: TextStyle(
+                                  color: corCeruleanBlue, fontSize: 12))
+                        ],
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              CartaSelecao(), //mudar mais pra frente
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      body: Center(
+        child:
+            Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 50,),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    child:
+                      Text('Pergunta 3: Neste exercicio, o usuario deve preencher os espaços da forma adequada',
+                      style: TextStyle(fontSize: 20 ),),
+                  ),
+                ),
+                const SizedBox(
+                  height: 180,
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: 
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        '             class nomedaclasse{\n' +
+                            '                       atributos =',
+                          style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromARGB(255, 58, 180, 24)),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 30,
+                    padding: const EdgeInsets.only(
+                      right: 50,
+                    ),
+                    child: TextField(),
+                  ),
+                ),
+                SizedBox(
+                  width: 22,
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        '                   metodo(',
+                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 1,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 20,
+                    padding: const EdgeInsets.only(
+                      right: 10,
+                    ),
+                    child: TextField(),
+                  ),
+                ),
+                Text(')',
+                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+                ),
+                Text('{', style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromARGB(255, 58, 180, 24)),),
+                SizedBox(
+                  width: 110,
+                ),
+              ],
+            ),
+            SizedBox(
+                  height: 10,
+                ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[],
+                  ),
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 20,
+                    padding: const EdgeInsets.only(
+                      right: 10,
+                    ),
+                    child: TextField(),
+                  ),
+                ),
+                SizedBox(
+                  width: 172,
+                ),
+              ],
+            ),
+             SizedBox(
+                  height: 10,
+                ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        '               return ',
+                        style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromARGB(255, 58, 180, 24)),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 20,
+                    padding: const EdgeInsets.only(
+                      right:  10,
+                    ),
+                    child: TextField(),
+                  ),
+                ),
+                SizedBox(
+                  width: 172,
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        '                }',
+                        style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromARGB(255, 58, 180, 24)),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        '               }',
+                        style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromARGB(255, 58, 180, 24)),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+              ],
+            ),
+             SizedBox(
+                  height: 70,
+                ),
+             Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "Avançar",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Home(),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.black, // Background color
+                        ),
+                      ),
+                    ])
+          ],
+        ),
+      ),
+    );
+  }
+}
