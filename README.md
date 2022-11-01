@@ -39,7 +39,7 @@ Repositorio voltado para o desenvolvimento da aplicação [GAME4CODE](https://gi
 <tr>
 <td>
 
-### André Luiz H. Kanashiro ([@iamkanashirolandre](https://github.com/iamkanashirolandre))
+### André Luiz H. Kanashiro ([@itsandrekanas](https://github.com/itsandrekanas))
 ### Victor de Oliveira Santos([@VictorOliveira26](https://github.com/VictorOliveira26))
 ### Francisco Henrique Moreira Firmino([@Henrique-Turing](https://github.com/Henrique-Turing))
 ### Marcus Vinicius da Silva de Paiva([@MarcusvPaiva](https://github.com/MarcusvPaiva))
