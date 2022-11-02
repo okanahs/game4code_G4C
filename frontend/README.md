@@ -1,68 +1,16 @@
-# 💡 GAME4CODE
+# game4code_front
 
-<br />
+A new Flutter project.
 
-# TrabalhoFilmesDB
+## Getting Started
 
-## Sobre
+This project is a starting point for a Flutter application.
 
-<table>
-<tr>
-<td>
+A few resources to get you started if this is your first Flutter project:
 
-Repositorio voltado para o desenvolvimento da aplicação [GAME4CODE](https://github.com/iamkanashirolandre/tcc_GAME4CODE). O objetivo é a criação de uma aplicação voltada a auxiliar no contato da linguagem de programação Java.
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-</td>
-</tr>
-</table>
-
-
-<br />
-
-## 👨🏻‍🏫 Orientador
-
-<table>
-<tr>
-<td>
-
-### Diogo Steinke Deconto
-
-</td>
-</tr>
-</table>
-
-<br />
-
-## 🚀 Alunos envolvidos
-
-<table>
-<tr>
-<td>
-
-### André Luiz H. Kanashiro ([@iamkanashirolandre](https://github.com/iamkanashirolandre))
-### Victor de Oliveira Santos([@VictorOliveira26](https://github.com/VictorOliveira26))
-### Francisco Henrique Moreira Firmino([@Henrique-Turing](https://github.com/Henrique-Turing))
-### Marcus Vinicius da Silva de Paiva([@MarcusvPaiva](https://github.com/MarcusvPaiva))
-
-</td>
-</tr>
-</table>
-
-
-<details open="open"> 
- 
-<table>
-<tr>
-<td>
-
- ### 🚀 Ferramentas e tecnólogias
-
-### [VISUAL STUDIO CODE](https://code.visualstudio.com/) - IDE para programação de várias linguagens.
-### [MySQL Workbench](https://www.mysql.com/downloads/) - Siga esses passos e baixe.
-### [Flutter](https://flutter.dev/docs/get-started/install) - Siga esses passos e baixe.
-### [Python](https://www.python.org/downloads/) - Siga esses passos e baixe.
- 
-</td>
-</tr>
-</table>
-</details> 
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
