@@ -1,5 +1,3 @@
--- Active: 1667498029693@@127.0.0.1@3306@flask_login
-
 CREATE database flask_login;
 
 USE flask_login;
@@ -26,11 +24,20 @@ CREATE TABLE codigo(
 );
 
 
-
-drop table users;
-drop table pergunta;
-drop table codigo;
+create table pergunta1 (
+    id Integer not null auto_increment,
+    cabecalho Varchar(255) not null,
+    a Varchar(255) not null,
+    b Varchar(255) not null,
+    c Varchar(255) not null,
+    d Varchar(255) not null,
+    op Varchar(255) not null,
+	primary key (id)
+    );
 
 select * from users;
+select * from pergunta1;
 select * from pergunta;
 select * from codigo;
+
+
